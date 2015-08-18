@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] startup problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20startup%20problem&In-Reply-To=%3C8f42d5660706290514t2801cca3vfb2a85f4913c028b%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000123.html">
+   <LINK REL="Next"  HREF="000125.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] startup problem</H1>
+    <B>Elio Heinrich</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20startup%20problem&In-Reply-To=%3C8f42d5660706290514t2801cca3vfb2a85f4913c028b%40mail.gmail.com%3E"
+       TITLE="[sunuo-users] startup problem">downsource at googlemail.com
+       </A><BR>
+    <I>Fri Jun 29 14:14:20 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000123.html">[sunuo-users] startup problem
+</A></li>
+        <LI>Next message: <A HREF="000125.html">[sunuo-users] startup problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#124">[ date ]</a>
+              <a href="thread.html#124">[ thread ]</a>
+              <a href="subject.html#124">[ subject ]</a>
+              <a href="author.html#124">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>2007/6/29, Max Kellermann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">max at duempel.org</A>&gt;:
+&gt;<i> Hi Elio,
+</I>&gt;<i>
+</I>&gt;<i> 1. What is your Mono version? (mono --version)
+</I>&gt;<i>
+</I>&gt;<i> 2. please try &quot;bash -x run.sh&quot; and give us the output.
+</I>
+Hi,
+
+1. The Mono version is 1.1.8.3
+2. the output is this:
+
++ '[' -f SunUO.exe ']'
++ '[' -f SunUO.exe ']'
++ '[' -f SunUO.exe.config ']'
++ export LANG=C
++ LANG=C
++ export LC_ALL=C
++ LC_ALL=C
++ unset DISPLAY XAUTHORITY
++ export SUNUO_EXIT=99
++ SUNUO_EXIT=99
++ trap on_exit EXIT
++ :
++ mono --server --debug -O=all,-shared SunUO.exe
+Unknown command line option: '--server'
++ SUNUO_PID=7495
++ wait
++ STATUS=0
++ unset SUNUO_PID
++ echo 'SunUO.exe exited with status 0'
+SunUO.exe exited with status 0
++ '[' 0 == 99 ']'
++ sleep 10
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000123.html">[sunuo-users] startup problem
+</A></li>
+	<LI>Next message: <A HREF="000125.html">[sunuo-users] startup problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#124">[ date ]</a>
+              <a href="thread.html#124">[ thread ]</a>
+              <a href="subject.html#124">[ subject ]</a>
+              <a href="author.html#124">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

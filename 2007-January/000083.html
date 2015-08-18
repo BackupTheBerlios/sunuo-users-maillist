@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Dynamic Hostnames as GameServer
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Dynamic%20Hostnames%20as%20GameServer&In-Reply-To=%3C45A3F4A2.6040401%40nkey.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000082.html">
+   <LINK REL="Next"  HREF="000084.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Dynamic Hostnames as GameServer</H1>
+    <B>Maik Greubel</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Dynamic%20Hostnames%20as%20GameServer&In-Reply-To=%3C45A3F4A2.6040401%40nkey.de%3E"
+       TITLE="[sunuo-users] Dynamic Hostnames as GameServer">greubel at nkey.de
+       </A><BR>
+    <I>Tue Jan  9 21:01:38 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000082.html">[sunuo-users] SunUO 0.4.3 released
+</A></li>
+        <LI>Next message: <A HREF="000084.html">[sunuo-users] Problem with bootstrap, tiledata.mul not found
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#83">[ date ]</a>
+              <a href="thread.html#83">[ thread ]</a>
+              <a href="subject.html#83">[ subject ]</a>
+              <a href="author.html#83">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+the attached patch fixes a small problem using dynamic hostnames and the
+german telekom &quot;Zwangstrennung&quot; which forces a disconnect after a
+specified time (frequently in 24 hours).
+
+If a user is connected to the server, and the forced disconnect occurs,
+the user will getting disconnected. If she try to login it will happen,
+that a connection can't established because the login-server only knows
+the dynamic ip address of the server before disconnect.
+
+With my solution each time a user wants to connect the login server
+resolve the given address in sunuo.xml and built the shard list with
+this new resolved ip.
+
+If there are some questions, feel free to ask me.
+
+Config your shard list as known from the documentation in on sunuo.org.
+
+2 Files will be fixed:
+
+src/Config.cs
+scripts/legacy/Misc/Shardlist.cs
+
+Regards
+Maik
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: gameserverlist-dynamichostnames.patch
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070109/629a3c8e/attachment.ksh">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070109/629a3c8e/attachment.ksh</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070109/629a3c8e/attachment.bin">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070109/629a3c8e/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000082.html">[sunuo-users] SunUO 0.4.3 released
+</A></li>
+	<LI>Next message: <A HREF="000084.html">[sunuo-users] Problem with bootstrap, tiledata.mul not found
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#83">[ date ]</a>
+              <a href="thread.html#83">[ thread ]</a>
+              <a href="subject.html#83">[ subject ]</a>
+              <a href="author.html#83">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

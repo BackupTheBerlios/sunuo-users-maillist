@@ -1,0 +1,227 @@
+From joseph.benjamin.howard at us.army.mil  Wed Apr 11 02:01:13 2007
+From: joseph.benjamin.howard at us.army.mil (joseph.benjamin.howard at us.army.mil)
+Date: Tue, 10 Apr 2007 19:01:13 -0500
+Subject: [sunuo-users] ...does not contain a definition for...
+Message-ID: <e39582d1c95b.461bdef9@us.army.mil>
+
+I just joined the list so if my question has already been answered, sorry.
+
+I know Linux is probably the ideal server, but--
+I am using WinXP (SP2), I have .net 2.0. and also Mono 1.2.
+I have the UO 9th anniversary installed and am trying to run SunUO 0.4.3.
+
+When I execue run.bat the file runs, but about 30 seconds later I get the following errors:
+
+- - - - - -
+SunUO Version 0.4.1 http://www.sunuo.org/
+  on Microsoft Windows NT 5.1.2600.0, runtime 1.1.4322.573
+
+2007-04-10 14:09:42,727 INFO  Compiling library legacy, 2032 C# sources
+2007-04-10 14:10:55,732 ERROR Compilation failed (3 errors, 1 warnings)
+2007-04-10 14:10:55,732 ERROR Scripts\Commands\Logging.cs: CS0117: (line 22, col
+umn 31) 'Server.Config.Root' does not contain a definition for 'LogDirectory'
+2007-04-10 14:10:55,732 ERROR Scripts\Misc\AutoSave.cs: CS0117: (line 9, column
+37) 'Server.Config.Root' does not contain a definition for 'SaveInterval'
+2007-04-10 14:10:55,732 ERROR Scripts\Misc\CrashGuard.cs: CS0117: (line 129, col
+umn 36) 'Server.Config.Root' does not contain a definition for 'LogDirectory'
+2007-04-10 14:10:55,732 WARN  Scripts\Misc\SocketOptions.cs: CS0618: (line 32, c
+olumn 35) 'Server.Network.Listener.Listener(int)' is obsolete: 'use Listener(IPE
+ndPoint)'
+- - - - - -
+
+Can someone tell me what I am doing wrong?
+Thx.
+
+
+From max at duempel.org  Wed Apr 11 10:22:07 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 11 Apr 2007 10:22:07 +0200
+Subject: [sunuo-users] ...does not contain a definition for...
+In-Reply-To: <e39582d1c95b.461bdef9@us.army.mil>
+References: <e39582d1c95b.461bdef9@us.army.mil>
+Message-ID: <20070411082207.GA4220@roonstrasse.net>
+
+On 2007/04/11 02:01, joseph.benjamin.howard at us.army.mil wrote:
+> I have the UO 9th anniversary installed and am trying to run SunUO
+> 0.4.3.
+[...]
+> SunUO Version 0.4.1 http://www.sunuo.org/
+
+How is that SunUO 0.4.3?
+
+Max
+
+
+
+From joseph.benjamin.howard at us.army.mil  Wed Apr 11 16:12:45 2007
+From: joseph.benjamin.howard at us.army.mil (joseph.benjamin.howard at us.army.mil)
+Date: Wed, 11 Apr 2007 09:12:45 -0500
+Subject: [sunuo-users] ...does not contain a definition for...
+In-Reply-To: <mailman.7.1176285606.23536.sunuo-users@lists.berlios.de>
+References: <mailman.7.1176285606.23536.sunuo-users@lists.berlios.de>
+Message-ID: <e35aae5dbb73.461ca68d@us.army.mil>
+
+I did not even notice the version numbers were different.
+
+I am using the binary file from http://download.berlios.de/sunuo/sunuo-0.4.3.zip and did a direct text-copy of my cmd window. I don't know why the two show different version numbers.
+
+I have redownloaded the sunuo-0.4.3.zip file and tried to run SunUO and I get the same results.
+I checked the version for the sunuo.exe in the included bin/w32 folder and it says 0.4.0.1.
+
+Any ideas?
+
+----- Original Message -----
+From: sunuo-users-request at lists.berlios.de
+Date: Wednesday, April 11, 2007 4:58 am
+Subject: sunuo-users Digest, Vol 9, Issue 1
+To: sunuo-users at lists.berlios.de
+
+
+> Send sunuo-users mailing list submissions to
+>  	sunuo-users at lists.berlios.de
+>  
+>  To subscribe or unsubscribe via the World Wide Web, visit
+>  	https://lists.berlios.de/mailman/listinfo/sunuo-users
+>  or, via email, send a message with subject or body 'help' to
+>  	sunuo-users-request at lists.berlios.de
+>  
+>  You can reach the person managing the list at
+>  	sunuo-users-owner at lists.berlios.de
+>  
+>  When replying, please edit your Subject line so it is more specific
+>  than "Re: Contents of sunuo-users digest..."
+>  
+>  
+>  Today's Topics:
+>  
+>     1. ...does not contain a definition for...
+>        (joseph.benjamin.howard at us.army.mil)
+>     2. Re: ...does not contain a definition for... (Max Kellermann)
+>  
+>  
+>  ----------------------------------------------------------------------
+>  
+>  Message: 1
+>  Date: Tue, 10 Apr 2007 19:01:13 -0500
+>  From: <joseph.benjamin.howard at us.army.mil>
+>  Subject: [sunuo-users] ...does not contain a definition for...
+>  To: sunuo-users at lists.berlios.de
+>  Message-ID: <e39582d1c95b.461bdef9 at us.army.mil>
+>  Content-Type: text/plain; charset=us-ascii
+>  
+>  I just joined the list so if my question has already been answered, sorry.
+>  
+>  I know Linux is probably the ideal server, but--
+>  I am using WinXP (SP2), I have .net 2.0. and also Mono 1.2.
+>  I have the UO 9th anniversary installed and am trying to run SunUO 0.4.3.
+>  
+>  When I execue run.bat the file runs, but about 30 seconds later I get 
+> the following errors:
+>  
+>  - - - - - -
+>  SunUO Version 0.4.1 http://www.sunuo.org/
+>    on Microsoft Windows NT 5.1.2600.0, runtime 1.1.4322.573
+>  
+>  2007-04-10 14:09:42,727 INFO  Compiling library legacy, 2032 C# sources
+>  2007-04-10 14:10:55,732 ERROR Compilation failed (3 errors, 1 warnings)
+>  2007-04-10 14:10:55,732 ERROR Scripts\Commands\Logging.cs: CS0117: 
+> (line 22, col
+>  umn 31) 'Server.Config.Root' does not contain a definition for 'LogDirectory'
+>  2007-04-10 14:10:55,732 ERROR Scripts\Misc\AutoSave.cs: CS0117: (line 
+> 9, column
+>  37) 'Server.Config.Root' does not contain a definition for 'SaveInterval'
+>  2007-04-10 14:10:55,732 ERROR Scripts\Misc\CrashGuard.cs: CS0117: 
+> (line 129, col
+>  umn 36) 'Server.Config.Root' does not contain a definition for 'LogDirectory'
+>  2007-04-10 14:10:55,732 WARN  Scripts\Misc\SocketOptions.cs: CS0618: 
+> (line 32, c
+>  olumn 35) 'Server.Network.Listener.Listener(int)' is obsolete: 'use Listener(IPE
+>  ndPoint)'
+>  - - - - - -
+>  
+>  Can someone tell me what I am doing wrong?
+>  Thx.
+>  
+>  
+>  ------------------------------
+>  
+>  Message: 2
+>  Date: Wed, 11 Apr 2007 10:22:07 +0200
+>  From: Max Kellermann <max at duempel.org>
+>  Subject: Re: [sunuo-users] ...does not contain a definition for...
+>  To: joseph.benjamin.howard at us.army.mil
+>  Cc: sunuo-users at lists.berlios.de
+>  Message-ID: <20070411082207.GA4220 at roonstrasse.net>
+>  Content-Type: text/plain; charset=us-ascii
+>  
+>  On 2007/04/11 02:01, joseph.benjamin.howard at us.army.mil wrote:
+>  > I have the UO 9th anniversary installed and am trying to run SunUO
+>  > 0.4.3.
+>  [...]
+>  > SunUO Version 0.4.1 http://www.sunuo.org/
+>  
+>  How is that SunUO 0.4.3?
+>  
+>  Max
+>  
+>  
+>  
+>  ------------------------------
+>  
+>  _______________________________________________
+>  sunuo-users mailing list
+>  sunuo-users at lists.berlios.de
+>  https://lists.berlios.de/mailman/listinfo/sunuo-users
+>  
+>  
+>  End of sunuo-users Digest, Vol 9, Issue 1
+>  *****************************************
+>  
+
+
+From max at duempel.org  Wed Apr 11 16:16:11 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 11 Apr 2007 16:16:11 +0200
+Subject: [sunuo-users] ...does not contain a definition for...
+In-Reply-To: <e35aae5dbb73.461ca68d@us.army.mil>
+References: <mailman.7.1176285606.23536.sunuo-users@lists.berlios.de>
+	<e35aae5dbb73.461ca68d@us.army.mil>
+Message-ID: <20070411141611.GA8494@roonstrasse.net>
+
+On 2007/04/11 16:12, joseph.benjamin.howard at us.army.mil wrote:
+> I have redownloaded the sunuo-0.4.3.zip file and tried to run SunUO and I get the same results.
+> I checked the version for the sunuo.exe in the included bin/w32 folder and it says 0.4.0.1.
+
+I have also downloaded from your link, and my binary says:
+
+ SunUO Version 0.4.3 http://www.sunuo.org/
+   on Unix 2.6.21.5, runtime 1.1.4322.2032
+
+
+
+From greubel at nkey.de  Wed Apr 11 20:10:08 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Wed, 11 Apr 2007 20:10:08 +0200
+Subject: [sunuo-users] ...does not contain a definition for...
+In-Reply-To: <e39582d1c95b.461bdef9@us.army.mil>
+References: <e39582d1c95b.461bdef9@us.army.mil>
+Message-ID: <461D2480.3080709@nkey.de>
+
+
+
+joseph.benjamin.howard at us.army.mil schrieb:
+> When I execue run.bat the file runs, but about 30 seconds later I get the following errors:
+
+You have new Scripts with an old version of sunuo core. Please download
+the latest zip archive and replace your SunUO.exe with the one in the zip.
+
+Regards
+Maik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070411/8adc1c16/attachment.bin>
+

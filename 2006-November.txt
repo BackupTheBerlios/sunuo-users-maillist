@@ -1,0 +1,285 @@
+From fabrizio.castellano at gmail.com  Fri Nov  3 17:27:55 2006
+From: fabrizio.castellano at gmail.com (fabrizio castellano)
+Date: Fri, 3 Nov 2006 17:27:55 +0100
+Subject: [sunuo-users] strange problem
+Message-ID: <51e511990611030827m1a502ea9g6f948aba644cb9a8@mail.gmail.com>
+
+Hi
+
+I've been using SunUO for a while now and I have a working custom
+shard, or at least I had it until today :P
+
+Today after some heavy modifications to the scripts something strange
+happens: SunUO compiles the new scripts but then loads the old ones
+(the cached version of legacy.dll)
+
+To check this thing I made a new installation of SunUO with standard
+RunUO scripts, launched SunUO.exe and checked that all was working.
+
+Then I replaced the Scripts folder with my custom from the old
+installation and SunUO complained that it couldn't find System.Drawing
+namespace.
+Note that my custom Scripts folder was compiling without problems in
+the old installation ...
+
+Then I made another fresh standard RunUO installation and started
+replacing the standard scripts with my custom ones a few at a time,
+recompiling scripts each time to see when the System.Drawing problem
+would show up.
+I ended up with all my custom scripts installed and correctly compiled
+(no problems with System.Drawing anymore o_O )
+
+As the server starts up I notice that it lacks the usual startup
+messages my custom scripts print out on the console and after loggin
+in I notice that it actually is a standard RunUO server, with standard
+scripts!
+
+SunUO compiled my custom scripts and then loaded the old legacy.dll
+
+If I make some modifications to a .cs file SunUO recompiles the
+scripts but then it loads the old ones and I can't manage to have my
+shard up and running with my scripts instead of the standard ones.
+
+Thanks in advance for any help
+Fax
+
+
+From max at duempel.org  Fri Nov  3 18:02:12 2006
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 3 Nov 2006 18:02:12 +0100
+Subject: [sunuo-users] strange problem
+In-Reply-To: <51e511990611030827m1a502ea9g6f948aba644cb9a8@mail.gmail.com>
+References: <51e511990611030827m1a502ea9g6f948aba644cb9a8@mail.gmail.com>
+Message-ID: <20061103170212.GA8334@roonstrasse.net>
+
+On 2006/11/03 17:27, fabrizio castellano <fabrizio.castellano at gmail.com> wrote:
+> SunUO compiled my custom scripts and then loaded the old legacy.dll
+
+Which old legacy.dll?  Where is it located?  Who created it?  Where is
+the compilation result?
+
+Max
+
+
+
+From fabrizio.castellano at gmail.com  Fri Nov  3 18:39:11 2006
+From: fabrizio.castellano at gmail.com (fabrizio castellano)
+Date: Fri, 3 Nov 2006 18:39:11 +0100
+Subject: [sunuo-users] strange problem
+In-Reply-To: <20061103170212.GA8334@roonstrasse.net>
+References: <51e511990611030827m1a502ea9g6f948aba644cb9a8@mail.gmail.com>
+	<20061103170212.GA8334@roonstrasse.net>
+Message-ID: <51e511990611030939m206a282s49f234b1f4a9360a@mail.gmail.com>
+
+I'm referring to the cached var/cache/lib/legacy/legacy.dll, but ok,
+this may have nothing to to with my problem, I was only guessing some
+possible causes (and problably saying wrong things :P )
+
+Forget my previuos mail and here I restate the problem in a cleaner way:
+
+- I install SunUO with standard RunUO scripts
+- I start SunUO wich compiles the scripts and allows me to log in
+- I perform some changes to scripts in Scripts folder
+- I restart SunUO wich compiles the new scripts without errors
+- I log in and see that there is no trace of my modifications and the
+server actually behaves as a standard RunUO server
+
+Here is a thing I just noticed:
+
+2006-11-03 18:34:17,495 INFO  Compiling library legacy, 993 C# sources
+2006-11-03 18:34:25,012 INFO  Compilation complete
+2006-11-03 18:34:25,335 INFO  Library core verified: 4 items, 0 mobiles
+2006-11-03 18:34:25,423 INFO  Library legacy verified: 1654 items, 435 mobiles
+
+SunUO compiled my Scripts (993 files instead of the the standard 2066)
+then it verifies items and mobiles finding 435 mobiles in spite of the
+fact that my Scripts contain only 75 mobiles.
+435 is the number of mobiles contained in the standard RunUO
+distribution so I'm guessing that for some reason after compiling my
+custom scripts it actually loads the older unmodified version.
+
+Fax
+
+
+From max at duempel.org  Sat Nov  4 01:32:14 2006
+From: max at duempel.org (Max Kellermann)
+Date: Sat, 4 Nov 2006 01:32:14 +0100
+Subject: [sunuo-users] strange problem
+In-Reply-To: <51e511990611030939m206a282s49f234b1f4a9360a@mail.gmail.com>
+References: <51e511990611030827m1a502ea9g6f948aba644cb9a8@mail.gmail.com>
+	<20061103170212.GA8334@roonstrasse.net>
+	<51e511990611030939m206a282s49f234b1f4a9360a@mail.gmail.com>
+Message-ID: <20061104003214.GA10153@roonstrasse.net>
+
+On 2006/11/03 18:39, fabrizio castellano <fabrizio.castellano at gmail.com> wrote:
+> 2006-11-03 18:34:17,495 INFO  Compiling library legacy, 993 C# sources
+> 2006-11-03 18:34:25,012 INFO  Compilation complete
+> 2006-11-03 18:34:25,335 INFO  Library core verified: 4 items, 0 mobiles
+> 2006-11-03 18:34:25,423 INFO  Library legacy verified: 1654 items, 435 mobiles
+
+That is indeed strange.  What happens if you delete the cache?  Can
+you find another legacy.dll which shouldn't be there?
+
+Max
+
+
+
+From fabrizio.castellano at gmail.com  Sat Nov  4 02:12:28 2006
+From: fabrizio.castellano at gmail.com (fabrizio castellano)
+Date: Sat, 4 Nov 2006 02:12:28 +0100
+Subject: [sunuo-users] strange problem
+In-Reply-To: <20061104003214.GA10153@roonstrasse.net>
+References: <51e511990611030827m1a502ea9g6f948aba644cb9a8@mail.gmail.com>
+	<20061103170212.GA8334@roonstrasse.net>
+	<51e511990611030939m206a282s49f234b1f4a9360a@mail.gmail.com>
+	<20061104003214.GA10153@roonstrasse.net>
+Message-ID: <51e511990611031712n3c75bf2fh444bac681f56655a@mail.gmail.com>
+
+I renamed legacy.dll to legacy.dll.bak and here is the result:
+
+SunUO Version 0.3.1 http://www.sunuo.org/
+  on Unix 2.6.17.4, runtime 1.1.4322.2032
+Please make sure you have Mono 1.1.7 or newer! (mono -V)
+
+2006-11-04 01:58:23,048 INFO  Compiling library legacy, 993 C# sources
+2006-11-04 01:58:30,656 FATAL System.IO.FileNotFoundException:
+/data/UO/RiverIsland/RunUO/var/cache/lib/legacy/legacy.dll :
+/data/UO/RiverIsland/RunUO/var/cache/lib/legacy/legacy.dll
+in <0x00000> <unknown method>
+in (wrapper managed-to-native) System.Reflection.Assembly:LoadFrom (string,bool)
+in <0x0000c> System.Reflection.Assembly:LoadFrom (System.String assemblyFile)
+in <0x003c0> Mono.CSharp.CSharpCodeCompiler:CompileFromFileBatch
+(System.CodeDom.Compiler.CompilerParameters options, System.String[]
+fileNames)
+in <0x00022> Mono.CSharp.CSharpCodeCompiler:CompileAssemblyFromFileBatch
+(System.CodeDom.Compiler.CompilerParameters options, System.String[]
+fileNames)
+in <0x00432> Server.ScriptCompiler:CompileCSScripts (ICollection
+fileColl, System.String assemblyFile, Server.Config.Library libConfig,
+Boolean debug)
+in <0x0052b> Server.ScriptCompiler:Compile (Server.Config.Library
+libConfig, Boolean debug)
+in <0x007b3> Server.ScriptCompiler:Compile (Boolean debug)
+in <0x0029c> Server.Core:Start (Server.Config.Root _config, Boolean
+debug, Boolean _service, Boolean _profiling)
+in <0x0041e> Server.Bootstrap:Main (System.String[] args)
+This exception is fatal, press return to exit
+
+
+In addition (but I don't konw if it is meaningful) looking at file
+timestamps I also noticed that legacy.dll was last modified when I
+installed and run the server for the first time today, so it actually
+has not been modified by the subsequent server runs, while legacy.stm
+is actualy updated at every server execution.
+
+
+Fax
+
+
+From tagno25 at gmail.com  Tue Nov  7 23:08:41 2006
+From: tagno25 at gmail.com (Philip)
+Date: Tue, 07 Nov 2006 16:08:41 -0600
+Subject: [sunuo-users] 2.0?
+Message-ID: <op.tin2graa6e8ke0@mce>
+
+Does SunUO Have suport for the .Net 2.0 archetecture(like RunUO 2.0) or is  
+this a question for Mono?
+
+
+From max at duempel.org  Tue Nov  7 23:24:52 2006
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 7 Nov 2006 23:24:52 +0100
+Subject: [sunuo-users] 2.0?
+In-Reply-To: <op.tin2graa6e8ke0@mce>
+References: <op.tin2graa6e8ke0@mce>
+Message-ID: <20061107222452.GA9628@roonstrasse.net>
+
+On 2006/11/07 23:08, Philip <tagno25 at gmail.com> wrote:
+> Does SunUO Have suport for the .Net 2.0 archetecture(like RunUO 2.0)
+> or is this a question for Mono?
+
+SunUO runs on .NET 1.1, .NET 2.0 and Mono 1.1. - i.e. all current .NET
+platforms.
+
+Max
+
+
+
+From korkuts at crilandor.com  Mon Nov 20 14:49:20 2006
+From: korkuts at crilandor.com (korkuts at crilandor.com)
+Date: Mon, 20 Nov 2006 14:49:20 +0100 (CET)
+Subject: [sunuo-users] Newbie with sunuo
+Message-ID: <34998.213.60.71.123.1164030560.squirrel@www.crilandor.com>
+
+Hello, I am learning sunuo, and i have alot of questions XD
+
+1?I can use the scripts of RunUO 2.0 or only I can use scripts from RunUO
+1.0?
+
+2? Where i can learn about the format of /etc/sunuo.xml?
+
+Thanks.
+
+pd. My English is very bad, i am spanish ;-)
+
+
+
+From max at duempel.org  Mon Nov 20 14:58:43 2006
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 20 Nov 2006 14:58:43 +0100
+Subject: [sunuo-users] Newbie with sunuo
+In-Reply-To: <34998.213.60.71.123.1164030560.squirrel@www.crilandor.com>
+References: <34998.213.60.71.123.1164030560.squirrel@www.crilandor.com>
+Message-ID: <20061120135843.GA7640@roonstrasse.net>
+
+On 2006/11/20 14:49, korkuts at crilandor.com wrote:
+> 1?I can use the scripts of RunUO 2.0 or only I can use scripts from
+> RunUO 1.0?
+
+Only RunUO 1.0.
+
+> 2? Where i can learn about the format of /etc/sunuo.xml?
+
+In SunUO's official documentation.  Duh.
+
+Max
+
+
+
+From korkuts at crilandor.com  Tue Nov 28 19:16:51 2006
+From: korkuts at crilandor.com (korkuts at crilandor.com)
+Date: Tue, 28 Nov 2006 19:16:51 +0100 (CET)
+Subject: [sunuo-users] Custom map
+Message-ID: <37633.213.60.71.123.1164737811.squirrel@www.crilandor.com>
+
+Hi, who i can remove maps of Tramel,Felucca... and put my custom map in
+SunUO?
+
+// Disculpad mi ingl?s, el tema es que quiero eliminar del mi server los
+mapas que vienen por defecto y poner un mapa nuevo que tengo hecho, que
+pasos hay que dar, porque seguro que hay que modificar mas de un asrchivo.
+
+Thanks.
+
+
+
+From max at duempel.org  Wed Nov 29 07:31:54 2006
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 29 Nov 2006 07:31:54 +0100
+Subject: [sunuo-users] Custom map
+In-Reply-To: <37633.213.60.71.123.1164737811.squirrel@www.crilandor.com>
+References: <37633.213.60.71.123.1164737811.squirrel@www.crilandor.com>
+Message-ID: <20061129063154.GA6409@roonstrasse.net>
+
+On 2006/11/28 19:16, korkuts at crilandor.com wrote:
+> Hi, who i can remove maps of Tramel,Felucca... and put my custom map
+> in SunUO?
+
+SunUO uses the maps shipped with the UO client.  Just make SunUO use
+your modified client, that should be enough.
+
+Max
+
+
+
+

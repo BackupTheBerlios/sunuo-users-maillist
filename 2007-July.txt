@@ -1,0 +1,202 @@
+From FlyingRedwing at web.de  Sat Jul 21 14:27:06 2007
+From: FlyingRedwing at web.de (Michel Sonnabend)
+Date: Sat, 21 Jul 2007 14:27:06 +0200
+Subject: [sunuo-users] kingdom reborn
+Message-ID: <688444496@web.de>
+
+Hi 
+
+Could you please tell me, wether UO:Kingdom Rebourn will be supported by sunuo or not?
+
+regards
+
+Michel Sonnabend
+_______________________________________________________________________
+Jetzt neu! Sch?tzen Sie Ihren PC mit McAfee und WEB.DE. 3 Monate
+kostenlos testen. http://www.pc-sicherheit.web.de/startseite/?mc=022220
+
+
+
+From max at duempel.org  Sun Jul 22 15:03:07 2007
+From: max at duempel.org (Max Kellermann)
+Date: Sun, 22 Jul 2007 15:03:07 +0200
+Subject: [sunuo-users] kingdom reborn
+In-Reply-To: <688444496@web.de>
+References: <688444496@web.de>
+Message-ID: <20070722130307.GA7296@roonstrasse.net>
+
+On 2007/07/21 14:27, Michel Sonnabend <FlyingRedwing at web.de> wrote:
+> Could you please tell me, wether UO:Kingdom Rebourn will be
+> supported by sunuo or not?
+
+It is currently not supported because nobody volunteered to write the
+scripts.
+
+Max
+
+
+From seabeams at gmx.de  Sun Jul 29 18:33:44 2007
+From: seabeams at gmx.de (Florian Fischer)
+Date: Sun, 29 Jul 2007 18:33:44 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor) and
+ LuaInterface.dlls with SunUO
+In-Reply-To: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>
+Message-ID: <20070729163344.123540@gmx.net>
+
+hi,
+
+i have problems using Transferserver (from xmlspawner editor) and LuaInterface.dlls (c# lua interface) with SunUO 0.4.4.
+
+SunUO crashs with an excaption when loading one of thoose dlls from "\local\lib\". RunUO1/2 works fine.
+
+my setup: winxp, .net (or mono for winxp).
+
+note: UOArchitect dlls are working fine.
+
+can anyone help out?
+
+regards
+SiENcE
+-- 
+Ist Ihr Browser Vista-kompatibel? Jetzt die neuesten 
+Browser-Versionen downloaden: http://www.gmx.net/de/go/browser
+
+
+From max at duempel.org  Mon Jul 30 10:16:43 2007
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 30 Jul 2007 10:16:43 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor)
+	and LuaInterface.dlls with SunUO
+In-Reply-To: <20070729163344.123540@gmx.net>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>
+	<20070729163344.123540@gmx.net>
+Message-ID: <20070730081643.GB24267@roonstrasse.net>
+
+On 2007/07/29 18:33, Florian Fischer <seabeams at gmx.de> wrote:
+> hi,
+> 
+> i have problems using Transferserver (from xmlspawner editor) and LuaInterface.dlls (c# lua interface) with SunUO 0.4.4.
+> 
+> SunUO crashs with an excaption when loading one of thoose dlls from
+> "\local\lib\". RunUO1/2 works fine.
+
+Hi Florian,
+
+please provide the full exception message including the stack trace.
+Without it, we cannot analyze your problem.  You should also tell us
+where we can get these scripts you are talking about (direct download
+URL would be great).
+
+Max
+
+
+From seabeams at gmx.de  Mon Jul 30 15:20:26 2007
+From: seabeams at gmx.de (Florian Fischer)
+Date: Mon, 30 Jul 2007 15:20:26 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor)
+ and LuaInterface.dlls with SunUO
+In-Reply-To: <20070730081643.GB24267@roonstrasse.net>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>
+	<20070729163344.123540@gmx.net>
+	<20070730081643.GB24267@roonstrasse.net>
+Message-ID: <20070730132026.167200@gmx.net>
+
+hi again,
+
+here are the infos you requested. I also attached the error message+stacktrace (sorry only png).
+
+spawneditor+transferserver (RunUO 1.0 version):
+http://xmlspawner.15.forumer.com/index.php?showtopic=49
+
+XMLSpawner itself (dependency):
+http://xmlspawner.15.forumer.com/index.php?showtopic=4
+
+
+sunuo.xml
+  <libraries>
+    <library name="legacy">
+      <!--
+      <ignore-source name="Misc/ZLib.cs" />
+      -->
+		<overlay name="bar"/>
+    </library>
+    <library name="bar"/>
+    <library name="myrunuo" disabled="yes" />
+    <library name="remote-admin" disabled="yes" />
+    <library name="reports" disabled="yes" />
+
+  	<library name="UOArchitect">
+    	<depends name="OrbServerSDK"/>
+    	<depends name="UOArchitectInterface"/>
+	</library>
+	<library name="XMLSpawner2_v321" />
+	<library name="XMLPoints_v123">
+		<depends name="XMLSpawner2_v321"/>
+	</library>
+	<library name="XMLSiege_v06">
+		<depends name="XMLSpawner2_v321"/>
+	</library>
+	<library name="XMLTransferServer">
+		<depends name="TransferServer"/>
+	</library>
+  </libraries>
+
+Assemblies.cfg:
+
+System.dll
+System.Web.dll
+System.Xml.dll
+System.Data.dll
+System.Drawing.dll
+System.Windows.Forms.dll
+System.Runtime.Remoting.dll
+log4net.dll
+MySql.Data.dll
+
+
+I also have another question. I try to overlay some distribution scripts. I'm able to change existing scripts and overlay them. Thats fine.
+But what do i do when i have an to add an dependency? For example i modify the PlayerMobile.cs to add something like this: "using Server.Engines.XmlSpawner2;"
+
+But sunuo cant compile this, because it needs xmlspawner2 first. But XMLSpawner needs the legacy.dll first. How do i do this? Adding this to the distribution files also doesn't work.
+
+regards
+SiENcE
+
+
+-------- Original-Nachricht --------
+Datum: Mon, 30 Jul 2007 10:16:43 +0200
+Von: Max Kellermann <max at duempel.org>
+An: Florian Fischer <seabeams at gmx.de>
+CC: sunuo-users at lists.berlios.de
+Betreff: Re: [sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+
+> On 2007/07/29 18:33, Florian Fischer <seabeams at gmx.de> wrote:
+> > hi,
+> > 
+> > i have problems using Transferserver (from xmlspawner editor) and
+> LuaInterface.dlls (c# lua interface) with SunUO 0.4.4.
+> > 
+> > SunUO crashs with an excaption when loading one of thoose dlls from
+> > "\local\lib\". RunUO1/2 works fine.
+> 
+> Hi Florian,
+> 
+> please provide the full exception message including the stack trace.
+> Without it, we cannot analyze your problem.  You should also tell us
+> where we can get these scripts you are talking about (direct download
+> URL would be great).
+> 
+> Max
+
+-- 
+GMX FreeMail: 1 GB Postfach, 5 E-Mail-Adressen, 10 Free SMS.
+Alle Infos und kostenlose Anmeldung: http://www.gmx.net/de/go/freemail
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: sunuo044.png
+Type: image/png
+Size: 34070 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070730/ab9512a3/attachment.png>
+

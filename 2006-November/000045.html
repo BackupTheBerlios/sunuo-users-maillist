@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] strange problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2006-November/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20strange%20problem&In-Reply-To=%3C51e511990611030939m206a282s49f234b1f4a9360a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000044.html">
+   <LINK REL="Next"  HREF="000046.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] strange problem</H1>
+    <B>fabrizio castellano</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20strange%20problem&In-Reply-To=%3C51e511990611030939m206a282s49f234b1f4a9360a%40mail.gmail.com%3E"
+       TITLE="[sunuo-users] strange problem">fabrizio.castellano at gmail.com
+       </A><BR>
+    <I>Fri Nov  3 18:39:11 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000044.html">[sunuo-users] strange problem
+</A></li>
+        <LI>Next message: <A HREF="000046.html">[sunuo-users] strange problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm referring to the cached var/cache/lib/legacy/legacy.dll, but ok,
+this may have nothing to to with my problem, I was only guessing some
+possible causes (and problably saying wrong things :P )
+
+Forget my previuos mail and here I restate the problem in a cleaner way:
+
+- I install SunUO with standard RunUO scripts
+- I start SunUO wich compiles the scripts and allows me to log in
+- I perform some changes to scripts in Scripts folder
+- I restart SunUO wich compiles the new scripts without errors
+- I log in and see that there is no trace of my modifications and the
+server actually behaves as a standard RunUO server
+
+Here is a thing I just noticed:
+
+2006-11-03 18:34:17,495 INFO  Compiling library legacy, 993 C# sources
+2006-11-03 18:34:25,012 INFO  Compilation complete
+2006-11-03 18:34:25,335 INFO  Library core verified: 4 items, 0 mobiles
+2006-11-03 18:34:25,423 INFO  Library legacy verified: 1654 items, 435 mobiles
+
+SunUO compiled my Scripts (993 files instead of the the standard 2066)
+then it verifies items and mobiles finding 435 mobiles in spite of the
+fact that my Scripts contain only 75 mobiles.
+435 is the number of mobiles contained in the standard RunUO
+distribution so I'm guessing that for some reason after compiling my
+custom scripts it actually loads the older unmodified version.
+
+Fax
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000044.html">[sunuo-users] strange problem
+</A></li>
+	<LI>Next message: <A HREF="000046.html">[sunuo-users] strange problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

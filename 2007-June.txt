@@ -1,0 +1,250 @@
+From andreew18 at gmail.com  Wed Jun 20 17:04:24 2007
+From: andreew18 at gmail.com (Gmail)
+Date: Wed, 20 Jun 2007 17:04:24 +0200
+Subject: [sunuo-users] Multis
+Message-ID: <002501c7b34c$4b76ed00$0802a8c0@andreewe0feef9>
+
+After I downloaded a new pure binary of SunUO 0.4.4 and while I tried to place a house or a boat I got an error at sunuo's console:
+
+2007-06-20 16:43:19,488 FATAL Exception disarmed in target 0x92F "QD" > Server.Multis.Deeds.HousePlacementTarget > Server.Targeting.LandTarget System.TypeInitializationException: The type initializer for "Server.MultiData" threw an exception. ---> System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
+   at System.IO.__Error.EndOfFile()
+   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
+   at System.IO.BinaryReader.ReadInt32()
+   at Server.MultiData..cctor() in i:\cygwin\home\max\svn\sunuo\src\MultiData.cs :line 105
+   --- End of inner exception stack trace ---
+   at Server.MultiData.GetComponents(Int32 multiID)
+   at Server.Items.BaseMulti.get_Components() in i:\cygwin\home\max\svn\sunuo\src\Items\BaseMulti.cs:line 81
+   at Server.Map.OnEnter(Item item) in i:\cygwin\home\max\svn\sunuo\src\Map.cs:line 744
+   at Server.Item.MoveToWorld(Point3D location, Map map) in i:\cygwin\home\max\svn\sunuo\src\Item.cs:line 1097
+   at Server.Multis.Deeds.HouseDeed.OnPlacement(Mobile from, Point3D p) in c:\Documents and Settings\Andreew1\Desktop\sunuo-0.4.4\sunuo-0.4.4\Scripts\Multis\Dee
+ds.cs:line 170
+   at Server.Multis.Deeds.HousePlacementTarget.OnTarget(Mobile from, Object o) in c:\Documents and Settings\Andreew1\Desktop\sunuo-0.4.4\sunuo-0.4.4\Scripts\Mul
+tis\Deeds.cs:line 33
+   at Server.Targeting.Target.Invoke(Mobile from, Object targeted) in i:\cygwin\home\max\svn\sunuo\src\Targeting\Target.cs:line 287
+   at erver.Network.PacketHandlers.TargetResponse(NetState state, PacketReader pvSrc) in i:\cygwin\home\max\svn\sunuo\src\Network\PacketHandlers.cs:line 1158
+
+In Linux all works fine, but not in Windows 
+Zlib.dll is in main folder, zlib.cs isn't igored in config xml
+
+Anyone can help?
+
+Andreew
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070620/fd57306f/attachment.html>
+
+From downsource at googlemail.com  Fri Jun 29 03:57:50 2007
+From: downsource at googlemail.com (Elio Heinrich)
+Date: Fri, 29 Jun 2007 02:57:50 +0100
+Subject: [sunuo-users] startup problem
+Message-ID: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+
+Hi,
+I got a Suse10.0 Linux Server and tried to run SunUO on it, but the
+start fails with this output:
+
+`bin/mono/SunUO.exe' -> `./SunUO.exe'
+`bin/mono/SunUO.exe.mdb' -> `./SunUO.exe.mdb'
+`bin/mono/Npgsql.dll' -> `./Npgsql.dll'
+`bin/mono/log4net.dll' -> `./log4net.dll'
+Unknown command line option: '--server'
+SunUO.exe exited with status 0
+
+does anyone know how to solve this problem?
+
+
+From max at duempel.org  Fri Jun 29 05:55:23 2007
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 29 Jun 2007 05:55:23 +0200
+Subject: [sunuo-users] startup problem
+In-Reply-To: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+References: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+Message-ID: <20070629035523.GA24667@roonstrasse.net>
+
+On 2007/06/29 03:57, Elio Heinrich <downsource at googlemail.com> wrote:
+[...]
+> Unknown command line option: '--server'
+> SunUO.exe exited with status 0
+> 
+> does anyone know how to solve this problem?
+
+Hi Elio,
+
+1. What is your Mono version? (mono --version)
+
+2. please try "bash -x run.sh" and give us the output.
+
+Max
+
+
+
+From downsource at googlemail.com  Fri Jun 29 14:14:20 2007
+From: downsource at googlemail.com (Elio Heinrich)
+Date: Fri, 29 Jun 2007 13:14:20 +0100
+Subject: [sunuo-users] startup problem
+In-Reply-To: <20070629035523.GA24667@roonstrasse.net>
+References: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+	<20070629035523.GA24667@roonstrasse.net>
+Message-ID: <8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+
+2007/6/29, Max Kellermann <max at duempel.org>:
+> Hi Elio,
+>
+> 1. What is your Mono version? (mono --version)
+>
+> 2. please try "bash -x run.sh" and give us the output.
+
+Hi,
+
+1. The Mono version is 1.1.8.3
+2. the output is this:
+
++ '[' -f SunUO.exe ']'
++ '[' -f SunUO.exe ']'
++ '[' -f SunUO.exe.config ']'
++ export LANG=C
++ LANG=C
++ export LC_ALL=C
++ LC_ALL=C
++ unset DISPLAY XAUTHORITY
++ export SUNUO_EXIT=99
++ SUNUO_EXIT=99
++ trap on_exit EXIT
++ :
++ mono --server --debug -O=all,-shared SunUO.exe
+Unknown command line option: '--server'
++ SUNUO_PID=7495
++ wait
++ STATUS=0
++ unset SUNUO_PID
++ echo 'SunUO.exe exited with status 0'
+SunUO.exe exited with status 0
++ '[' 0 == 99 ']'
++ sleep 10
+
+
+From max at duempel.org  Fri Jun 29 14:19:41 2007
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 29 Jun 2007 14:19:41 +0200
+Subject: [sunuo-users] startup problem
+In-Reply-To: <8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+References: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+	<20070629035523.GA24667@roonstrasse.net>
+	<8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+Message-ID: <20070629121941.GA10377@roonstrasse.net>
+
+On 2007/06/29 14:14, Elio Heinrich <downsource at googlemail.com> wrote:
+> 1. The Mono version is 1.1.8.3
+
+This is too old.
+
+ http://www.sunuo.org/doc/sunuo.html#requirements
+
+Max
+
+
+From downsource at googlemail.com  Fri Jun 29 16:43:57 2007
+From: downsource at googlemail.com (Elio Heinrich)
+Date: Fri, 29 Jun 2007 15:43:57 +0100
+Subject: [sunuo-users] startup problem
+In-Reply-To: <8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+References: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+	<20070629035523.GA24667@roonstrasse.net>
+	<8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+Message-ID: <8f42d5660706290743i47d67b3an2d1380f9e7fa85f2@mail.gmail.com>
+
+Okay, with an update of Mono it worked.
+But now it says "TileData.mul" not found, though the file is existent
+on the server.
+
+-----
+SunUO Version 0.4.4 http://www.sunuo.org/
+  on Unix 2.6.9.23, runtime 1.1.4322.2032
+
+2007-06-29 16:36:51,824 INFO  Loaded binary library legacy
+2007-06-29 16:36:52,119 INFO  Loaded binary library profiler
+2007-06-29 16:36:52,125 INFO  Library core verified: 4 items, 0 mobiles
+2007-06-29 16:36:52,270 INFO  Library legacy verified: 1654 items, 435 mobiles
+2007-06-29 16:36:52,270 INFO  Library profiler verified: 0 items, 0 mobiles
+2007-06-29 16:36:52,272 INFO  All libraries verified: 1658 items, 435 mobiles)
+2007-06-29 16:36:52,277 WARN  Warning: data file TileData.mul not found
+2007-06-29 16:36:52,280 FATAL System.Exception: TileData.mul was not found
+  at Server.TileData.Configure () [0x0013f] in
+/home/max/svn/sunuo/src/TileData.cs:288
+  at Server.Core.Start (Boolean repair) [0x000a8] in
+/home/max/svn/sunuo/src/Main.cs:407
+  at Server.Bootstrap.Main (System.String[] args) [0x0026a] in
+/home/max/svn/sunuo/src/Bootstrap.cs:147
+SunUO.exe exited with status 0
+-----
+
+
+From arek75 at gmail.com  Sat Jun 30 01:41:24 2007
+From: arek75 at gmail.com (James Potts)
+Date: Fri, 29 Jun 2007 18:41:24 -0500
+Subject: [sunuo-users] startup problem
+In-Reply-To: <8f42d5660706290743i47d67b3an2d1380f9e7fa85f2@mail.gmail.com>
+References: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+	<20070629035523.GA24667@roonstrasse.net>
+	<8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+	<8f42d5660706290743i47d67b3an2d1380f9e7fa85f2@mail.gmail.com>
+Message-ID: <7cf8dd660706291641r6458558dr1df6d7eb40af83b9@mail.gmail.com>
+
+Make sure that TileData.mul exists, and is named TileData.mul exactly
+(not tiledata.mul, for example, which is a common mistake - one I've
+made myself, even :) ).
+
+On 6/29/07, Elio Heinrich <downsource at googlemail.com> wrote:
+> Okay, with an update of Mono it worked.
+> But now it says "TileData.mul" not found, though the file is existent
+> on the server.
+>
+> -----
+> SunUO Version 0.4.4 http://www.sunuo.org/
+>   on Unix 2.6.9.23, runtime 1.1.4322.2032
+>
+> 2007-06-29 16:36:51,824 INFO  Loaded binary library legacy
+> 2007-06-29 16:36:52,119 INFO  Loaded binary library profiler
+> 2007-06-29 16:36:52,125 INFO  Library core verified: 4 items, 0 mobiles
+> 2007-06-29 16:36:52,270 INFO  Library legacy verified: 1654 items, 435 mobiles
+> 2007-06-29 16:36:52,270 INFO  Library profiler verified: 0 items, 0 mobiles
+> 2007-06-29 16:36:52,272 INFO  All libraries verified: 1658 items, 435 mobiles)
+> 2007-06-29 16:36:52,277 WARN  Warning: data file TileData.mul not found
+> 2007-06-29 16:36:52,280 FATAL System.Exception: TileData.mul was not found
+>   at Server.TileData.Configure () [0x0013f] in
+> /home/max/svn/sunuo/src/TileData.cs:288
+>   at Server.Core.Start (Boolean repair) [0x000a8] in
+> /home/max/svn/sunuo/src/Main.cs:407
+>   at Server.Bootstrap.Main (System.String[] args) [0x0026a] in
+> /home/max/svn/sunuo/src/Bootstrap.cs:147
+> SunUO.exe exited with status 0
+> -----
+> _______________________________________________
+> sunuo-users mailing list
+> sunuo-users at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/sunuo-users
+>
+
+
+From downsource at googlemail.com  Sat Jun 30 15:04:07 2007
+From: downsource at googlemail.com (Elio Heinrich)
+Date: Sat, 30 Jun 2007 14:04:07 +0100
+Subject: [sunuo-users] startup problem
+In-Reply-To: <8f42d5660706290743i47d67b3an2d1380f9e7fa85f2@mail.gmail.com>
+References: <8f42d5660706281857w3b9fbacet9d25a59d4ffad143@mail.gmail.com>
+	<20070629035523.GA24667@roonstrasse.net>
+	<8f42d5660706290514t2801cca3vfb2a85f4913c028b@mail.gmail.com>
+	<8f42d5660706290743i47d67b3an2d1380f9e7fa85f2@mail.gmail.com>
+Message-ID: <8f42d5660706300604xd2dc769q264fb36c2edab3c6@mail.gmail.com>
+
+> Make sure that TileData.mul exists, and is named TileData.mul exactly
+> (not tiledata.mul, for example, which is a common mistake - one I've
+> made myself, even :) ).
+
+Uuuh, I got the point. I forgot to write an ending slash for the path
+in the etc/sunuo.xml
+Now it does work very well.
+
+Thanks to you, mates ;)
+
+

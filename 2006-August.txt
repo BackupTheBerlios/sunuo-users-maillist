@@ -1,0 +1,146 @@
+From brodock at gmail.com  Sat Aug 19 09:45:23 2006
+From: brodock at gmail.com (BrodocK)
+Date: Sat, 19 Aug 2006 04:45:23 -0300
+Subject: [sunuo-users] runuo 2.0 and mono
+Message-ID: <de11c8430608190045o2b07460u575cbdf0123aec5c@mail.gmail.com>
+
+ok i considered it's a good time to make this post.
+i already work with sunuo at my linux box and run a shard with it.
+i also uses linux as my desktop OS and develop using it.
+what i want to know is:
+
+what you people have tested about runuo 2.0 and incompatibilities with
+current mono implementation of net framework 2.0.
+
+the first thing that i saw was about generic collections, but mono
+1.1.16seens to solve this issue. my ubuntu doesn't support it and i
+think i wil
+have to way a beta version of next release (edgy) to try it as it has many
+incompatibilities that prevent running it on dapper.
+
+does any one already testes it with mono 1.1.16 ?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060819/77da4fbc/attachment.html>
+
+From arek75 at gmail.com  Mon Aug 21 16:21:13 2006
+From: arek75 at gmail.com (James Potts)
+Date: Mon, 21 Aug 2006 09:21:13 -0500
+Subject: [sunuo-users] runuo 2.0 and mono
+In-Reply-To: <de11c8430608190045o2b07460u575cbdf0123aec5c@mail.gmail.com>
+References: <de11c8430608190045o2b07460u575cbdf0123aec5c@mail.gmail.com>
+Message-ID: <7cf8dd660608210721w1945c290h3e50f035a5cfc32e@mail.gmail.com>
+
+On 8/19/06, BrodocK <brodock at gmail.com> wrote:
+> ok i considered it's a good time to make this post.
+> i already work with sunuo at my linux box and run a shard with it.
+> i also uses linux as my desktop OS and develop using it.
+> what i want to know is:
+>
+> what you people have tested about runuo 2.0 and incompatibilities with
+> current mono implementation of net framework 2.0.
+>
+> the first thing that i saw was about generic collections, but mono 1.1.16
+> seens to solve this issue. my ubuntu doesn't support it and i think i wil
+> have to way a beta version of next release (edgy) to try it as it has many
+> incompatibilities that prevent running it on dapper.
+>
+> does any one already testes it with mono 1.1.16 ?
+>
+>
+> _______________________________________________
+> sunuo-users mailing list
+> sunuo-users at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/sunuo-users
+>
+>
+>
+Well, it doesn't work with mono 1.1.16 (I tried it, also tried
+1.1.17).  It may work with 1.1.18 or later, but I don't know.  In any
+case, RunUO 2.0 uses a number of features of the .NET 2.0 class
+libraries, which may or may not be implemented in mono.  So how about
+trying it with the latest mono and seeing what happens?  I'm going to
+be trying again soon myself, too.  Hope this helps.
+
+--Arek
+
+
+From arek75 at gmail.com  Thu Aug 31 01:50:55 2006
+From: arek75 at gmail.com (James Potts)
+Date: Wed, 30 Aug 2006 18:50:55 -0500
+Subject: [sunuo-users] runuo 2.0 and mono
+In-Reply-To: <de11c8430608211103k6cd4bb86occ3d580437e167e3@mail.gmail.com>
+References: <de11c8430608190045o2b07460u575cbdf0123aec5c@mail.gmail.com>
+	<7cf8dd660608210721w1945c290h3e50f035a5cfc32e@mail.gmail.com>
+	<de11c8430608211103k6cd4bb86occ3d580437e167e3@mail.gmail.com>
+Message-ID: <7cf8dd660608301650k4b1db9dax72696cd607d4cf85@mail.gmail.com>
+
+You're getting errors in collection.generics?  Are you using mcs to
+attempt to compile RunUO 2.0?  If so, keep in mind that mcs doesn't
+support generics, you'll need to use gmcs instead.
+
+As for backporting other features, I don't think we should backport
+any feature to .NET 1.0 unless a) gmcs doesn't support it (and it's
+not trivial to implement) and b) backporting the feature doesn't cause
+any breakage in existing scripts.  This is to keep compatibility with
+"legacy" scripts - a feature of SunUO that I'd rather not part with.
+
+Here's hoping that mono can run RunUO 2.0 soon. :)
+
+--Arek
+
+On 8/21/06, BrodocK <brodock at gmail.com> wrote:
+> i think the most anoying "feature" to port back to 1.0 is
+> collection.generics but i think if it depends on other features that are
+> easy back-portable we can in a near feature release a new sunuo version with
+> the modifications.
+>
+> I compared both core codes and there isn't so much new features, almost mods
+> are optimizations and colections.generics updates (from old code)
+>
+> 2006/8/21, James Potts < arek75 at gmail.com>:
+> > On 8/19/06, BrodocK <brodock at gmail.com > wrote:
+> > > ok i considered it's a good time to make this post.
+> > > i already work with sunuo at my linux box and run a shard with it.
+> > > i also uses linux as my desktop OS and develop using it.
+> > > what i want to know is:
+> > >
+> > > what you people have tested about runuo 2.0 and incompatibilities with
+> > > current mono implementation of net framework 2.0.
+> > >
+> > > the first thing that i saw was about generic collections, but mono
+> 1.1.16
+> > > seens to solve this issue. my ubuntu doesn't support it and i think i
+> wil
+> > > have to way a beta version of next release (edgy) to try it as it has
+> many
+> > > incompatibilities that prevent running it on dapper.
+> > >
+> > > does any one already testes it with mono 1.1.16 ?
+> > >
+> > >
+> > > _______________________________________________
+> > > sunuo-users mailing list
+> > > sunuo-users at lists.berlios.de
+> > > https://lists.berlios.de/mailman/listinfo/sunuo-users
+> > >
+> > >
+> > >
+> > Well, it doesn't work with mono 1.1.16 (I tried it, also tried
+> > 1.1.17).  It may work with 1.1.18 or later, but I don't know.  In any
+> > case, RunUO 2.0 uses a number of features of the .NET 2.0 class
+> > libraries, which may or may not be implemented in mono.  So how about
+> > trying it with the latest mono and seeing what happens?  I'm going to
+> > be trying again soon myself, too.  Hope this helps.
+> >
+> > --Arek
+> > _______________________________________________
+> > sunuo-users mailing list
+> > sunuo-users at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/sunuo-users
+> >
+>
+>
+>
+
+

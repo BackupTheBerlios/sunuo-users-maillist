@@ -1,0 +1,377 @@
+From adminamarath at hotmail.it  Tue Feb 13 22:05:52 2007
+From: adminamarath at hotmail.it (Michele Zarrillo)
+Date: Tue, 13 Feb 2007 22:05:52 +0100
+Subject: [sunuo-users] (no subject)
+Message-ID: <BAY110-W6A819D1A513EA4CEEF0F3BE900@phx.gbl>
+
+
+Hi, i've a problem :D
+ 
+i made new map , using all space ( 6144 x 4049 ) without jail , dungenon or staff places.
+ 
+In game walking on this places there are a lot of problems, like tele in black place, ecc ecc, so i tryed to modify source. this my experience :
+ 
+1) open map.cs
+2) find and delete
+ 
+ >
+ 
+public static Map Felucca{ get{ return m_Maps[0]; } }
+public static Map Trammel{ get{ return m_Maps[1]; } }
+public static Map Ilshenar{ get{ return m_Maps[2]; } }
+public static Map Malas{ get{ return m_Maps[3]; } }
+public static Map Tokuno{ get{ return m_Maps[4]; } }
+public static Map Internal{ get{ return m_Maps[0x7F]; } }
+ 
+<
+ 
+3) uncomment this
+ 
+<
+ 
+public static readonly Map Felucca = new Map( 0, 0, 6144, 4096, 4, "Felucca", MapRules.FeluccaRules );
+public static readonly Map Trammel = new Map( 1, 0, 6144, 4096, 0, "Trammel", MapRules.TrammelRules );
+public static readonly Map Ilshenar = new Map( 2, 2, 2304, 1600, 1, "Ilshenar", MapRules.TrammelRules );
+public static readonly Map Malas = new Map( 3, 3, 2560, 2048, 1, "Malas", MapRules.TrammelRules );
+public static readonly Map Internal = new Map( 0x7F, 0x7F, SectorSize, SectorSize, 1, "Internal", MapRules.Internal );
+ 
+>
+ 
+4) compile and i've this error : no overload for method 'map' take 7 arguments.
+ 
+ 
+so... who can help me? tnx a lot 
+_________________________________________________________________
+Esprimiti: personalizza la tua home page con Live.com.
+http://www.live.com/
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070213/3d217563/attachment.html>
+
+From max at duempel.org  Wed Feb 14 09:08:19 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 14 Feb 2007 09:08:19 +0100
+Subject: [sunuo-users] (no subject)
+In-Reply-To: <BAY110-W6A819D1A513EA4CEEF0F3BE900@phx.gbl>
+References: <BAY110-W6A819D1A513EA4CEEF0F3BE900@phx.gbl>
+Message-ID: <20070214080819.GA13957@roonstrasse.net>
+
+On 2007/02/13 22:05, Michele Zarrillo <adminamarath at hotmail.it> wrote:
+> 4) compile and i've this error : no overload for method 'map' take 7
+> arguments.
+
+Please post the full error message (copy+paste).  Without it, we would
+have to guess where the compile error occurs.
+
+Max
+
+
+
+From adminamarath at hotmail.it  Wed Feb 14 15:47:57 2007
+From: adminamarath at hotmail.it (Michele Zarrillo)
+Date: Wed, 14 Feb 2007 15:47:57 +0100
+Subject: [sunuo-users] sunuo-users Digest, Vol 7, Issue 1
+Message-ID: <BAY110-W1F8A4C47662AC9B6B4343BE970@phx.gbl>
+
+
+Please post the full error message (copy+paste). Without it, we wouldhave to guess where the compile error occurs.
+ 
+ok, click on the link : 
+ 
+http://estelvinya.ac-net.it/img/error.jpg
+ 
+tnx :)
+_________________________________________________________________
+Prova Live.com: una sola home page per avere a portata di mano tutte le tue informazioni.
+http://www.live.com/
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070214/1f2cb81a/attachment.html>
+
+From max at duempel.org  Wed Feb 14 15:58:28 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 14 Feb 2007 15:58:28 +0100
+Subject: [sunuo-users] (no subject)
+In-Reply-To: <BAY110-W6A819D1A513EA4CEEF0F3BE900@phx.gbl>
+References: <BAY110-W6A819D1A513EA4CEEF0F3BE900@phx.gbl>
+Message-ID: <20070214145828.GA18100@roonstrasse.net>
+
+On 2007/02/13 22:05, Michele Zarrillo <adminamarath at hotmail.it> wrote:
+> 3) uncomment this
+>  
+> <
+>  
+> public static readonly Map Felucca = new Map( 0, 0, 6144, 4096, 4, "Felucca", MapRules.FeluccaRules );
+> public static readonly Map Trammel = new Map( 1, 0, 6144, 4096, 0, "Trammel", MapRules.TrammelRules );
+> public static readonly Map Ilshenar = new Map( 2, 2, 2304, 1600, 1, "Ilshenar", MapRules.TrammelRules );
+> public static readonly Map Malas = new Map( 3, 3, 2560, 2048, 1, "Malas", MapRules.TrammelRules );
+> public static readonly Map Internal = new Map( 0x7F, 0x7F, SectorSize, SectorSize, 1, "Internal", MapRules.Internal );
+
+The code which was commented out is indeed invalid.  It's old code
+from RunUO.  If you want to modify the maps, please edit the script
+Misc/MapDefinitions.cs.
+
+Max
+
+
+
+
+From sunuo at kewlshells.com  Wed Feb 14 22:12:43 2007
+From: sunuo at kewlshells.com (Tonya)
+Date: Wed, 14 Feb 2007 13:12:43 -0800
+Subject: [sunuo-users] I just signed up for this mailing list and I have a
+	few questions
+Message-ID: <000a01c7507c$dea9b860$800101df@bearrivercasino.com>
+
+Hi everyone,
+
+ 
+
+I just signed up for this mailing list recently.  I have installed sunuo on
+my server that I have on co-location in New York.  I also sell IRCD, bnc,
+etc. but this shard will be the only game on the server.
+
+ 
+
+I haven't played UO in years.  I sold my account years ago when the scrolls
+first came out.  I am trying to get this shard working with evos and some
+other things that I like from the free shards I have seen lately.
+
+ 
+
+I guess I am wondering if there is more documentation about sunuo somewhere.
+Or does anyone here have a good location of some of the better scripts that
+work with sunuo.  I tried to install an evos script that I can't make work
+to save my life.  
+
+ 
+
+Anyway, would someone volunteer to let me come see their shard that is
+running sunuo?  Maybe see what some of the scripts do?  
+
+ 
+
+I am a single Mom and I work full time, I don't really have a lot of time to
+devote to this.  I was also hoping to find someone who might be interested
+in helping me with it.
+
+ 
+
+I am totally open to suggestions here.  I did meet a guy from uogateway
+forums that wants to help me.  Is there any way he could get me in trouble
+if he had admin access to the shard?  I mean I can always reinstall in a new
+directory so if he messed up the shard it's no big deal.  Being as new to
+this as I am, I don't know what to look out for.  This guy is way too
+interested in helping me and mentioned the people from uogateway didn't like
+him.  
+
+ 
+
+Anyway, have a great day!!  It's Valentines Day :) 
+
+ 
+
+Cabernay / Tonya
+
+ 
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070214/b0246f9f/attachment.html>
+
+From adminamarath at hotmail.it  Thu Feb 15 20:20:03 2007
+From: adminamarath at hotmail.it (Michele Zarrillo)
+Date: Thu, 15 Feb 2007 20:20:03 +0100
+Subject: [sunuo-users] sunuo-users Digest, Vol 7, Issue 2
+Message-ID: <BAY110-W16E755D55BA8E31D7A087BE960@phx.gbl>
+
+
+tnx a lot, i forgot lagacy source :P :D> From: sunuo-users-request at lists.berlios.de> Subject: sunuo-users Digest, Vol 7, Issue 2> To: sunuo-users at lists.berlios.de> Date: Thu, 15 Feb 2007 12:00:04 +0100> > Send sunuo-users mailing list submissions to> sunuo-users at lists.berlios.de> > To subscribe or unsubscribe via the World Wide Web, visit> https://lists.berlios.de/mailman/listinfo/sunuo-users> or, via email, send a message with subject or body 'help' to> sunuo-users-request at lists.berlios.de> > You can reach the person managing the list at> sunuo-users-owner at lists.berlios.de> > When replying, please edit your Subject line so it is more specific> than "Re: Contents of sunuo-users digest..."> > > Today's Topics:> > 1. Re: sunuo-users Digest, Vol 7, Issue 1 (Michele Zarrillo)> 2. Re: (no subject) (Max Kellermann)> 3. I just signed up for this mailing list and I have a few> questions (Tonya)> > > ----------------------------------------------------------------------> > Message: 1> Date: Wed, 14 Feb 2007 15:47:57 +0100> From: Michele Zarrillo <adminamarath at hotmail.it>> Subject: Re: [sunuo-users] sunuo-users Digest, Vol 7, Issue 1> To: <sunuo-users at lists.berlios.de>> Message-ID: <BAY110-W1F8A4C47662AC9B6B4343BE970 at phx.gbl>> Content-Type: text/plain; charset="iso-8859-1"> > > Please post the full error message (copy+paste). Without it, we wouldhave to guess where the compile error occurs.> > ok, click on the link : > > http://estelvinya.ac-net.it/img/error.jpg> > tnx :)> _________________________________________________________________> Prova Live.com: una sola home page per avere a portata di mano tutte le tue informazioni.> http://www.live.com/> -------------- next part --------------> An HTML attachment was scrubbed...> URL: https://lists.berlios.de/pipermail/sunuo-users/attachments/20070214/1f2cb81a/attachment-0001.html > > ------------------------------> > Message: 2> Date: Wed, 14 Feb 2007 15:58:28 +0100> From: Max Kellermann <max at duempel.org>> Subject: Re: [sunuo-users] (no subject)> To: sunuo-users at lists.berlios.de> Message-ID: <20070214145828.GA18100 at roonstrasse.net>> Content-Type: text/plain; charset=us-ascii> > On 2007/02/13 22:05, Michele Zarrillo <adminamarath at hotmail.it> wrote:> > 3) uncomment this> > > > <> > > > public static readonly Map Felucca = new Map( 0, 0, 6144, 4096, 4, "Felucca", MapRules.FeluccaRules );> > public static readonly Map Trammel = new Map( 1, 0, 6144, 4096, 0, "Trammel", MapRules.TrammelRules );> > public static readonly Map Ilshenar = new Map( 2, 2, 2304, 1600, 1, "Ilshenar", MapRules.TrammelRules );> > public static readonly Map Malas = new Map( 3, 3, 2560, 2048, 1, "Malas", MapRules.TrammelRules );> > public static readonly Map Internal = new Map( 0x7F, 0x7F, SectorSize, SectorSize, 1, "Internal", MapRules.Internal );> > The code which was commented out is indeed invalid. It's old code> from RunUO. If you want to modify the maps, please edit the script> Misc/MapDefinitions.cs.> > Max> > > > > ------------------------------> > Message: 3> Date: Wed, 14 Feb 2007 13:12:43 -0800> From: "Tonya" <sunuo at kewlshells.com>> Subject: [sunuo-users] I just signed up for this mailing list and I> have a few questions> To: <sunuo-users at lists.berlios.de>> Message-ID: <000a01c7507c$dea9b860$800101df at bearrivercasino.com>> Content-Type: text/plain; charset="us-ascii"> > Hi everyone,> > > > I just signed up for this mailing list recently. I have installed sunuo on> my server that I have on co-location in New York. I also sell IRCD, bnc,> etc. but this shard will be the only game on the server.> > > > I haven't played UO in years. I sold my account years ago when the scrolls> first came out. I am trying to get this shard working with evos and some> other things that I like from the free shards I have seen lately.> > > > I guess I am wondering if there is more documentation about sunuo somewhere.> Or does anyone here have a good location of some of the better scripts that> work with sunuo. I tried to install an evos script that I can't make work> to save my life. > > > > Anyway, would someone volunteer to let me come see their shard that is> running sunuo? Maybe see what some of the scripts do? > > > > I am a single Mom and I work full time, I don't really have a lot of time to> devote to this. I was also hoping to find someone who might be interested> in helping me with it.> > > > I am totally open to suggestions here. I did meet a guy from uogateway> forums that wants to help me. Is there any way he could get me in trouble> if he had admin access to the shard? I mean I can always reinstall in a new> directory so if he messed up the shard it's no big deal. Being as new to> this as I am, I don't know what to look out for. This guy is way too> interested in helping me and mentioned the people from uogateway didn't like> him. > > > > Anyway, have a great day!! It's Valentines Day :) > > > > Cabernay / Tonya> > > > > > -------------- next part --------------> An HTML attachment was scrubbed...> URL: https://lists.berlios.de/pipermail/sunuo-users/attachments/20070214/b0246f9f/attachment-0001.html > > ------------------------------> > _______________________________________________> sunuo-users mailing list> sunuo-users at lists.berlios.de> https://lists.berlios.de/mailman/listinfo/sunuo-users> > > End of sunuo-users Digest, Vol 7, Issue 2> *****************************************
+_________________________________________________________________
+Prova Live.com: il tuo mondo on line, con notizie, sport, meteo e molto altro ancora.
+http://www.live.com/
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070215/f36add02/attachment.html>
+
+From sunuo at kewlshells.com  Thu Feb 15 20:54:36 2007
+From: sunuo at kewlshells.com (Tonya)
+Date: Thu, 15 Feb 2007 11:54:36 -0800
+Subject: [sunuo-users] Xanthos EVO Script
+Message-ID: <000e01c7513b$1f780c70$800101df@bearrivercasino.com>
+
+I installed this script.
+(http://www.runuo.com/forums/server-support/73115-xantos-evo-system-prob.htm
+l)
+
+ 
+
+This is the error I am getting.  
+
+ 
+
+I am really trying here.  Am I putting it in the wrong directory?  Does
+anyone know what I am doing wrong here?
+
+ 
+
+Thanks
+
+ 
+
+Tonya
+
+ 
+
+[uo at arac UO]$ ./run.sh
+
+/bin/bash: /root/.bashrc: Permission denied
+
+SunUO Version 0.4.3 http://www.sunuo.org/
+
+  on Unix 2.4.20.30, runtime 1.1.4322.2032
+
+ 
+
+2007-02-15 14:48:13,040 INFO  Compiling library legacy, 2076 C# sources
+
+2007-02-15 14:48:19,695 ERROR Compilation failed (9 errors, 0 warnings)
+
+2007-02-15 14:48:19,696 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/AI/EvoArcherAI.cs: CS1002: (line 51, column 35) Expecting `;'
+
+2007-02-15 14:48:19,697 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/AI/EvoBerserkAI.cs: CS1002: (line 51, column 35) Expecting `;'
+
+2007-02-15 14:48:19,697 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/AI/EvoMageAI.cs: CS1002: (line 51, column 35) Expecting `;'
+
+2007-02-15 14:48:19,697 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/AI/EvoMeleeAI.cs: CS1002: (line 51, column 35) Expecting `;'
+
+2007-02-15 14:48:19,697 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/Mercenary/Mercenary.cs: CS1002: (line 209, column 31) Expecting `;'
+
+2007-02-15 14:48:19,698 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/Mercenary/Mercenary.cs: CS1002: (line 226, column 31) Expecting `;'
+
+2007-02-15 14:48:19,698 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/Mercenary/Mercenary.cs: CS1002: (line 268, column 31) Expecting `;'
+
+2007-02-15 14:48:19,698 ERROR /home/uo/UO/UO/Scripts/Xanthos/EVO
+System/Mercenary/Mercenary.cs: CS1002: (line 477, column 28) Expecting `;'
+
+2007-02-15 14:48:19,698 ERROR /home/uo/UO/UO/Scripts/Xanthos/Shrink
+System/ShrinkItem.cs: CS1041: (line 209, column 64) Identifier expected
+
+SunUO.exe exited with status 0
+
+ 
+
+ 
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070215/843456c7/attachment.html>
+
+From max at duempel.org  Fri Feb 16 09:46:12 2007
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 16 Feb 2007 09:46:12 +0100
+Subject: [sunuo-users] Xanthos EVO Script
+In-Reply-To: <000e01c7513b$1f780c70$800101df@bearrivercasino.com>
+References: <000e01c7513b$1f780c70$800101df@bearrivercasino.com>
+Message-ID: <20070216084612.GA24166@roonstrasse.net>
+
+On 2007/02/15 20:54, Tonya <sunuo at kewlshells.com> wrote:
+> I am really trying here.  Am I putting it in the wrong directory?
+> Does anyone know what I am doing wrong here?
+
+Obviously, the code you downloaded contains invalid C# syntax.  Since
+I have no access to the RunUO forum (I'm banned), I cannot help you
+with that, sorry.
+
+Max
+
+
+
+From sunuo at kewlshells.com  Fri Feb 16 18:06:51 2007
+From: sunuo at kewlshells.com (Tonya)
+Date: Fri, 16 Feb 2007 09:06:51 -0800
+Subject: [sunuo-users] Xanthos EVO Script
+In-Reply-To: <20070216084612.GA24166@roonstrasse.net>
+Message-ID: <000901c751ec$dab7d180$800101df@bearrivercasino.com>
+
+Well here is my dilemma.  This mail list seems to be my only means of
+support/help with SunUO.
+
+I don't mind using older versions of these scripts.
+
+But at this time I have no idea where to find them.  
+
+I am thinking about installing vmware and xp and then runuo.  I really
+didn't want to do that, but at least I have somewhere to turn.
+
+Do you know where I can find scripts that will work with sunuo?  
+
+
+
+-----Original Message-----
+From: Max Kellermann [mailto:max at duempel.org] 
+Sent: Friday, February 16, 2007 12:46 AM
+To: Tonya
+Cc: sunuo-users at lists.berlios.de
+Subject: Re: [sunuo-users] Xanthos EVO Script
+
+On 2007/02/15 20:54, Tonya <sunuo at kewlshells.com> wrote:
+> I am really trying here.  Am I putting it in the wrong directory?
+> Does anyone know what I am doing wrong here?
+
+Obviously, the code you downloaded contains invalid C# syntax.  Since
+I have no access to the RunUO forum (I'm banned), I cannot help you
+with that, sorry.
+
+Max
+
+
+
+
+
+From greubel at nkey.de  Fri Feb 16 20:14:39 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Fri, 16 Feb 2007 20:14:39 +0100
+Subject: [sunuo-users] Xanthos EVO Script
+In-Reply-To: <000901c751ec$dab7d180$800101df@bearrivercasino.com>
+References: <000901c751ec$dab7d180$800101df@bearrivercasino.com>
+Message-ID: <45D6029F.9080203@nkey.de>
+
+Send me the xanthos evo sys per mail, not to this list, I will fix it
+and post a diff.
+
+Regards
+Maik
+
+Tonya schrieb:
+> Well here is my dilemma.  This mail list seems to be my only means of
+> support/help with SunUO.
+> 
+> I don't mind using older versions of these scripts.
+> 
+> But at this time I have no idea where to find them.  
+> 
+> I am thinking about installing vmware and xp and then runuo.  I really
+> didn't want to do that, but at least I have somewhere to turn.
+> 
+> Do you know where I can find scripts that will work with sunuo?  
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070216/0f22edfd/attachment.bin>
+

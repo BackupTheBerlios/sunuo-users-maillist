@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Script bug or sunuo internal bug?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Script%20bug%20or%20sunuo%20internal%20bug%3F&In-Reply-To=%3C20061218092453.GC8867%40roonstrasse.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000059.html">
+   <LINK REL="Next"  HREF="000060.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Script bug or sunuo internal bug?</H1>
+    <B>Max Kellermann</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Script%20bug%20or%20sunuo%20internal%20bug%3F&In-Reply-To=%3C20061218092453.GC8867%40roonstrasse.net%3E"
+       TITLE="[sunuo-users] Script bug or sunuo internal bug?">max at duempel.org
+       </A><BR>
+    <I>Mon Dec 18 10:24:53 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000059.html">[sunuo-users] Script bug or sunuo internal bug?
+</A></li>
+        <LI>Next message: <A HREF="000060.html">[sunuo-users] Error in Compiling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2006/12/16 12:49, Maik Greubel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">greubel at nkey.de</A>&gt; wrote:
+&gt;<i> rew an exception. ---&gt; System.ArgumentException: Value does not fall
+</I>&gt;<i> within the 
+</I>&gt;<i> expected range. 
+</I>&gt;<i> at System.Runtime.CompilerServices.RuntimeHelpers.InitializeArray(Array
+</I>&gt;<i> array 
+</I>&gt;<i> , RuntimeFieldHandle fldHandle) 
+</I>&gt;<i> at Server.Utility..cctor() 
+</I>&gt;<i> --- End of inner exception stack trace --- 
+</I>&gt;<i> at Server.Utility.RandomDouble() 
+</I>&gt;<i> at Server.Mobiles.AITimer..ctor(BaseAI owner) 
+</I>&gt;<i> at Server.Mobiles.BaseAI..ctor(BaseCreature m) 
+</I>&gt;<i> at Server.Mobiles.BaseCreature.ChangeAIType(AIType NewAI) 
+</I>&gt;<i> at Server.Mobiles.BaseCreature.Deserialize(GenericReader reader) 
+</I>&gt;<i> at Server.Mobiles.BaseVendor.Deserialize(GenericReader reader) 
+</I>&gt;<i> at Server.Mobiles.Tanner.Deserialize(GenericReader reader) 
+</I>&gt;<i> at Server.World.LoadEntities() 
+</I>&gt;<i> An error was encountered while loading a saved object 
+</I>&gt;<i> - Type: Server.Mobiles.Tanner 
+</I>&gt;<i> - Serial: 0xFFFFFFFF 
+</I>&gt;<i> Delete the object? (y/n)
+</I>
+This happens when you use a SunUO.exe compiled on Linux, and run it on
+Windows.  Please use the SunUO.exe from the &quot;w32&quot; directory in the
+binary distribution, or try to compile one yourself.
+
+Max
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000059.html">[sunuo-users] Script bug or sunuo internal bug?
+</A></li>
+	<LI>Next message: <A HREF="000060.html">[sunuo-users] Error in Compiling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

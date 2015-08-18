@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20problems%20using%20Transferserver%20%28xmlspawner%20editor%29%0A%20and%20LuaInterface.dlls%20with%20SunUO&In-Reply-To=%3C20070802072317.237260%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000134.html">
+   <LINK REL="Next"  HREF="000136.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO</H1>
+    <B>Florian Fischer</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20problems%20using%20Transferserver%20%28xmlspawner%20editor%29%0A%20and%20LuaInterface.dlls%20with%20SunUO&In-Reply-To=%3C20070802072317.237260%40gmx.net%3E"
+       TITLE="[sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO">seabeams at gmx.de
+       </A><BR>
+    <I>Thu Aug  2 09:23:17 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000134.html">[sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+</A></li>
+        <LI>Next message: <A HREF="000136.html">[sunuo-users] problems using Transferserver (xmlspawner editor)	and LuaInterface.dlls with SunUO
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#135">[ date ]</a>
+              <a href="thread.html#135">[ thread ]</a>
+              <a href="subject.html#135">[ subject ]</a>
+              <a href="author.html#135">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for your answer. I already tried to put the TransferServer.dll into the Assemblies.cfg. But this brings up the same problem. I think this precompiled dll isn't compatible with mono.
+I already ask ArteGordon (the maker of SpawnEditor) to release his source. He is willing todo it after a source cleanup.
+
+The second sollution solves my problems. I thought, that sunuo is able to solve dependencies with the libraries option in comparsion with overlay scripts. This would be the more clean sollution i think.
+But now it works for now. Thanks much.
+
+regards
+
+SiENcE
+
+-------- Original-Nachricht --------
+Datum: Wed, 01 Aug 2007 19:25:10 +0200
+Von: Maik Greubel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">greubel at nkey.de</A>&gt;
+An: Florian Fischer &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">seabeams at gmx.de</A>&gt;
+CC: <A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">sunuo-users at lists.berlios.de</A>
+Betreff: Re: [sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+
+&gt;<i> Florian Fischer schrieb:
+</I>&gt;<i> Your stack trace: It seems to me, that you have to put the
+</I>&gt;<i> TransferServer.dll as entry into the Data\Assemblies.cfg. Is that .dll
+</I>&gt;<i> precompiled?
+</I>&gt;<i> 
+</I>&gt;<i> &gt; I also have another question. I try to overlay some distribution 
+</I>&gt;<i> &gt; scripts. I'm able to change existing scripts and overlay
+</I>&gt;<i> &gt; them. Thats fine.
+</I>&gt;<i> &gt; But what do i do when i have an to add an dependency? For example
+</I>&gt;<i> &gt; i modify the PlayerMobile.cs to add something like this:
+</I>&gt;<i> &gt; &quot;using Server.Engines.XmlSpawner2;&quot;
+</I>&gt;<i> 
+</I>&gt;<i> Any dependency you need for legacy scripts, have to be in legacy folder.
+</I>&gt;<i> The split into libraries option is only useful for independent packages,
+</I>&gt;<i> like UOArchitect, which you use and this will work.
+</I>&gt;<i> 
+</I>&gt;<i> &gt; But sunuo cant compile this, because it needs xmlspawner2 first.
+</I>&gt;<i> &gt; But XMLSpawner needs the legacy.dll first. How do i do this?
+</I>&gt;<i> &gt; Adding this to the distribution files also doesn't work.
+</I>&gt;<i> 
+</I>&gt;<i> As said, just put the scripts on which the legacy scripts depend to the
+</I>&gt;<i> other legacy scripts. sunuo is able to solve dependencies by it self, if
+</I>&gt;<i> they are in the same location.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Regards
+</I>&gt;<i> Maik
+</I>
+-- 
+Psssst! Schon vom neuen GMX MultiMessenger geh&#246;rt?
+Der kanns mit allen: <A HREF="http://www.gmx.net/de/go/multimessenger">http://www.gmx.net/de/go/multimessenger</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000134.html">[sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+</A></li>
+	<LI>Next message: <A HREF="000136.html">[sunuo-users] problems using Transferserver (xmlspawner editor)	and LuaInterface.dlls with SunUO
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#135">[ date ]</a>
+              <a href="thread.html#135">[ thread ]</a>
+              <a href="subject.html#135">[ subject ]</a>
+              <a href="author.html#135">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

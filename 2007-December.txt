@@ -1,0 +1,41 @@
+From max at duempel.org  Tue Dec 25 12:35:51 2007
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 25 Dec 2007 12:35:51 +0100
+Subject: [sunuo-users] SunUO 0.5.1
+Message-ID: <20071225113551.GA22921@swift.blarg.de>
+
+Hi,
+
+I am proud to announce the release of SunUO 0.5.1.
+
+ http://www.sunuo.org/download.html
+ http://download.berlios.de/sunuo/sunuo-0.5.1.zip
+
+It finally supports the client version 6.0.5.0, and it fixes a bunch
+of severe vulnerabilities, see the NEWS file for details.  Some of the
+patches were ported from RunUO 2.0, again.
+
+Merry X-mas!
+
+Max
+
+
+
+From max at duempel.org  Tue Dec 25 13:09:15 2007
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 25 Dec 2007 13:09:15 +0100
+Subject: [sunuo-users] uoproxy 0.2
+Message-ID: <20071225120915.GA26325@swift.blarg.de>
+
+Hi,
+
+uoproxy has also been adapted to the new client version 6.0.5.0.
+
+ http://max.kellermann.name/projects/uoproxy/
+ http://max.kellermann.name/download/uoproxy/v0.2/uoproxy-0.2.tar.bz2
+ http://max.kellermann.name/download/uoproxy/v0.2/uoproxy-0.2-1.i386.rpm
+
+Max
+
+
+

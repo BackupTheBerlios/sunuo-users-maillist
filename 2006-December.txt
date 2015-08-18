@@ -1,0 +1,503 @@
+From korkuts at crilandor.com  Fri Dec  1 15:28:22 2006
+From: korkuts at crilandor.com (korkuts at crilandor.com)
+Date: Fri, 1 Dec 2006 15:28:22 +0100 (CET)
+Subject: [sunuo-users] telnet and error
+Message-ID: <36630.213.60.71.123.1164983302.squirrel@www.crilandor.com>
+
+First: Who i can connect to server with telnet?
+
+Second: i installed the sunuo in a chroot and run ok, but i copy all files
+in other chroot and don't work. why? Mono says:
+
+SunUO Version 0.3.1 http://www.sunuo.org/
+  on Unix 2.6.8.2, runtime 1.1.4322.2032
+Please make sure you have Mono 1.1.7 or newer! (mono -V)
+
+2006-12-01 14:24:45,120 INFO  Compiling library legacy, 2067 C# sources
+
+Y put mono -V:
+
+Mono JIT compiler version 1.1.18, (C) 2002-2006 Novell, Inc and
+Contributors. www.mono-project.com
+        TLS:           normal
+        GC:            Included Boehm (with typed GC)
+        SIGSEGV:       normal
+        Disabled:      none
+
+//Mi ingles es malisimo, mi primer problema es que no me funciona la
+conexi?n via telnet al server y mi segundo problema es que copiando todo
+el sistema de archivos en el que corre sunuo (en un entorno chroot) lo
+copio literalemnte a otro nuevo con las mismas rutas de archivo, y al
+lanzar el chroot se me queda en lo de compilando legacy.... por mas de una
+hora
+
+
+
+From max at duempel.org  Fri Dec  1 15:31:45 2006
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 1 Dec 2006 15:31:45 +0100
+Subject: [sunuo-users] telnet and error
+In-Reply-To: <36630.213.60.71.123.1164983302.squirrel@www.crilandor.com>
+References: <36630.213.60.71.123.1164983302.squirrel@www.crilandor.com>
+Message-ID: <20061201143145.GA4227@roonstrasse.net>
+
+On 2006/12/01 15:28, korkuts at crilandor.com wrote:
+> First: Who i can connect to server with telnet?
+
+You can not, unless you can type the UO compressed protocol with your
+keyboard ;)
+
+> Second: i installed the sunuo in a chroot and run ok, but i copy all files
+> in other chroot and don't work. why? Mono says:
+> 
+> SunUO Version 0.3.1 http://www.sunuo.org/
+>   on Unix 2.6.8.2, runtime 1.1.4322.2032
+> Please make sure you have Mono 1.1.7 or newer! (mono -V)
+> 
+> 2006-12-01 14:24:45,120 INFO  Compiling library legacy, 2067 C#
+> sources
+
+Wait until compilation is finished.  That may be quite a while on slow
+machines.  The Mono compiler itself is slower than Microsoft's
+compiler.
+
+Max
+
+
+
+
+
+From korkuts at crilandor.com  Fri Dec  1 16:51:42 2006
+From: korkuts at crilandor.com (korkuts at crilandor.com)
+Date: Fri, 1 Dec 2006 16:51:42 +0100 (CET)
+Subject: [sunuo-users] telnet and error
+In-Reply-To: <36517.213.60.71.123.1164985003.squirrel@www.crilandor.com>
+References: <36630.213.60.71.123.1164983302.squirrel@www.crilandor.com>   
+	<20061201143145.GA4227@roonstrasse.net>
+	<36517.213.60.71.123.1164985003.squirrel@www.crilandor.com>
+Message-ID: <36115.213.60.71.123.1164988302.squirrel@www.crilandor.com>
+
+>> On 2006/12/01 15:28, korkuts at crilandor.com wrote:
+>>> First: Who i can connect to server with telnet?
+>>
+>> You can not, unless you can type the UO compressed protocol with your
+>> keyboard ;)
+>
+> mmmm, and where are de files that contain de class to custom my own client
+> telnet?
+
+// Osea que en que archivo est?n las clases que definen el protocolo de
+compresi?n usado para comunicarse con SunUO, as? puedo hacer mi propio
+cliente telnet para comunicarme con el
+
+
+
+From brodock at gmail.com  Mon Dec 11 14:05:31 2006
+From: brodock at gmail.com (BrodocK)
+Date: Mon, 11 Dec 2006 11:05:31 -0200
+Subject: [sunuo-users] Restart a shell script
+Message-ID: <de11c8430612110505p2b2b042dpab01714cc2fef59b@mail.gmail.com>
+
+Here i've made a shell script (.sh) to start sunuo... i would like that
+sunuo call this script at [restart...
+how can i do that?
+
+if i try to start script.sh it doesnt work...
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20061211/ade47381/attachment.html>
+
+From max at duempel.org  Mon Dec 11 14:10:46 2006
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 11 Dec 2006 14:10:46 +0100
+Subject: [sunuo-users] Restart a shell script
+In-Reply-To: <de11c8430612110505p2b2b042dpab01714cc2fef59b@mail.gmail.com>
+References: <de11c8430612110505p2b2b042dpab01714cc2fef59b@mail.gmail.com>
+Message-ID: <20061211131046.GA11021@roonstrasse.net>
+
+On 2006/12/11 14:05, BrodocK <brodock at gmail.com> wrote:
+> Here i've made a shell script (.sh) to start sunuo... i would like that
+> sunuo call this script at [restart...
+> how can i do that?
+> 
+> if i try to start script.sh it doesnt work...
+
+The [restart command is defined in the scripts, have a look at
+Misc/AutoRestart.cs and the AdminGump code.
+
+Max
+
+
+
+From greubel at nkey.de  Sat Dec 16 12:49:07 2006
+From: greubel at nkey.de (Maik Greubel)
+Date: Sat, 16 Dec 2006 12:49:07 +0100
+Subject: [sunuo-users] Script bug or sunuo internal bug?
+Message-ID: <1166269747.24419.4.camel@moon.universe.pwg>
+
+Hello list,
+
+we are a small community and want to use sunuo instead runuo, because
+some developers want to develope direct in linux, vmware ist not really
+a solution for this. Also we read the news about better
+resource-handling, and want to use it also on windows and .net. My linux
+sunuo works perfectly but at my brothers windows xp a mobile loading
+error occured:
+
+== snip ==
+
+2006-12-16 12:39:14,921 INFO Loading world 
+2006-12-16 12:39:15,468 ERROR failed to load mobile 
+System.TypeInitializationException: The type initializer for
+"Server.Utility" th 
+rew an exception. ---> System.ArgumentException: Value does not fall
+within the 
+expected range. 
+at System.Runtime.CompilerServices.RuntimeHelpers.InitializeArray(Array
+array 
+, RuntimeFieldHandle fldHandle) 
+at Server.Utility..cctor() 
+--- End of inner exception stack trace --- 
+at Server.Utility.RandomDouble() 
+at Server.Mobiles.AITimer..ctor(BaseAI owner) 
+at Server.Mobiles.BaseAI..ctor(BaseCreature m) 
+at Server.Mobiles.BaseCreature.ChangeAIType(AIType NewAI) 
+at Server.Mobiles.BaseCreature.Deserialize(GenericReader reader) 
+at Server.Mobiles.BaseVendor.Deserialize(GenericReader reader) 
+at Server.Mobiles.Tanner.Deserialize(GenericReader reader) 
+at Server.World.LoadEntities() 
+An error was encountered while loading a saved object 
+- Type: Server.Mobiles.Tanner 
+- Serial: 0xFFFFFFFF 
+Delete the object? (y/n)
+
+== /snip ==
+
+IMO this error is an internal, because, its in
+Server.Utility.RandomDouble, may a range check in this can solve the
+problem.
+
+Greetings.
+-- 
+Maik Greubel
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3365 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20061216/61a8eae3/attachment.bin>
+
+From korkuts at crilandor.com  Sat Dec 16 20:42:59 2006
+From: korkuts at crilandor.com (korkuts at crilandor.com)
+Date: Sat, 16 Dec 2006 20:42:59 +0100 (CET)
+Subject: [sunuo-users] Error in Compiling
+Message-ID: <18207.88.11.1.150.1166298179.squirrel@www.crilandor.com>
+
+
+dark:/opt/sunuo# mono SunUO.exe
+SunUO Version 0.3.1 http://www.sunuo.org/
+  on Unix 2.4.27.3, runtime 1.1.4322.2032
+Please make sure you have Mono 1.1.7 or newer! (mono -V
+
+
+2006-12-16 19:44:52,790 INFO  Compiling library legacy, 2066 C# sources
+2006-12-16 19:45:12,851 FATAL System.Exception: Compiler failed to produce
+the assembly. Stderr='', Stdout=''
+  at Mono.CSharp.CSharpCodeCompiler.CompileFromFileBatch
+(System.CodeDom.Compiler.CompilerParameters options, System.String[]
+fileNames) [0x00000]
+  at Mono.CSharp.CSharpCodeCompiler.CompileAssemblyFromFileBatch
+(System.CodeDom.Compiler.CompilerParameters options, System.String[]
+fileNames) [0x00000]
+  at Server.ScriptCompiler.CompileCSScripts (ICollection fileColl,
+System.String assemblyFile, Server.Config.Library libConfig, Boolean
+debug) [0x00000]
+  at Server.ScriptCompiler.Compile (Server.Config.Library libConfig,
+Boolean debug) [0x00000]
+  at Server.ScriptCompiler.Compile (Boolean debug) [0x00000]
+  at Server.Core.Start (Server.Config.Root _config, Boolean debug, Boolean
+_service, Boolean _profiling) [0x00000]
+  at Server.Bootstrap.Main (System.String[] args) [0x00000]
+This exception is fatal, press return to exit
+
+
+
+From greubel at nkey.de  Sat Dec 16 22:23:28 2006
+From: greubel at nkey.de (Maik Greubel)
+Date: Sat, 16 Dec 2006 22:23:28 +0100
+Subject: [sunuo-users] Error in Compiling
+In-Reply-To: <18207.88.11.1.150.1166298179.squirrel@www.crilandor.com>
+References: <18207.88.11.1.150.1166298179.squirrel@www.crilandor.com>
+Message-ID: <1166304208.24419.6.camel@moon.universe.pwg>
+
+Am Samstag, den 16.12.2006, 20:42 +0100 schrieb korkuts at crilandor.com:
+> dark:/opt/sunuo# mono SunUO.exe
+> SunUO Version 0.3.1 http://www.sunuo.org/
+>   on Unix 2.4.27.3, runtime 1.1.4322.2032
+> Please make sure you have Mono 1.1.7 or newer! (mono -V
+> 
+> 
+> 2006-12-16 19:44:52,790 INFO  Compiling library legacy, 2066 C# sources
+> 2006-12-16 19:45:12,851 FATAL System.Exception: Compiler failed to produce
+> the assembly. Stderr='', Stdout=''
+
+This may occur if the assembly file is not writable, e.g. another
+process access the assembly. Do you did a 'ps ax' and check wether
+another sunuo process is running?
+
+-- 
+Maik Greubel
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3365 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20061216/80212f5b/attachment.bin>
+
+From max at duempel.org  Mon Dec 18 10:24:53 2006
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 18 Dec 2006 10:24:53 +0100
+Subject: [sunuo-users] Script bug or sunuo internal bug?
+In-Reply-To: <1166269747.24419.4.camel@moon.universe.pwg>
+References: <1166269747.24419.4.camel@moon.universe.pwg>
+Message-ID: <20061218092453.GC8867@roonstrasse.net>
+
+On 2006/12/16 12:49, Maik Greubel <greubel at nkey.de> wrote:
+> rew an exception. ---> System.ArgumentException: Value does not fall
+> within the 
+> expected range. 
+> at System.Runtime.CompilerServices.RuntimeHelpers.InitializeArray(Array
+> array 
+> , RuntimeFieldHandle fldHandle) 
+> at Server.Utility..cctor() 
+> --- End of inner exception stack trace --- 
+> at Server.Utility.RandomDouble() 
+> at Server.Mobiles.AITimer..ctor(BaseAI owner) 
+> at Server.Mobiles.BaseAI..ctor(BaseCreature m) 
+> at Server.Mobiles.BaseCreature.ChangeAIType(AIType NewAI) 
+> at Server.Mobiles.BaseCreature.Deserialize(GenericReader reader) 
+> at Server.Mobiles.BaseVendor.Deserialize(GenericReader reader) 
+> at Server.Mobiles.Tanner.Deserialize(GenericReader reader) 
+> at Server.World.LoadEntities() 
+> An error was encountered while loading a saved object 
+> - Type: Server.Mobiles.Tanner 
+> - Serial: 0xFFFFFFFF 
+> Delete the object? (y/n)
+
+This happens when you use a SunUO.exe compiled on Linux, and run it on
+Windows.  Please use the SunUO.exe from the "w32" directory in the
+binary distribution, or try to compile one yourself.
+
+Max
+
+
+
+
+From max at duempel.org  Mon Dec 18 13:40:27 2006
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 18 Dec 2006 13:40:27 +0100
+Subject: [sunuo-users] Restart a shell script
+In-Reply-To: <de11c8430612180357n3fd25e8m88707582ac6d796c@mail.gmail.com>
+References: <de11c8430612110505p2b2b042dpab01714cc2fef59b@mail.gmail.com>
+	<20061211131046.GA11021@roonstrasse.net>
+	<de11c8430612180357n3fd25e8m88707582ac6d796c@mail.gmail.com>
+Message-ID: <20061218124027.GA26956@roonstrasse.net>
+
+On 2006/12/18 12:57, BrodocK <brodock at gmail.com> wrote:
+> i mean... i changed that... but as it?s a shell script... if i do a
+> ...Start("script.sh") when sunuo closes it just don?t execute script.sh (or
+> cancel  the execution)...
+> i think i have to do it in a different way... like, "bash  script.sh" or
+> something different... so the new process do not depend on the old process
+> to exist...
+> 
+> any idea? it?s more a linux help then a sunuo/c# related question
+
+Don't use Process.Start() - it's evil on Linux.  Rather write a shell
+script which calls SunUO.exe in a while loop.  Or wait for SunUO 0.4,
+which will be released this week, and ships with such a script.
+
+Max
+
+
+
+
+From max at duempel.org  Thu Dec 21 05:58:16 2006
+From: max at duempel.org (Max Kellermann)
+Date: Thu, 21 Dec 2006 05:58:16 +0100
+Subject: [sunuo-users] SunUO 0.4.0 released
+Message-ID: <20061221045816.GA28120@roonstrasse.net>
+
+Hi,
+
+I am proud to announce the release 0.4.0 of SunUO.  The biggest change
+is that it includes the scripts, that means that we are fully
+independent of RunUO 1.0 now.
+
+This also means that we are able to do proper bug fixes.  SunUO 0.4.0
+fixes numerous script bugs, too many to list here, some of them
+critical.
+
+It has become easier to install and run SunUO, since everything
+(except the UO data files) is in the zip file now.  Three steps:
+unzip, configure data-path, execute run.bat or run.sh (Windows /
+Linux) - that's all you need to get a full SunUO install.
+
+Have fun with it, and remember to report bugs..
+
+ http://download.berlios.de/sunuo/sunuo-0.4.0.zip
+
+Max
+
+
+
+From greubel at nkey.de  Thu Dec 21 14:17:01 2006
+From: greubel at nkey.de (Maik Greubel)
+Date: Thu, 21 Dec 2006 14:17:01 +0100
+Subject: [sunuo-users] SunUO 0.4.0 released
+In-Reply-To: <20061221045816.GA28120@roonstrasse.net>
+References: <20061221045816.GA28120@roonstrasse.net>
+Message-ID: <1166707021.10983.1.camel@moon.universe.pwg>
+
+Am Donnerstag, den 21.12.2006, 05:58 +0100 schrieb Max Kellermann:
+> Hi,
+> 
+> I am proud to announce the release 0.4.0 of SunUO.  The biggest change
+> is that it includes the scripts, that means that we are fully
+> independent of RunUO 1.0 now.
+> 
+> This also means that we are able to do proper bug fixes.  SunUO 0.4.0
+> fixes numerous script bugs, too many to list here, some of them
+> critical.
+> 
+> It has become easier to install and run SunUO, since everything
+> (except the UO data files) is in the zip file now.  Three steps:
+> unzip, configure data-path, execute run.bat or run.sh (Windows /
+> Linux) - that's all you need to get a full SunUO install.
+> 
+> Have fun with it, and remember to report bugs..
+> 
+>  http://download.berlios.de/sunuo/sunuo-0.4.0.zip
+> 
+> Max
+> 
+
+Well, this sounds cool. My first question here, is it safe to replace
+the complete existing runuo directory with the content of your archive?
+
+Thanks, and thumbs up!
+
+> _______________________________________________
+> sunuo-users mailing list
+> sunuo-users at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/sunuo-users
+-- 
+Maik Greubel
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3365 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20061221/4ba196bd/attachment.bin>
+
+From max at duempel.org  Thu Dec 21 14:46:22 2006
+From: max at duempel.org (Max Kellermann)
+Date: Thu, 21 Dec 2006 14:46:22 +0100
+Subject: [sunuo-users] SunUO 0.4.0 released
+In-Reply-To: <1166707021.10983.1.camel@moon.universe.pwg>
+References: <20061221045816.GA28120@roonstrasse.net>
+	<1166707021.10983.1.camel@moon.universe.pwg>
+Message-ID: <20061221134622.GA19668@roonstrasse.net>
+
+On 2006/12/21 14:17, Maik Greubel <greubel at nkey.de> wrote:
+> Well, this sounds cool. My first question here, is it safe to
+> replace the complete existing runuo directory with the content of
+> your archive?
+
+If you plan to upgrade your shard, you can first try only with the new
+core (SunUO.exe) - the old scripts will continue to work.
+
+On the long term, I suggest that you also upgrade your scripts - this
+is however a lot of work since your scripts are probably heavily
+modified.  If you have been using an SCM like darcs, CVS or svn,
+you've won: just apply your patches to the 0.4.0 scripts.  If not, you
+have to merge your changes by hand...
+
+Max
+
+
+
+From korkuts at crilandor.com  Fri Dec 22 21:35:00 2006
+From: korkuts at crilandor.com (korkuts at crilandor.com)
+Date: Fri, 22 Dec 2006 21:35:00 +0100 (CET)
+Subject: [sunuo-users] Error in Compiling
+In-Reply-To: <1166304208.24419.6.camel@moon.universe.pwg>
+References: <18207.88.11.1.150.1166298179.squirrel@www.crilandor.com>
+	<1166304208.24419.6.camel@moon.universe.pwg>
+Message-ID: <1225.80.27.162.157.1166819700.squirrel@www.crilandor.com>
+
+
+
+> Am Samstag, den 16.12.2006, 20:42 +0100 schrieb korkuts at crilandor.com:
+>> dark:/opt/sunuo# mono SunUO.exe
+>> SunUO Version 0.3.1 http://www.sunuo.org/
+>>   on Unix 2.4.27.3, runtime 1.1.4322.2032
+>> Please make sure you have Mono 1.1.7 or newer! (mono -V
+>>
+>>
+>> 2006-12-16 19:44:52,790 INFO  Compiling library legacy, 2066 C# sources
+>> 2006-12-16 19:45:12,851 FATAL System.Exception: Compiler failed to
+>> produce
+>> the assembly. Stderr='', Stdout=''
+>
+> This may occur if the assembly file is not writable, e.g. another
+> process access the assembly. Do you did a 'ps ax' and check wether
+> another sunuo process is running?
+
+No process is running at the same time. I am running sunuo in a chroot.
+Can it happen for another different thing?
+
+>
+> --
+> Maik Greubel
+>
+>
+>
+
+
+
+
+From max at duempel.org  Tue Dec 26 12:27:01 2006
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 26 Dec 2006 12:27:01 +0100
+Subject: [sunuo-users] SunUO 0.4.1 released
+In-Reply-To: <20061221045816.GA28120@roonstrasse.net>
+References: <20061221045816.GA28120@roonstrasse.net>
+Message-ID: <20061226112701.GA28600@roonstrasse.net>
+
+On 2006/12/21 05:58, Max Kellermann <max at duempel.org> wrote:
+> I am proud to announce the release 0.4.0 of SunUO.  The biggest
+> change is that it includes the scripts, that means that we are fully
+> independent of RunUO 1.0 now.
+
+Hi again,
+
+unfortunately, I have introduced a critical data corruption bug in the
+account database loader.  This only affects users who have already
+merged my changes in scripts/legacy/Accounting/Accounts.cs - if you
+only upgraded the core, this new release is not mandatory.
+
+Meanwhile, I have been adding a lot of memory optimizations in the SVN
+trunk.  I have written a Mono profiler (like heap-buddy but with less
+overhead) which shows who creates most of the garbage, and points me
+to where it's worth to optimize.
+
+Max
+
+
+

@@ -1,0 +1,342 @@
+From brodock at gmail.com  Sun Jun 18 01:50:16 2006
+From: brodock at gmail.com (BrodocK)
+Date: Sat, 17 Jun 2006 20:50:16 -0300
+Subject: [sunuo-users] Forum
+Message-ID: <de11c8430606171650m54cd23dci385ed41ec5c0fa21@mail.gmail.com>
+
+forum is down...
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060617/c1f073b2/attachment.html>
+
+From ato at online.no  Sun Jun 18 01:56:38 2006
+From: ato at online.no (Andreas Tolfsen)
+Date: Sun, 18 Jun 2006 01:56:38 +0200
+Subject: [sunuo-users] Forum
+In-Reply-To: <de11c8430606171650m54cd23dci385ed41ec5c0fa21@mail.gmail.com>
+References: <de11c8430606171650m54cd23dci385ed41ec5c0fa21@mail.gmail.com>
+Message-ID: <20060617235638.GA4478@online.no>
+
+On Sat, Jun 17, 2006 at 08:50:16PM -0300, BrodocK wrote:
+> forum is down...
+
+Well, we both know mailing lists are much cozier anyways.
+
+-- 
+Andreas Tolfsen
+<ato at online.no>
+
+
+From ato at online.no  Sun Jun 18 01:56:38 2006
+From: ato at online.no (Andreas Tolfsen)
+Date: Sun, 18 Jun 2006 01:56:38 +0200
+Subject: [sunuo-users] Forum
+In-Reply-To: <de11c8430606171650m54cd23dci385ed41ec5c0fa21@mail.gmail.com>
+References: <de11c8430606171650m54cd23dci385ed41ec5c0fa21@mail.gmail.com>
+Message-ID: <20060617235638.GA4478@online.no>
+
+On Sat, Jun 17, 2006 at 08:50:16PM -0300, BrodocK wrote:
+> forum is down...
+
+Well, we both know mailing lists are much cozier anyways.
+
+-- 
+Andreas Tolfsen
+<ato at online.no>
+
+
+From arek75 at gmail.com  Wed Jun 21 07:20:14 2006
+From: arek75 at gmail.com (James Potts)
+Date: Wed, 21 Jun 2006 00:20:14 -0500
+Subject: [sunuo-users] SunLogin, and a note about Scripts.
+Message-ID: <7cf8dd660606202220r548c2defj8fd640cbf3a6451a@mail.gmail.com>
+
+First, SunLogin:  What do I have to do to use (and configure)
+SunLogin?  I know about setting ignore-auth-id in the config, but what
+else I need to do?  Documentation pointers would be VERY welcome here
+- the only info I was able to find is that it is able to use a
+database for accounts (I want to use the DB-accounts support, since it
+will make it easy to set up web-based account creation).
+
+Second, Scripts:  This just in from Ryan:  RunUO's scripts are
+licensed under the GPL (including scripts for RunUO 1.0, and
+user-created scripts).  Read about it at http://www.runuo.com - It's
+at the bottom of the main page, and also in the "Announcements" forum
+(use your favorite proxy if you have to :) ).  And on that note,
+should we start maintaining "Legacy" scripts for SunUO, including mods
+to get them working on mono/linux?
+
+Thanks
+
+--Arek
+
+
+From max at duempel.org  Wed Jun 21 07:32:05 2006
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 21 Jun 2006 07:32:05 +0200
+Subject: [sunuo-users] SunLogin, and a note about Scripts.
+In-Reply-To: <7cf8dd660606202220r548c2defj8fd640cbf3a6451a@mail.gmail.com>
+References: <7cf8dd660606202220r548c2defj8fd640cbf3a6451a@mail.gmail.com>
+Message-ID: <20060621053205.GA9310@roonstrasse.net>
+
+On 2006/06/21 07:20, James Potts <arek75 at gmail.com> wrote:
+> First, SunLogin:  What do I have to do to use (and configure)
+> SunLogin?  I know about setting ignore-auth-id in the config, but what
+> else I need to do?  Documentation pointers would be VERY welcome here
+> - the only info I was able to find is that it is able to use a
+> database for accounts (I want to use the DB-accounts support, since it
+> will make it easy to set up web-based account creation).
+
+SunLogin was created for Defiance and uses their crappy database
+format.  I suggest not to use it right now.  It was planned to change
+their table structure, but this hasn't been done.
+
+> Second, Scripts: This just in from Ryan: RunUO's scripts are
+> licensed under the GPL (including scripts for RunUO 1.0, and
+> user-created scripts).  Read about it at http://www.runuo.com - It's
+> at the bottom of the main page, and also in the "Announcements"
+> forum (use your favorite proxy if you have to :) ).  And on that
+> note, should we start maintaining "Legacy" scripts for SunUO,
+> including mods to get them working on mono/linux?
+
+This is very good news.  I'll be on vacation for 2 weeks, let's talk
+about that project after my return.  Please make a screenshot of that
+statement, it may be important to archive it.
+
+Max
+
+
+
+From arek75 at gmail.com  Wed Jun 21 07:52:36 2006
+From: arek75 at gmail.com (James Potts)
+Date: Wed, 21 Jun 2006 00:52:36 -0500
+Subject: [sunuo-users] SunLogin, and a note about Scripts.
+In-Reply-To: <20060621053205.GA9310@roonstrasse.net>
+References: <7cf8dd660606202220r548c2defj8fd640cbf3a6451a@mail.gmail.com>
+	 <20060621053205.GA9310@roonstrasse.net>
+Message-ID: <7cf8dd660606202252k1d1d285dsfc8a70b72acc9ad@mail.gmail.com>
+
+On 6/21/06, Max Kellermann <max at duempel.org> wrote:
+> On 2006/06/21 07:20, James Potts <arek75 at gmail.com> wrote:
+> > First, SunLogin:  What do I have to do to use (and configure)
+> > SunLogin?  I know about setting ignore-auth-id in the config, but what
+> > else I need to do?  Documentation pointers would be VERY welcome here
+> > - the only info I was able to find is that it is able to use a
+> > database for accounts (I want to use the DB-accounts support, since it
+> > will make it easy to set up web-based account creation).
+>
+> SunLogin was created for Defiance and uses their crappy database
+> format.  I suggest not to use it right now.  It was planned to change
+> their table structure, but this hasn't been done.
+>
+Ok.  I'll look into laying out a better format, then.  I really think
+that running with "AutoAccounts" enabled is a bad idea, but I don't
+really want to have to manually approve and create accounts.
+Web-based account creation (with e-mail-based confirmation) seems, to
+me, like the most reasonable alternative, and works best with a
+database.
+
+> > Second, Scripts: This just in from Ryan: RunUO's scripts are
+> > licensed under the GPL (including scripts for RunUO 1.0, and
+> > user-created scripts).  Read about it at http://www.runuo.com - It's
+> > at the bottom of the main page, and also in the "Announcements"
+> > forum (use your favorite proxy if you have to :) ).  And on that
+> > note, should we start maintaining "Legacy" scripts for SunUO,
+> > including mods to get them working on mono/linux?
+>
+> This is very good news.  I'll be on vacation for 2 weeks, let's talk
+> about that project after my return.  Please make a screenshot of that
+> statement, it may be important to archive it.
+Screenshot taken.  I'm still too "new" at C# programming to be much
+help on this front, but I'll do what I can.  Most of the work has
+already been done, tho (the only exception I can think of being the
+factions mess) - it just needs to be packaged.
+
+--Arek
+
+
+From arek75 at gmail.com  Sat Jun 24 03:06:36 2006
+From: arek75 at gmail.com (James Potts)
+Date: Fri, 23 Jun 2006 20:06:36 -0500
+Subject: [sunuo-users] Error during first startup.
+Message-ID: <7cf8dd660606231806r60b94477w931a54c26a3d9839@mail.gmail.com>
+
+I have an error that's been happening during Startup:
+===
+2006-06-23 17:57:23,546 FATAL failed to load item
+System.Exception: ***** Bad serialize on Server.Items.WoodenChair *****
+   at Server.World.LoadEntities() in c:\sunuo-0.3.1\src\World.cs:line 732
+An error was encountered while loading a saved object
+ - Type: Server.Items.WoodenChair
+ - Serial: 0xFFFFFFFF
+Delete the object? (y/n)
+===
+This is with SunUO on MS .NET 1.1 SP1.  The error also occurs using
+Mono 1.1.13.6, and I get a different error (crash, and I didn't keep a
+log) with Mono 1.1.15.  Both Mono tests are on Gentoo Linux (full ~x86
+box, plus out-of-tree kernel, headers, and glibc - Mono 1.1.15 was
+also installed from an overlay).
+
+I am not familiar enough with C#, SunUO, or RunUO to have even the
+slightest clue where to look for an answer to this problem.
+
+Note:  Using the 32-bit .NET 2.0 SunUO.exe provided with
+sunuo-0.3.1-bin did not help either.
+
+--Arek
+
+
+From arek75 at gmail.com  Sat Jun 24 05:51:28 2006
+From: arek75 at gmail.com (James Potts)
+Date: Fri, 23 Jun 2006 22:51:28 -0500
+Subject: [sunuo-users] Error during first startup.
+In-Reply-To: <de11c8430606231939n27d06a68o5d6f27602ce28f27@mail.gmail.com>
+References: <7cf8dd660606231806r60b94477w931a54c26a3d9839@mail.gmail.com>
+	 <de11c8430606231939n27d06a68o5d6f27602ce28f27@mail.gmail.com>
+Message-ID: <7cf8dd660606232051h2a1cd196u944f5d7186fb434d@mail.gmail.com>
+
+Nothing has been modified, not even Zlib.cs this time (I usually fix
+that one right off the top, but after about the third wipe/reinstall
+of SunUO trying to figure this mess out I stopped doing it), and there
+isn't a worldsave to be corrupt/broken yet (first startup, new shard).
+
+--Arek
+
+On 6/23/06, BrodocK <brodock at gmail.com> wrote:
+> looks like a bad serialization... (world save broken)
+>
+> did you modified anything?
+>
+>
+> On 6/23/06, James Potts <arek75 at gmail.com > wrote:
+> >
+> I have an error that's been happening during Startup:
+> ===
+> 2006-06-23 17:57:23,546 FATAL failed to load item
+> System.Exception: ***** Bad serialize on Server.Items.WoodenChair *****
+>    at Server.World.LoadEntities() in c:\sunuo-0.3.1\src\World.cs:line 732
+> An error was encountered while loading a saved object
+>  - Type: Server.Items.WoodenChair
+>  - Serial: 0xFFFFFFFF
+> Delete the object? (y/n)
+> ===
+> This is with SunUO on MS .NET 1.1 SP1.  The error also occurs using
+> Mono 1.1.13.6, and I get a different error (crash, and I didn't keep a
+> log) with Mono 1.1.15.  Both Mono tests are on Gentoo Linux (full ~x86
+> box, plus out-of-tree kernel, headers, and glibc - Mono 1.1.15 was
+> also installed from an overlay).
+>
+> I am not familiar enough with C#, SunUO, or RunUO to have even the
+> slightest clue where to look for an answer to this problem.
+>
+> Note:  Using the 32-bit .NET 2.0 SunUO.exe provided with
+> sunuo-0.3.1-bin did not help either.
+>
+> --Arek
+> _______________________________________________
+> sunuo-users mailing list
+> sunuo-users at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/sunuo-users
+>
+>
+
+
+From arek75 at gmail.com  Sat Jun 24 06:27:06 2006
+From: arek75 at gmail.com (James Potts)
+Date: Fri, 23 Jun 2006 23:27:06 -0500
+Subject: [sunuo-users] Error during first startup.
+In-Reply-To: <7cf8dd660606232051h2a1cd196u944f5d7186fb434d@mail.gmail.com>
+References: <7cf8dd660606231806r60b94477w931a54c26a3d9839@mail.gmail.com>
+	 <de11c8430606231939n27d06a68o5d6f27602ce28f27@mail.gmail.com>
+	 <7cf8dd660606232051h2a1cd196u944f5d7186fb434d@mail.gmail.com>
+Message-ID: <7cf8dd660606232127w4c73cdc7g15a72d242d4b0856@mail.gmail.com>
+
+crud...I just double-checked everything, and found that I had a
+"Saves" folder in my SunUO folder - which didn't belong there.  Yanked
+that, and everything now works, including a bunch of custom scripts I
+was testing.  Thanks for the pointer in the right direction, and sorry
+for wasting your time.
+
+--Arek
+
+On 6/23/06, James Potts <arek75 at gmail.com> wrote:
+> Nothing has been modified, not even Zlib.cs this time (I usually fix
+> that one right off the top, but after about the third wipe/reinstall
+> of SunUO trying to figure this mess out I stopped doing it), and there
+> isn't a worldsave to be corrupt/broken yet (first startup, new shard).
+>
+> --Arek
+>
+> On 6/23/06, BrodocK <brodock at gmail.com> wrote:
+> > looks like a bad serialization... (world save broken)
+> >
+> > did you modified anything?
+> >
+> >
+> > On 6/23/06, James Potts <arek75 at gmail.com > wrote:
+> > >
+> > I have an error that's been happening during Startup:
+> > ===
+> > 2006-06-23 17:57:23,546 FATAL failed to load item
+> > System.Exception: ***** Bad serialize on Server.Items.WoodenChair *****
+> >    at Server.World.LoadEntities() in c:\sunuo-0.3.1\src\World.cs:line 732
+> > An error was encountered while loading a saved object
+> >  - Type: Server.Items.WoodenChair
+> >  - Serial: 0xFFFFFFFF
+> > Delete the object? (y/n)
+> > ===
+> > This is with SunUO on MS .NET 1.1 SP1.  The error also occurs using
+> > Mono 1.1.13.6, and I get a different error (crash, and I didn't keep a
+> > log) with Mono 1.1.15.  Both Mono tests are on Gentoo Linux (full ~x86
+> > box, plus out-of-tree kernel, headers, and glibc - Mono 1.1.15 was
+> > also installed from an overlay).
+> >
+> > I am not familiar enough with C#, SunUO, or RunUO to have even the
+> > slightest clue where to look for an answer to this problem.
+> >
+> > Note:  Using the 32-bit .NET 2.0 SunUO.exe provided with
+> > sunuo-0.3.1-bin did not help either.
+> >
+> > --Arek
+> > _______________________________________________
+> > sunuo-users mailing list
+> > sunuo-users at lists.berlios.de
+> > http://lists.berlios.de/mailman/listinfo/sunuo-users
+> >
+> >
+>
+
+
+From arek75 at gmail.com  Mon Jun 26 14:41:44 2006
+From: arek75 at gmail.com (James Potts)
+Date: Mon, 26 Jun 2006 07:41:44 -0500
+Subject: [sunuo-users] Cascaing Overlays
+Message-ID: <7cf8dd660606260541x76dd614drd199baac943c945d@mail.gmail.com>
+
+I attempted the following in SunUO:
+<library name="legacy">
+    <overlay name="owltr"/>
+</library>
+<library name="owltr">
+    <overlay name="owltr-overrides"/>
+</library>
+<library name="owltr-overrides">
+</library>
+
+And got the following error starting SunUO:
+ERROR: Can't overlay owltr which is being used as overlay for another library.
+
+Hmmm...My question is this:  How hard would it be to implement this,
+and is there a good reason it's not already been done?  Take the above
+case in point - I have somebody else's custom script which needs to
+overlay Legacy and, in order for it to coexist with other scripts I'm
+planning on using for my server, I need to make modifications to that
+script.  I think that this case should be handled gracefully, by
+allowing me to overlay the overlay ("cascade" the 2 overlays), rather
+than requiring me to modify the first overlay directly.  Any reason
+this can't and/or shouldn't be done (other than SunUO not currently
+allowing it, of course)?
+
+--Arek
+
+

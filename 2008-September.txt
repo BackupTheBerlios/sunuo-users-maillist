@@ -1,0 +1,26 @@
+From greubel at nkey.de  Thu Sep 25 18:47:58 2008
+From: greubel at nkey.de (Maik Greubel)
+Date: Thu, 25 Sep 2008 18:47:58 +0200
+Subject: [sunuo-users] Bug in Revision 898 -> 899
+Message-ID: <48DBC0BE.4040408@nkey.de>
+
+Hello list,
+
+unfortunately there is a bug in the patch from Defiance. If we have a
+multi-page gump like the account list gump or the .go gump the gump will
+be removed after closing but the callback routine is not finished. This
+will result in the behaviour, thats not possible to create new accounts
+in the admin gump nor use the .go command.
+
+If I comment the line 6201 in Mobile.cs, which should contain
+
+m_NetState.RemoveGump(gump);
+
+the .go gump works correctly, as well as the account list to create a
+new account.
+
+Best regards
+
+Maik
+
+

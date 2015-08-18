@@ -1,0 +1,320 @@
+From greubel at nkey.de  Sun Mar  4 13:03:37 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sun, 04 Mar 2007 13:03:37 +0100
+Subject: [sunuo-users] Account problem
+Message-ID: <45EAB599.2020101@nkey.de>
+
+Hello,
+
+I have a problem, that I don't understand: sometimes if I restart the
+shard process (linux mono 1.2.x), most of the accounts created or
+sometimes all accounts are deleted. If are all deleted, I have to delete
+account.xml to create a new administrator.
+
+This problem is not! reproducable, so I can't say, where the source of
+this problem is. World Save can't be the problem, there are many saves
+between last account disconnect.
+
+I have no idea where to start analyze. May someone has an idea.
+
+-- 
+Maik Greubel
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070304/0ad0862a/attachment.bin>
+
+From max at duempel.org  Sun Mar  4 13:06:36 2007
+From: max at duempel.org (Max Kellermann)
+Date: Sun, 4 Mar 2007 13:06:36 +0100
+Subject: [sunuo-users] Account problem
+In-Reply-To: <45EAB599.2020101@nkey.de>
+References: <45EAB599.2020101@nkey.de>
+Message-ID: <20070304120636.GA17689@roonstrasse.net>
+
+On 2007/03/04 13:03, Maik Greubel <greubel at nkey.de> wrote:
+> I have a problem, that I don't understand: sometimes if I restart
+> the shard process (linux mono 1.2.x), most of the accounts created
+> or sometimes all accounts are deleted. If are all deleted, I have to
+> delete account.xml to create a new administrator.
+
+Did you save before shutting down?
+
+Max
+
+
+
+From greubel at nkey.de  Sun Mar  4 13:19:17 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sun, 04 Mar 2007 13:19:17 +0100
+Subject: [sunuo-users] Account problem
+In-Reply-To: <20070304120636.GA17689@roonstrasse.net>
+References: <45EAB599.2020101@nkey.de> <20070304120636.GA17689@roonstrasse.net>
+Message-ID: <45EAB945.4070106@nkey.de>
+
+If you mean, wether I typed [save, I have to say, no. But the last save
+was about 10 minutes before.
+
+I wrote a init script for fedora to start and stop the -service
+parametered SunUO.exe call.
+
+On stop there is no save, just a killproc command. Is that the failure?
+If so, I have a problem. I don't want to connect each time I restart the
+process. Is there a command line tool to initiate a save and reboot? If
+not, may I write one using the OrbRemote-Technology.
+
+Regards
+Maik
+
+Max Kellermann schrieb:
+> On 2007/03/04 13:03, Maik Greubel <greubel at nkey.de> wrote:
+>> I have a problem, that I don't understand: sometimes if I restart
+>> the shard process (linux mono 1.2.x), most of the accounts created
+>> or sometimes all accounts are deleted. If are all deleted, I have to
+>> delete account.xml to create a new administrator.
+> 
+> Did you save before shutting down?
+> 
+> Max
+> 
+> _______________________________________________
+> sunuo-users mailing list
+> sunuo-users at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/sunuo-users
+> 
+
+-- 
+Maik Greubel
+
+Kleinhenzstra?e 12
+97483 Eltmann
+
+Tel:    +49 09522 30 19 47
+Mobil:  0179 670 620 1
+
+Mail: greubel at nkey.de
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070304/1ae7b526/attachment.bin>
+
+From greubel at nkey.de  Sat Mar 10 13:28:29 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sat, 10 Mar 2007 13:28:29 +0100
+Subject: [sunuo-users] Simple Change in one file - complete script compiling
+Message-ID: <1173529709.2818.3.camel@moon.universe.pwg>
+
+Is it possible to modify ScriptCompiler to compile only that scripts,
+which are new or modified?
+
+This would save much time.
+-- 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3900 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070310/16c21b16/attachment.bin>
+
+From patrick-reinhardt at web.de  Sun Mar 18 02:39:16 2007
+From: patrick-reinhardt at web.de (Patrick Reinhardt)
+Date: Sun, 18 Mar 2007 02:39:16 +0100
+Subject: [sunuo-users] Simple Change in one file - complete script
+	compiling
+In-Reply-To: <1173529709.2818.3.camel@moon.universe.pwg>
+References: <1173529709.2818.3.camel@moon.universe.pwg>
+Message-ID: <45FC9844.4040109@web.de>
+
+Hello.
+
+Maik Greubel schrieb:
+> Is it possible to modify ScriptCompiler to compile only that scripts,
+> which are new or modified?
+Try to split up your scripts into libraries. Only the changed libraries 
+will be recompiled on startup.
+
+See: http://www.sunuo.org/doc/sunuo.html#why_script_libs for details.
+
+Patrick
+
+
+From patrick-reinhardt at web.de  Mon Mar 19 21:33:01 2007
+From: patrick-reinhardt at web.de (Patrick Reinhardt)
+Date: Mon, 19 Mar 2007 21:33:01 +0100
+Subject: [sunuo-users] Custom house problem on Linux was: Re: Simple Change
+ in one file - complete script compiling
+In-Reply-To: <B043C438-2008-48A7-BA0B-0189A69BBCA6@ezcomputersct.com>
+References: <1173529709.2818.3.camel@moon.universe.pwg>
+	<45FC9844.4040109@web.de>
+	<B043C438-2008-48A7-BA0B-0189A69BBCA6@ezcomputersct.com>
+Message-ID: <45FEF37D.2060500@web.de>
+
+Hi.
+
+Peter Esposito wrote:
+> Hey do you know if sunuo via linux works with custom houses yet?
+> Im dieing to run it on my bsd or linux box and ditch windows
+Yes, we successfully tested it some months ago. Your problem is probably 
+zlib related. Max discusses this in the SunUO documentation: 
+http://www.sunuo.org/doc/sunuo.html#custom_houses
+
+I added a cc to the list to let everyone participate.
+
+Patrick
+
+
+From greubel at nkey.de  Mon Mar 19 22:32:03 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Mon, 19 Mar 2007 22:32:03 +0100
+Subject: [sunuo-users] Simple Change in one file - complete
+	script	compiling
+In-Reply-To: <45FC9844.4040109@web.de>
+References: <1173529709.2818.3.camel@moon.universe.pwg>
+	<45FC9844.4040109@web.de>
+Message-ID: <45FF0153.5080204@nkey.de>
+
+
+
+Patrick Reinhardt schrieb:
+> See: http://www.sunuo.org/doc/sunuo.html#why_script_libs for details.
+
+Wow, this cool feature I didn't know. Very nice! Thanks.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070319/f9abb8bc/attachment.bin>
+
+From greubel at nkey.de  Mon Mar 19 22:37:46 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Mon, 19 Mar 2007 22:37:46 +0100
+Subject: [sunuo-users] Account problem
+In-Reply-To: <45EAB945.4070106@nkey.de>
+References: <45EAB599.2020101@nkey.de> <20070304120636.GA17689@roonstrasse.net>
+	<45EAB945.4070106@nkey.de>
+Message-ID: <45FF02AA.2030008@nkey.de>
+
+Ok, I took some investigations on this. It seems, that PlayerMobiles are
+not serialized surely. After a restart with some Chars lost, I have more
+items at world load. But that is impossible, I didn't added something.
+
+After a new restart, the accounts are deleted, too, because the char
+index doesn't exist. So the server thinks, that this account don't exist
+anymore.
+
+IMO this problem is not really an account problem, but an serializing
+problem.
+
+Do you need further information? I will investigate any hint to solve this.
+
+My restart was a clean restart from admin menu.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070319/0fc1fa2a/attachment.bin>
+
+From greubel at nkey.de  Wed Mar 28 01:35:07 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Wed, 28 Mar 2007 01:35:07 +0200
+Subject: [sunuo-users] Account problem
+In-Reply-To: <45FF02AA.2030008@nkey.de>
+References: <45EAB599.2020101@nkey.de>
+	<20070304120636.GA17689@roonstrasse.net>	<45EAB945.4070106@nkey.de>
+	<45FF02AA.2030008@nkey.de>
+Message-ID: <4609AA2B.9030801@nkey.de>
+
+Hello,
+
+I hate to repost this, but the problem is very tricky. And I don't
+understand it really, yet. I have just a small hack for this, because it
+is not nice to recreate accounts after every restart:
+
+The problem is the deserializing of accounts. I learned from debugging
+sessions, that not all accounts are readen from the accounts.xml. But
+the file structur is ok and I have no syntax error. But, and thats
+really annoying, just every second <account></account> node is read out
+using the XmlReader. In Accounts.cs in the Load() method right after
+while(reader.Read) I put a simple logging:
+
+log.InfoFormat("node: {0} ;  name: {1}", reader.NodeType, reader.Name);
+
+which only shows 4 of my 8 account node structures. I also give out the
+username of the account. After analyzing the output I saw, that it was
+only each second account node.
+
+My simple hack is putting an empty account node after each real account
+node. Example:
+
+<accounts count="8">
+        <account>
+                <username>Myname</username>
+                <cryptPassword>REMOVED</cryptPassword>
+                <flags>2</flags>
+                <created>2007-03-25T13:32:22.6970410+02:00</created>
+                <lastLogin>2007-03-27T19:59:52.8938070+02:00</lastLogin>
+                <totalGameTime>PT14H24M16.2064720S</totalGameTime>
+                <chars>
+                        <char index="0">4</char>
+                </chars>
+                <addressList count="3">
+                        <ip>x.x.x.x</ip>
+                        <ip>x.x.x.x</ip>
+                        <ip>x.x.x.x</ip>
+                </addressList>
+        </account>
+        <account></account> <<<<< Look at this
+
+
+The empty account node fixes that problem. But thats quick and dirty.
+May I find some time soon to fix this more elegant.
+
+I just want to inform you.
+
+Maik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070328/bad3efab/attachment.bin>
+
+From max at duempel.org  Wed Mar 28 07:27:40 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 28 Mar 2007 07:27:40 +0200
+Subject: [sunuo-users] Account problem
+In-Reply-To: <4609AA2B.9030801@nkey.de>
+References: <45EAB599.2020101@nkey.de> <20070304120636.GA17689@roonstrasse.net>
+	<45EAB945.4070106@nkey.de> <45FF02AA.2030008@nkey.de>
+	<4609AA2B.9030801@nkey.de>
+Message-ID: <20070328052740.GA17929@roonstrasse.net>
+
+On 2007/03/28 01:35, Maik Greubel <greubel at nkey.de> wrote:
+> which only shows 4 of my 8 account node structures. I also give out the
+> username of the account. After analyzing the output I saw, that it was
+> only each second account node.
+> 
+> My simple hack is putting an empty account node after each real account
+> node. Example:
+
+This is a known bug in SunUO 0.4.0.  The current version is 0.4.3.
+Please make sure your scripts have been updated.
+
+Max
+
+
+

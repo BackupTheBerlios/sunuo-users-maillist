@@ -1,0 +1,433 @@
+From greubel at nkey.de  Wed Aug  1 19:25:10 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Wed, 01 Aug 2007 19:25:10 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor)
+ and LuaInterface.dlls with SunUO
+In-Reply-To: <20070730132026.167200@gmx.net>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>	<20070729163344.123540@gmx.net>	<20070730081643.GB24267@roonstrasse.net>
+	<20070730132026.167200@gmx.net>
+Message-ID: <46B0C1F6.7030800@nkey.de>
+
+Florian Fischer schrieb:
+Your stack trace: It seems to me, that you have to put the
+TransferServer.dll as entry into the Data\Assemblies.cfg. Is that .dll
+precompiled?
+
+> I also have another question. I try to overlay some distribution 
+> scripts. I'm able to change existing scripts and overlay
+> them. Thats fine.
+> But what do i do when i have an to add an dependency? For example
+> i modify the PlayerMobile.cs to add something like this:
+> "using Server.Engines.XmlSpawner2;"
+
+Any dependency you need for legacy scripts, have to be in legacy folder.
+The split into libraries option is only useful for independent packages,
+like UOArchitect, which you use and this will work.
+
+> But sunuo cant compile this, because it needs xmlspawner2 first.
+> But XMLSpawner needs the legacy.dll first. How do i do this?
+> Adding this to the distribution files also doesn't work.
+
+As said, just put the scripts on which the legacy scripts depend to the
+other legacy scripts. sunuo is able to solve dependencies by it self, if
+they are in the same location.
+
+
+Regards
+Maik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070801/1bd1849e/attachment.bin>
+
+From seabeams at gmx.de  Thu Aug  2 09:23:17 2007
+From: seabeams at gmx.de (Florian Fischer)
+Date: Thu, 02 Aug 2007 09:23:17 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor)
+ and LuaInterface.dlls with SunUO
+In-Reply-To: <46B0C1F6.7030800@nkey.de>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>
+	<20070729163344.123540@gmx.net>	<20070730081643.GB24267@roonstrasse.net>
+	<20070730132026.167200@gmx.net> <46B0C1F6.7030800@nkey.de>
+Message-ID: <20070802072317.237260@gmx.net>
+
+Thanks for your answer. I already tried to put the TransferServer.dll into the Assemblies.cfg. But this brings up the same problem. I think this precompiled dll isn't compatible with mono.
+I already ask ArteGordon (the maker of SpawnEditor) to release his source. He is willing todo it after a source cleanup.
+
+The second sollution solves my problems. I thought, that sunuo is able to solve dependencies with the libraries option in comparsion with overlay scripts. This would be the more clean sollution i think.
+But now it works for now. Thanks much.
+
+regards
+
+SiENcE
+
+-------- Original-Nachricht --------
+Datum: Wed, 01 Aug 2007 19:25:10 +0200
+Von: Maik Greubel <greubel at nkey.de>
+An: Florian Fischer <seabeams at gmx.de>
+CC: sunuo-users at lists.berlios.de
+Betreff: Re: [sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+
+> Florian Fischer schrieb:
+> Your stack trace: It seems to me, that you have to put the
+> TransferServer.dll as entry into the Data\Assemblies.cfg. Is that .dll
+> precompiled?
+> 
+> > I also have another question. I try to overlay some distribution 
+> > scripts. I'm able to change existing scripts and overlay
+> > them. Thats fine.
+> > But what do i do when i have an to add an dependency? For example
+> > i modify the PlayerMobile.cs to add something like this:
+> > "using Server.Engines.XmlSpawner2;"
+> 
+> Any dependency you need for legacy scripts, have to be in legacy folder.
+> The split into libraries option is only useful for independent packages,
+> like UOArchitect, which you use and this will work.
+> 
+> > But sunuo cant compile this, because it needs xmlspawner2 first.
+> > But XMLSpawner needs the legacy.dll first. How do i do this?
+> > Adding this to the distribution files also doesn't work.
+> 
+> As said, just put the scripts on which the legacy scripts depend to the
+> other legacy scripts. sunuo is able to solve dependencies by it self, if
+> they are in the same location.
+> 
+> 
+> Regards
+> Maik
+
+-- 
+Psssst! Schon vom neuen GMX MultiMessenger geh?rt?
+Der kanns mit allen: http://www.gmx.net/de/go/multimessenger
+
+
+From max at duempel.org  Wed Aug  8 11:05:40 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 8 Aug 2007 11:05:40 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor)
+	and LuaInterface.dlls with SunUO
+In-Reply-To: <20070802072317.237260@gmx.net>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>
+	<20070729163344.123540@gmx.net>
+	<20070730081643.GB24267@roonstrasse.net>
+	<20070730132026.167200@gmx.net> <46B0C1F6.7030800@nkey.de>
+	<20070802072317.237260@gmx.net>
+Message-ID: <20070808090540.GA31981@roonstrasse.net>
+
+On 2007/08/02 09:23, Florian Fischer <seabeams at gmx.de> wrote:
+> Thanks for your answer. I already tried to put the
+> TransferServer.dll into the Assemblies.cfg. But this brings up the
+> same problem. I think this precompiled dll isn't compatible with
+> mono.
+
+So is TransferServer.dll a CIL binary, or is it a native (i.e. Win32)
+binary?  I am unable to download it myself, because I am banned on
+runuo.com.
+
+> I already ask ArteGordon (the maker of SpawnEditor) to release his
+> source. He is willing todo it after a source cleanup.
+
+Good.  I cannot (and will not even try to) provide support for closed
+source libraries.  In fact, it is illegal to distribute precompiled
+DLLs for SunUO without source.
+
+Max
+
+
+
+From greubel at nkey.de  Wed Aug  8 18:51:22 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Wed, 08 Aug 2007 18:51:22 +0200
+Subject: [sunuo-users] problems using Transferserver (xmlspawner editor)
+ and LuaInterface.dlls with SunUO
+In-Reply-To: <20070808090540.GA31981@roonstrasse.net>
+References: <mailman.0.1185709490.22657.sunuo-users@lists.berlios.de>	<20070729163344.123540@gmx.net>	<20070730081643.GB24267@roonstrasse.net>	<20070730132026.167200@gmx.net>
+	<46B0C1F6.7030800@nkey.de>	<20070802072317.237260@gmx.net>
+	<20070808090540.GA31981@roonstrasse.net>
+Message-ID: <46B9F48A.70706@nkey.de>
+
+
+
+Max Kellermann schrieb:
+> So is TransferServer.dll a CIL binary, or is it a native (i.e. Win32)
+> binary?  I am unable to download it myself, because I am banned on
+> runuo.com.
+
+No, the source for this seems to be available at
+http://xmlspawner.15.forumer.com/index.php?act=Attach&type=post&id=2929
+
+You can download it, its not runuo.
+
+But I think, if you just compile the source of TransferServer with mono,
+it should work. It seems to me, that Florian used the RunUO 2.0 dll
+direct from archive.
+
+-- 
+Maik Greubel
+
+Kleinhenzstra?e 12
+97483 Eltmann
+
+Tel:    +49 09522 30 19 47
+Mobil:  0179 670 620 1
+
+Mail: greubel at nkey.de
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070808/c8d22cc2/attachment.bin>
+
+From alphaomega.admin at gmail.com  Thu Aug  9 19:35:43 2007
+From: alphaomega.admin at gmail.com (Admin Admin)
+Date: Thu, 9 Aug 2007 13:35:43 -0400
+Subject: [sunuo-users] SunUO support of newest clients
+Message-ID: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+
+Any chance of SunUO being updated to support 6.0.1.10 or later versions? I'd
+help but I'm just a casual scripter.
+
+
+Also, I realize there were mailing lists long before forums existed but why
+haven't you guys moved to a forum? It seems a much easier medium to hold
+discussions. Just curious :)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070809/174750f3/attachment.html>
+
+From alphaomega.admin at gmail.com  Mon Aug 13 14:08:30 2007
+From: alphaomega.admin at gmail.com (Admin Admin)
+Date: Mon, 13 Aug 2007 08:08:30 -0400
+Subject: [sunuo-users] Anyone Alive?
+Message-ID: <eed9d1550708130508u361092d2w9be587f641f17434@mail.gmail.com>
+
+So is it just me and one other guy that still frequents this mailing list?
+Is the development of SunUO still moving forward or should I look at
+compiling runuo 2.0 under mono for my linux fix. I'm not trying to start a
+flamewar sunuo vs runuo, just wondering if I should continue with this
+project?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070813/793a18ca/attachment.html>
+
+From greubel at nkey.de  Mon Aug 13 19:02:25 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Mon, 13 Aug 2007 19:02:25 +0200
+Subject: [sunuo-users] SunUO support of newest clients
+In-Reply-To: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+References: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+Message-ID: <46C08EA1.9000408@nkey.de>
+
+I don't understand your question. What is the problem with client
+version 6.0.1.10 and sunuo?
+
+Admin Admin schrieb:
+> Any chance of SunUO being updated to support 6.0.1.10 or later versions? I'd
+> help but I'm just a casual scripter.
+
+Regards
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3984 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070813/a1c992f5/attachment.bin>
+
+From max at duempel.org  Wed Aug 15 08:35:08 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 15 Aug 2007 08:35:08 +0200
+Subject: [sunuo-users] SunUO support of newest clients
+In-Reply-To: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+References: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+Message-ID: <20070815063508.GA10004@roonstrasse.net>
+
+On 2007/08/09 19:35, Admin Admin <alphaomega.admin at gmail.com> wrote:
+> Any chance of SunUO being updated to support 6.0.1.10 or later versions? I'd
+> help but I'm just a casual scripter.
+
+Hello Admin,
+
+there will be support for newer clients very soon.  Maik extracted a
+patch from the RunUO 2.0 Subversion repository, which I will apply to
+the SunUO sources this week.
+
+> Also, I realize there were mailing lists long before forums existed
+> but why haven't you guys moved to a forum? It seems a much easier
+> medium to hold discussions. Just curious :)
+
+There used to be a forum, which was closed for some reason, but I
+don't care.  I still do not understand how people think that a web
+based forum is better than a mailing list.  With mailing lists, I can
+use my favorite mailer and my favorite message editor, but with a web
+based solution, I'm heavily restricted.  If anyone feels there should
+be a forum, then go ahead and create one.
+
+Max
+
+
+From alphaomega.admin at gmail.com  Wed Aug 15 14:37:03 2007
+From: alphaomega.admin at gmail.com (Admin Admin)
+Date: Wed, 15 Aug 2007 08:37:03 -0400
+Subject: [sunuo-users] SunUO support of newest clients
+In-Reply-To: <20070815063508.GA10004@roonstrasse.net>
+References: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+	<20070815063508.GA10004@roonstrasse.net>
+Message-ID: <eed9d1550708150537x5f246a82va88682584eeab38f@mail.gmail.com>
+
+Thanks for looking into this guys. The attitudes here are so refreshing
+after hanging out at "that other place" for a few years. Long live SunUO!
+
+On 8/15/07, Max Kellermann <max at duempel.org> wrote:
+>
+> On 2007/08/09 19:35, Admin Admin <alphaomega.admin at gmail.com> wrote:
+> > Any chance of SunUO being updated to support 6.0.1.10 or later versions?
+> I'd
+> > help but I'm just a casual scripter.
+>
+> Hello Admin,
+>
+> there will be support for newer clients very soon.  Maik extracted a
+> patch from the RunUO 2.0 Subversion repository, which I will apply to
+> the SunUO sources this week.
+>
+> > Also, I realize there were mailing lists long before forums existed
+> > but why haven't you guys moved to a forum? It seems a much easier
+> > medium to hold discussions. Just curious :)
+>
+> There used to be a forum, which was closed for some reason, but I
+> don't care.  I still do not understand how people think that a web
+> based forum is better than a mailing list.  With mailing lists, I can
+> use my favorite mailer and my favorite message editor, but with a web
+> based solution, I'm heavily restricted.  If anyone feels there should
+> be a forum, then go ahead and create one.
+>
+> Max
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070815/9f7481e1/attachment.html>
+
+From alphaomega.admin at gmail.com  Wed Aug 15 15:01:56 2007
+From: alphaomega.admin at gmail.com (Admin Admin)
+Date: Wed, 15 Aug 2007 09:01:56 -0400
+Subject: [sunuo-users] SunUO support of newest clients
+In-Reply-To: <eed9d1550708150537x5f246a82va88682584eeab38f@mail.gmail.com>
+References: <eed9d1550708091035w36d81b83x7b4cbe6170e39c11@mail.gmail.com>
+	<20070815063508.GA10004@roonstrasse.net>
+	<eed9d1550708150537x5f246a82va88682584eeab38f@mail.gmail.com>
+Message-ID: <eed9d1550708150601r42afd1dcoef802f2b88344481@mail.gmail.com>
+
+Max, Everyone,
+
+I've created a forum at http://sunuo.freeforums.org/ if any of you would
+like to take a look. I'll be happy to turn over administration of the forum
+to Max or someone he designates if this takes off. I understand I may be in
+the minority when it comes to mailing list vs forums so we can just see how
+this plays out.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070815/c574fcbf/attachment.html>
+
+From max at duempel.org  Mon Aug 20 20:38:46 2007
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 20 Aug 2007 20:38:46 +0200
+Subject: [sunuo-users] SunUO 0.5.0
+Message-ID: <20070820183846.GA11288@roonstrasse.net>
+
+Hi all,
+
+the new SunUO version supports the new UO client version 6.
+
+ http://www.sunuo.org/download.html
+ http://download.berlios.de/sunuo/sunuo-0.5.0.zip
+
+The patch was pulled from RunUO's public subversion repository.  Many
+thanks to the RunUO team for developing this patch.
+
+Good to see that the Open Source principle works for us.  Last year,
+Mark replaced RunUO's hard-coded 10ms sleep() invocation with SunUO's
+tickless event-based system.
+
+Max
+
+
+From decoreba at gmail.com  Wed Aug 22 15:07:58 2007
+From: decoreba at gmail.com (Fraga)
+Date: Wed, 22 Aug 2007 10:07:58 -0300
+Subject: [sunuo-users] SunUO 0.5.0 System.net.Socket exception
+Message-ID: <91e1db100708220607j58b6587dta3daf2fc957e774d@mail.gmail.com>
+
+Max,
+
+How are you my friend?
+
+I've just updated to 0.5.0 and I'm having the following issue:
+
+2007-08-22 09:56:48,641 ERROR System.Net.Sockets.SocketException: Connection
+reset by peer
+  at
+System.Net.Sockets.Socket+SocketAsyncResult.CheckIfThrowDelayedException ()
+[0x00000]
+  at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000]
+  at Server.Network.NetState.OnReceive (IAsyncResult asyncResult) [0x00000]
+
+I never had error like this...
+
+Got any idea why it drops the client?
+
+I'm also having lag problem...
+
+runnning on Linux, kernel 2.6....
+
+Thanks
+
+
+On 8/20/07, Max Kellermann <max at duempel.org> wrote:
+>
+> Hi all,
+>
+> the new SunUO version supports the new UO client version 6.
+>
+> http://www.sunuo.org/download.html
+> http://download.berlios.de/sunuo/sunuo-0.5.0.zip
+>
+> The patch was pulled from RunUO's public subversion repository.  Many
+> thanks to the RunUO team for developing this patch.
+>
+> Good to see that the Open Source principle works for us.  Last year,
+> Mark replaced RunUO's hard-coded 10ms sleep() invocation with SunUO's
+> tickless event-based system.
+>
+> Max
+> _______________________________________________
+> sunuo-users mailing list
+> sunuo-users at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/sunuo-users
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070822/634bd9b3/attachment.html>
+
+From alphaomega.admin at gmail.com  Thu Aug 23 15:05:33 2007
+From: alphaomega.admin at gmail.com (Admin Argo)
+Date: Thu, 23 Aug 2007 09:05:33 -0400
+Subject: [sunuo-users] Visit the forums!
+Message-ID: <eed9d1550708230605x786561b9l7987cf2552b23ab2@mail.gmail.com>
+
+Hey guys, if you haven't joined in on all the fun at the forums please visit
+us. We're up to 14 users now and have a pretty good community of posters
+already.
+
+Come see whats up!  http://sunuo.freeforums.org
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070823/87d0a3d1/attachment.html>
+

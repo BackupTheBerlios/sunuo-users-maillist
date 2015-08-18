@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Error during first startup.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2006-June/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Error%20during%20first%20startup.&In-Reply-To=%3C7cf8dd660606231806r60b94477w931a54c26a3d9839%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000022.html">
+   <LINK REL="Next"  HREF="000024.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Error during first startup.</H1>
+    <B>James Potts</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Error%20during%20first%20startup.&In-Reply-To=%3C7cf8dd660606231806r60b94477w931a54c26a3d9839%40mail.gmail.com%3E"
+       TITLE="[sunuo-users] Error during first startup.">arek75 at gmail.com
+       </A><BR>
+    <I>Sat Jun 24 03:06:36 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000022.html">[sunuo-users] SunLogin, and a note about Scripts.
+</A></li>
+        <LI>Next message: <A HREF="000024.html">[sunuo-users] Error during first startup.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have an error that's been happening during Startup:
+===
+2006-06-23 17:57:23,546 FATAL failed to load item
+System.Exception: ***** Bad serialize on Server.Items.WoodenChair *****
+   at Server.World.LoadEntities() in c:\sunuo-0.3.1\src\World.cs:line 732
+An error was encountered while loading a saved object
+ - Type: Server.Items.WoodenChair
+ - Serial: 0xFFFFFFFF
+Delete the object? (y/n)
+===
+This is with SunUO on MS .NET 1.1 SP1.  The error also occurs using
+Mono 1.1.13.6, and I get a different error (crash, and I didn't keep a
+log) with Mono 1.1.15.  Both Mono tests are on Gentoo Linux (full ~x86
+box, plus out-of-tree kernel, headers, and glibc - Mono 1.1.15 was
+also installed from an overlay).
+
+I am not familiar enough with C#, SunUO, or RunUO to have even the
+slightest clue where to look for an answer to this problem.
+
+Note:  Using the 32-bit .NET 2.0 SunUO.exe provided with
+sunuo-0.3.1-bin did not help either.
+
+--Arek
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000022.html">[sunuo-users] SunLogin, and a note about Scripts.
+</A></li>
+	<LI>Next message: <A HREF="000024.html">[sunuo-users] Error during first startup.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

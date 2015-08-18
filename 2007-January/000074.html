@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Shard connecting problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Shard%20connecting%20problem&In-Reply-To=%3C20070104221822.GA11345%40roonstrasse.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000073.html">
+   <LINK REL="Next"  HREF="000075.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Shard connecting problem</H1>
+    <B>Max Kellermann</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Shard%20connecting%20problem&In-Reply-To=%3C20070104221822.GA11345%40roonstrasse.net%3E"
+       TITLE="[sunuo-users] Shard connecting problem">max at duempel.org
+       </A><BR>
+    <I>Thu Jan  4 23:18:22 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000073.html">[sunuo-users] Shard connecting problem
+</A></li>
+        <LI>Next message: <A HREF="000075.html">[sunuo-users] Shard connecting problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2007/01/04 22:49, Maik Greubel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">greubel at nkey.de</A>&gt; wrote:
+[...]
+&gt;<i> We only did a port forwarding to port 2593 to a local ip address e.g.
+</I>&gt;<i> 192.168.2.100.
+</I>[...]
+
+Good stuff!  Thanks for all the information.
+
+&gt;<i> As you can see, the server listens on 0.0.0.0 INADDR_ANY, that should
+</I>&gt;<i> include the forwarded address from the dsl router.
+</I>
+No, it does not.  0.0.0.0 means it listens on all IPs this machine
+owns, but this machine does _not_ own the DSL router's IP.  But that
+doesn't matter since the DSL router rewrites the IP (DNAT).
+
+
+Ok, now a basic introduction to the UO protocol, maybe this helps you
+understand: client logs into login server, login server sends server
+list.  Client chooses game server from list.  Login server tells
+client which IP to connect to.
+
+This is where it becomes interesting: which IP did the login server
+send?  Its own?  That is, 192.168.2.100.  Now your brother's client
+connects to 192.168.2.100.  But that doesn't work since 192.168.2.100
+is a private IP.
+
+What you have to do is make SunUO send the &quot;official&quot; DSL IP.
+
+One solution would be to edit the &quot;Address&quot; variable and enter your
+DynDNS hostname there.  Which Misc/ServerList.cs are you using,
+RunUO's or SunUO's?
+
+Max
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000073.html">[sunuo-users] Shard connecting problem
+</A></li>
+	<LI>Next message: <A HREF="000075.html">[sunuo-users] Shard connecting problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

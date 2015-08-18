@@ -1,0 +1,428 @@
+From sdiushlshvidsuhgpqiipo at gmail.com  Tue May  9 17:27:58 2006
+From: sdiushlshvidsuhgpqiipo at gmail.com (Meatspin.com)
+Date: Tue, 09 May 2006 06:27:58 -0900
+Subject: [sunuo-users] Fmqapkbhqxl
+Message-ID: <38175ADD.919AC10@gmail.com>
+
+Unser neues Forum geht nun online:
+
+http://www.meatspin.com/
+
+
+Besuchen Sie uns! 
+
+
+
+From Telefonsexipjwfsy at arcormail.de  Wed May 10 16:10:26 2006
+From: Telefonsexipjwfsy at arcormail.de (Marta)
+Date: Wed, 10 May 2006 06:10:26 -0800
+Subject: [sunuo-users] Habe Dich nicht erreicht. Schade. Ich bin rasiert und dauerfeucht.
+Message-ID: <3C83D002.DCFF04B@arcormail.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060510/a11eace9/attachment.html>
+
+From martyn at theendofhistether.org.uk  Wed May 10 16:41:01 2006
+From: martyn at theendofhistether.org.uk (Martyn)
+Date: Wed, 10 May 2006 15:41:01 +0100
+Subject: [sunuo-users] Unhandled Exception: System.NullReferenceException: Object reference
+ not set to an instance of an object
+Message-ID: <4461FB7D.1060406@theendofhistether.org.uk>
+
+Here's the output and it doesn't give me much of a clue :(
+
+    SunUO Version 0.3.1 http://www.sunuo.org/
+      on Unix 2.6.12.4, runtime 1.1.4322.573
+    Please make sure you have Mono 1.1.7 or newer! (mono -V)
+     
+     
+    Unhandled Exception: System.NullReferenceException: Object reference
+    not set to an instance of an object
+     
+    ** ERROR **: file mini-exceptions.c: line 631
+    (mono_handle_exception): assertion failed: (jit_tls->abort_func)
+    aborting...
+
+run as root (to ensure no permission problems), strace output below :-
+
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGRTMIN (Unknown signal 32) @ 0 (0) ---
+    28165 --- SIGSEGV (Segmentation fault) @ 0 (0) ---
+    28165 +++ killed by SIGKILL +++
+
+I'm sure I've got something messed up, have installed all of mono (inc. 
+mcs and -devel etc.), and wine too, just incase, RunUO 1.0 and have 
+datafiles ready for it when it wants them... just haven't been asked for 
+them yet :(
+
+Any clues would be appreciated.
+
+--
+Martyn
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060510/74490d22/attachment.html>
+
+From max at duempel.org  Fri May 12 11:38:25 2006
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 12 May 2006 11:38:25 +0200
+Subject: [sunuo-users] Unhandled Exception: System.NullReferenceException: Object reference not set to an instance of an object
+In-Reply-To: <4461FB7D.1060406@theendofhistether.org.uk>
+References: <4461FB7D.1060406@theendofhistether.org.uk>
+Message-ID: <20060512093825.GA29162@roonstrasse.net>
+
+On 2006/05/10 16:41, Martyn <martyn at theendofhistether.org.uk> wrote:
+> Here's the output and it doesn't give me much of a clue :(
+> 
+>    SunUO Version 0.3.1 http://www.sunuo.org/
+>      on Unix 2.6.12.4, runtime 1.1.4322.573
+>    Please make sure you have Mono 1.1.7 or newer! (mono -V)
+>     
+>     
+>    Unhandled Exception: System.NullReferenceException: Object reference
+>    not set to an instance of an object
+>     
+>    ** ERROR **: file mini-exceptions.c: line 631
+>    (mono_handle_exception): assertion failed: (jit_tls->abort_func)
+>    aborting...
+
+Try running mono without optimizations and without JIT.  I can only
+analyze the problem when I have a stack trace of SunUO.
+
+> I'm sure I've got something messed up, have installed all of mono
+> (inc.  mcs and -devel etc.), and wine too, just incase, RunUO 1.0
+> and have datafiles ready for it when it wants them... just haven't
+> been asked for them yet :(
+
+You don't need wine.
+
+Max
+
+
+
+From sadao-y at nightat.com  Sun May 14 04:41:50 2006
+From: sadao-y at nightat.com (Jesus Johnson)
+Date: Sun, 14 May 2006 10:41:50 +0800
+Subject: [sunuo-users] Corel Draw
+Message-ID: <000001c6772a$d0ad7c00$0100007f@localhost>
+
+
+Special Offer
+Adobe Video Collection
+Adobe Premiere 1.5 Professional
+Adobe After Effects 6.5 Professional
+Adobe Audition 1.5
+Adobe Encore DVD 1.5
+$149.95
+More Info >>  Microsoft 2 in 1
+MS Windows XP Pro
+MS Office 2003 Pro
+
+
+
+
+
+$99.95
+More Info >>  Microsoft + Adobe 3 in 1
+
+MS Windows XP Pro
+MS Office 2003 Pro
+Adobe Acrobat 7.0 Professional
+
+
+
+$149.95
+More Info >>
+
+Bestsellers
+ Microsoft Office Professional Edition 2003
+Rating:  6 reviews
+Retail price: $550.00
+
+You save: $480.05 (87%)
+Our price: $69.95
+    [Add to cart]
+
+ Microsoft Windows XP Professional
+Rating:  8 reviews
+Retail price: $200.00
+
+You save: $150.05 (75%)
+
+Our price: $49.95
+    [Add to cart]
+
+ Adobe Photoshop CS2 V 9.0
+Rating:  3 reviews
+Retail price: $599.00
+
+You save: $529.05 (88%)
+
+Our price: $69.95
+    [Add to cart]
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060514/79a1efac/attachment.html>
+
+From swtyg at nitlink.com  Sun May 14 12:50:04 2006
+From: swtyg at nitlink.com (Dawson Scott)
+Date: Sun, 14 May 2006 01:50:04 -0900
+Subject: [sunuo-users] What IS 0EM Software And Why D0 You Care?
+Message-ID: <000001c677e4$6e18b680$0100007f@localhost>
+
+
+Special Offer
+Adobe Video Collection
+Adobe Premiere 1.5 Professional
+Adobe After Effects 6.5 Professional
+Adobe Audition 1.5
+Adobe Encore DVD 1.5
+$149.95
+More Info >>  Microsoft 2 in 1
+MS Windows XP Pro
+MS Office 2003 Pro
+
+
+
+
+
+$99.95
+More Info >>  Microsoft + Adobe 3 in 1
+
+MS Windows XP Pro
+MS Office 2003 Pro
+Adobe Acrobat 7.0 Professional
+
+
+
+$149.95
+More Info >>
+
+Bestsellers
+ Microsoft Office Professional Edition 2003
+Rating:  6 reviews
+Retail price: $550.00
+
+You save: $480.05 (87%)
+Our price: $69.95
+    [Add to cart]
+
+ Microsoft Windows XP Professional
+Rating:  8 reviews
+Retail price: $200.00
+
+You save: $150.05 (75%)
+
+Our price: $49.95
+    [Add to cart]
+
+ Adobe Photoshop CS2 V 9.0
+Rating:  3 reviews
+Retail price: $599.00
+
+You save: $529.05 (88%)
+
+Our price: $69.95
+    [Add to cart]
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060514/df4d1da2/attachment.html>
+
+From pjriggs at koalamusik.com  Mon May 15 18:02:44 2006
+From: pjriggs at koalamusik.com (Keegan Brooks)
+Date: Mon, 15 May 2006 21:02:44 +0500
+Subject: [sunuo-users] Hey buddy, whats up
+Message-ID: <000001c6785e$d1dfc580$0100007f@localhost>
+
+grew sullen Black angry mouths, the clouds
+swallowed up the sun The air was dense with
+suppressed excitement The wind howled through
+the long corridors and sobbed  and whisperedin 
+the secret recesses
+ 
+  
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060515/e9679f72/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: top.jpg
+Type: image/jpeg
+Size: 8387 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060515/e9679f72/attachment.jpg>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: down.gif
+Type: image/gif
+Size: 7523 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060515/e9679f72/attachment.gif>
+
+From cassandrabassett at computermail.net  Mon May 15 18:13:08 2006
+From: cassandrabassett at computermail.net (milo reyes)
+Date: Mon, 15 May 2006 16:13:08 +0000
+Subject: [sunuo-users] Re: Your family., crystal-streaming
+Message-ID: <00ea01c67839$f83f3a00$3338385f@zahnsp>
+
+Need money?
+Your credit doesn't matter to us!
+Want IMMEDIATE cash to spend ANY way you like, or simply wish to LOWER your monthly payments by a third or more?
+Simply fill out this one-minute form...
+http://zapate.com/a62f/
+
+virgin parchment self-determining rum shrub
+mean-spiritedness sea peat auditors-general
+face painting treason-hatching krym-saghyz
+ore-hoisting pie rack ivory-finished
+ampere balance bull-necked sea flea
+tea can German-built thin-veiled
+spear-fallen strength-bringing axle pinner
+paint-filler soft-dressed grass-woven
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060515/4290f854/attachment.html>
+
+From glennahairston at neolocation.com  Mon May 15 22:53:02 2006
+From: glennahairston at neolocation.com (edee grimes)
+Date: Mon, 15 May 2006 20:53:02 +0000
+Subject: [sunuo-users] Re: Your money., sheep washer
+Message-ID: <007001c67861$84b12300$2c83b7c3@orsd>
+
+Need money?
+Your credit doesn't matter to us!
+Want IMMEDIATE cash to spend ANY way you like, or simply wish to LOWER your monthly payments by a third or more?
+Simply fill out this one-minute form...
+http://clareto.com/a62f/
+
+blood mole Consistory court tub front
+jump wire gable-shaped self-pollination
+shrill-tongued food preservative green-eyed
+fairwater sleeve putter-forth dog-footed
+color striker difference engine blue-breasted darter
+tear-forced dredge bucket pumping engine
+mid-time board combiner cell body
+lilac gray rear-directed co-owner
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060515/e2ce5d74/attachment.html>
+
+From siannadrew at vstre4a.com  Tue May 16 09:10:35 2006
+From: siannadrew at vstre4a.com (cleve jimenez)
+Date: Tue, 16 May 2006 07:10:35 +0000
+Subject: [sunuo-users] Re: Your money., Occupation day
+Message-ID: <007001c678b7$5d854080$2a53831d@dpsgndjw>
+
+Need money?
+Your credit doesn't matter to us!
+Want IMMEDIATE cash to spend ANY way you like, or simply wish to LOWER your monthly payments by a third or more?
+Simply fill out this one-minute form...
+http://hazpel.com/a62f/
+
+Un-mexican thin-legged mud puddle
+bunchflower family shoulder bone triplicate-ternate
+deep-damasked calm-minded pressure group
+sand rat swan-sweet sand hopper
+drum dam saber-shaped four-way
+wormwood oil slack-baked lucken gowan
+tithe proctor well-initiated card-counting
+world-animating cap rock turnip shell
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060516/da6d066e/attachment.html>
+
+From dgp at joanfalk.com  Tue May 16 20:06:42 2006
+From: dgp at joanfalk.com (Ali Hayes)
+Date: Tue, 16 May 2006 13:06:42 -0500
+Subject: [sunuo-users] Test the sweets of the life yourself
+Message-ID: <000001c6793e$61a87100$0100007f@localhost>
+
+In a trice without warning the face  of nature 
+grew sullen Black angry mouths, the clouds
+swallowed up the sun The air was dense with
+suppressed excitement The wind howled through
+the long corridors and sobbed  and whisperedin 
+the secret recesses
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060516/3b53164e/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Left.gif
+Type: image/gif
+Size: 3545 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060516/3b53164e/attachment.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: top.jpg
+Type: image/jpeg
+Size: 9309 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060516/3b53164e/attachment.jpg>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: table.gif
+Type: image/gif
+Size: 7760 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060516/3b53164e/attachment-0001.gif>
+
+From lamondmccall at pechati.com  Tue May 16 19:48:54 2006
+From: lamondmccall at pechati.com (dusty ruiz)
+Date: Tue, 16 May 2006 17:48:54 +0000
+Subject: [sunuo-users] Re: Your family., bulk-pile
+Message-ID: <003301c6790f$ac5ec480$1ee6bf11@urwvlezr>
+
+Need money?
+Your credit doesn't matter to us!
+Want IMMEDIATE cash to spend ANY way you like, or simply wish to LOWER your monthly payments by a third or more?
+Simply fill out this one-minute form...
+http://betiom.com/a62f/
+
+tunnel vault bamboo partridge cacao butter
+closed-circuit winding open-end bond mastodon locomotive
+small-town sky-god activity coefficient
+quasi attempt pie knife duck call
+amyloid degeneration vacant-minded rush daffodil
+sneezewort tansy wound parasite face urn
+ader wax V tool two-deck vessel
+tall-tussocked wing bay juniper berry
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060516/8f120566/attachment.html>
+
+From lauritzmercer at overture.com  Wed May 17 05:37:09 2006
+From: lauritzmercer at overture.com (luelle cox)
+Date: Wed, 17 May 2006 03:37:09 +0000
+Subject: [sunuo-users] Re: Your wealth., meat ax
+Message-ID: <00ce01c67962$549d7900$b6100b74@tpjtsdu>
+
+Need money?
+Your credit doesn't matter to us!
+Want IMMEDIATE cash to spend ANY way you like, or simply wish to LOWER your monthly payments by a third or more?
+Simply fill out this one-minute form...
+http://jetjamp.com/a62f/
+
+apple mint kikuyu grass Etowah mound
+stay pin guard ring side-winded
+stope drill milk-blended wry-necked
+Limoges ware lizard bronze sky-clad
+furnace stoker greenish-blue sad-looking
+necessity money ground detector selective-head
+service pipe coffee-scented plume-stripped
+admiralty brass sixth-grade clean-speaking
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060517/ca14fe4d/attachment.html>
+

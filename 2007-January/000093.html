@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Dynamic Hostname Shardlist patch
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Dynamic%20Hostname%20Shardlist%20patch&In-Reply-To=%3C45BF9B77.8050503%40nkey.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000092.html">
+   <LINK REL="Next"  HREF="000095.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Dynamic Hostname Shardlist patch</H1>
+    <B>Maik Greubel</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Dynamic%20Hostname%20Shardlist%20patch&In-Reply-To=%3C45BF9B77.8050503%40nkey.de%3E"
+       TITLE="[sunuo-users] Dynamic Hostname Shardlist patch">greubel at nkey.de
+       </A><BR>
+    <I>Tue Jan 30 20:24:39 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000092.html">[sunuo-users] Dynamic Hostname Shardlist patch
+</A></li>
+        <LI>Next message: <A HREF="000095.html">[sunuo-users] Dynamic Hostname Shardlist patch
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#93">[ date ]</a>
+              <a href="thread.html#93">[ thread ]</a>
+              <a href="subject.html#93">[ subject ]</a>
+              <a href="author.html#93">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+Max Kellermann schrieb:
+&gt;<i> - I'm planning to do a really &quot;easy&quot; solution to the &quot;SunUO on dial-in
+</I>&gt;<i>   IP&quot; problem, which I have to experiment with.  Until that is
+</I>&gt;<i>   accomplished, it's good to have your patch!
+</I>
+Well, that only be possible, if the login server knows, that it is
+behind a NAT-Firewall. If I am right, NAT will results in a modified
+IP-Packet, which have a flag field. That may be a solution for this. I
+don't know, wether .NET or mono have the ability to handle network
+packages in raw mode to find this flag.
+
+But this should be a very &quot;easy&quot; solutiond ;-)
+
+&gt;<i> - now something about your patch.  I'd prefer to make the GameServer
+</I>&gt;<i>   object do all the lookup and the decision whether to look up the IP
+</I>&gt;<i>   every time.  It seems more natural and OO to me.
+</I>
+Yes, I will review it another time to make it more natural. Thanks for
+that feedback.
+
+&gt;<i> - consider that a lagging DNS server will make the shard pause until
+</I>&gt;<i>   the DNS request is finished (keep in mind that services like DynDNS
+</I>&gt;<i>   make the DNS server forward all requests to the authoritative DynDNS
+</I>&gt;<i>   server, which adds even more lag)
+</I>
+Yes, thats a side effect of dynamic dns, which all services have. My
+solution is imho just important for local tests, a &quot;production&quot;-server
+should not have a dynamic ip or hostname and just do not need such a
+feature.
+
+Maik
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070130/9a79966b/attachment.bin">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070130/9a79966b/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000092.html">[sunuo-users] Dynamic Hostname Shardlist patch
+</A></li>
+	<LI>Next message: <A HREF="000095.html">[sunuo-users] Dynamic Hostname Shardlist patch
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#93">[ date ]</a>
+              <a href="thread.html#93">[ thread ]</a>
+              <a href="subject.html#93">[ subject ]</a>
+              <a href="author.html#93">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

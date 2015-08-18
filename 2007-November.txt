@@ -1,0 +1,90 @@
+From Brent.Glines at HILL.af.mil  Thu Nov 29 20:26:55 2007
+From: Brent.Glines at HILL.af.mil (Glines Brent Civ 518 SMXS/MXDEE)
+Date: Thu, 29 Nov 2007 12:26:55 -0700
+Subject: [sunuo-users] New user
+Message-ID: <79AD519FBACBDD4EABB89F5C1C6F4336F6F13C@VFUTMLAO02.Enterprise.afmc.ds.af.mil>
+
+Greetings
+
+ 
+
+I am experiencing some problems getting started.  First, I downloaded
+and installed the UO client (Mondain's Legacy, I think was the version
+name) from FilePlanet, but when I started it to patch the client up, the
+patcher choked when it tried to apply the first patch, and quit with an
+error message saying that I might not be using a valid client.  What
+client should I be using?
+
+ 
+
+I also have a question about editing the ./etc/sunuo.xml file.  The
+example in the documentation seems to presume a Linux system for the
+data-path example (<data-path>/usr/local/games/uo</data-path>), but I am
+running a Windows XP system.  I entered something like
+<data-path>c:/Program Files/uo</data-path>.  SunUO didn't barf when I
+launched it, but neither did it find the client when I started it and
+tried to enter a user name and password.  In the client, the message I
+got seemed to indicate that it tried and failed to log into the regular
+game.
+ 
+Perhaps this is because I am not using a valid client, either because I
+have the wrong client, or perhaps because the client I have failed to
+patch, but if there is some other configuration step I should be
+performing, or if I have screwed up the <data-path> declaration, it
+isn't obvious from your documentation.
+ 
+Since SunUO supports both Windows and Linux, it would be helpful to
+provide example for both platforms in the documentation.
+ 
+Thanks
+ 
+Owain
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20071129/bc9573a6/attachment.html>
+
+From max at duempel.org  Fri Nov 30 10:29:21 2007
+From: max at duempel.org (Max Kellermann)
+Date: Fri, 30 Nov 2007 10:29:21 +0100
+Subject: [sunuo-users] New user
+In-Reply-To: <79AD519FBACBDD4EABB89F5C1C6F4336F6F13C@VFUTMLAO02.Enterprise.afmc.ds.af.mil>
+References: <79AD519FBACBDD4EABB89F5C1C6F4336F6F13C@VFUTMLAO02.Enterprise.afmc.ds.af.mil>
+Message-ID: <20071130092921.GA16169@swift.blarg.de>
+
+Hi,
+
+On 2007/11/29 20:26, Glines Brent Civ 518 SMXS/MXDEE <Brent.Glines at HILL.af.mil> wrote:
+> I am experiencing some problems getting started.  First, I
+> downloaded and installed the UO client (Mondain's Legacy, I think
+> was the version name) from FilePlanet, but when I started it to
+> patch the client up, the patcher choked when it tried to apply the
+> first patch, and quit with an error message saying that I might not
+> be using a valid client.  What client should I be using?
+
+SunUO is not involved in patching the UO client, so I'm sorry I cannot
+help with that.  It's important however to disable encryption before
+you try to log in to SunUO.
+
+> I also have a question about editing the ./etc/sunuo.xml file.  The
+> example in the documentation seems to presume a Linux system for the
+> data-path example (<data-path>/usr/local/games/uo</data-path>), but
+> I am running a Windows XP system.  I entered something like
+> <data-path>c:/Program Files/uo</data-path>.  SunUO didn't barf when
+> I launched it, but neither did it find the client when I started it
+> and tried to enter a user name and password.  In the client, the
+> message I got seemed to indicate that it tried and failed to log
+> into the regular game.
+
+I believe the slash '/' is not a valid path separator on windows,
+i.e. the path you entered might be invalid.  If you experience errors,
+please provide all relevant error messages.
+
+> Since SunUO supports both Windows and Linux, it would be helpful to
+> provide example for both platforms in the documentation.
+
+Good idea, I will add an example path for windows.
+
+Max
+
+
+

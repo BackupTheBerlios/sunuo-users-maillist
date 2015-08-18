@@ -1,0 +1,85 @@
+From Gandalf at mystical-unicorn.net  Tue Sep  5 23:10:14 2006
+From: Gandalf at mystical-unicorn.net (Gandalf)
+Date: Tue, 5 Sep 2006 16:10:14 -0500
+Subject: [sunuo-users] Running shard for first time
+Message-ID: <20060905211043.164C1738C1@bat.berlios.de>
+
+I have just installed SunUO according to the directions on the website. I am
+coming up with the following errors.....
+
+ 
+
+ 
+
+ 
+
+2006-09-05 16:03:58,530 INFO  Compiling library legacy, 2066 C# sources
+
+2006-09-05 16:04:12,313 ERROR Compilation failed (4 errors, 0 warnings)
+
+2006-09-05 16:04:12,313 ERROR
+/home/******/sunuo/Scripts/Engines/MyRunUO/DatabaseCommandQueue.cs: CS0234:
+(line 5, column 7) The type or namespace name `Odbc' does not exist in the
+namespace `System.Data'. Are you missing an assembly reference?
+
+2006-09-05 16:04:12,313 ERROR
+/home/******/sunuo/Scripts/Engines/MyRunUO/DatabaseCommandQueue.cs: CS0246:
+(line 5, column 1) The type or namespace name `System.Data.Odbc' could not
+be found. Are you missing a using directive or an assembly reference?
+
+2006-09-05 16:04:12,314 ERROR
+/home/******/sunuo/Scripts/Engines/MyRunUO/DatabaseCommandQueue.cs: CS0234:
+(line 5, column 7) The type or namespace name `Odbc' does not exist in the
+namespace `System.Data'. Are you missing an assembly reference?
+
+2006-09-05 16:04:12,314 ERROR
+/home/******/sunuo/Scripts/Engines/MyRunUO/DatabaseCommandQueue.cs: CS0246:
+(line 5, column 1) The type or namespace name `System.Data.Odbc' could not
+be found. Are you missing a using directive or an assembly reference?
+
+ 
+
+ 
+
+ 
+
+I made sure libgdiplus was installed and correctly. I also downloaded
+System.Windows.Forms.dll, System.Data.dll, System.Web.dll and made sure they
+were named correctly.  I  have been told that the Reports and MyRunUO
+folders are not necessary but I would like to have the capability of the
+reports and such. It would be greatly appreciated if someone knew how to fix
+this.  Thank you in Advance.
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060905/ec876f76/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image001.jpg
+Type: image/jpeg
+Size: 2950 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20060905/ec876f76/attachment.jpg>
+
+From max at duempel.org  Tue Sep  5 23:15:42 2006
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 5 Sep 2006 23:15:42 +0200
+Subject: [sunuo-users] Running shard for first time
+In-Reply-To: <20060905211043.164C1738C1@bat.berlios.de>
+References: <20060905211043.164C1738C1@bat.berlios.de>
+Message-ID: <20060905211542.GA14268@roonstrasse.net>
+
+On 2006/09/05 23:10, Gandalf <Gandalf at mystical-unicorn.net> wrote:
+> 2006-09-05 16:04:12,313 ERROR
+> /home/******/sunuo/Scripts/Engines/MyRunUO/DatabaseCommandQueue.cs: CS0234:
+> (line 5, column 7) The type or namespace name `Odbc' does not exist in the
+> namespace `System.Data'. Are you missing an assembly reference?
+
+Is "System.Data.dll" in Data/Assemblies.cfg?
+
+Max
+
+
+

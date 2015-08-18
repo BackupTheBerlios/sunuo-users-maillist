@@ -1,0 +1,27 @@
+From max at duempel.org  Sun Feb  5 21:24:35 2006
+From: max at duempel.org (Max Kellermann)
+Date: Sun, 5 Feb 2006 21:24:35 +0100
+Subject: [sunuo-users] SunUO 0.3.0 is released!
+Message-ID: <20060205202435.GA9072@roonstrasse.net>
+
+Hi,
+
+today, the SunUO project celebrates its first birthday. On February
+2nd, 2005, SunUO 0.1.0 was released.  Today, I sent the 500th commit
+to the subversion repository (generously hosted by BerliOS) which
+happens to be the release of version 0.3.0.
+
+Major changes:
+
+- optimized memory usage, mostly by lazy allocation
+- less CPU usage and lower latency by using mutexes instead of a fixed
+- sleep time
+- 64 bit support (.NET 2.0) - the binary release now includes a .EXE
+  for Windows x64
+
+http://www.sunuo.org/download.html
+
+Max
+
+
+

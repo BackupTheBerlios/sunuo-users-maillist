@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Multis
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Multis&In-Reply-To=%3C002501c7b34c%244b76ed00%240802a8c0%40andreewe0feef9%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000122.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Multis</H1>
+    <B>Gmail</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Multis&In-Reply-To=%3C002501c7b34c%244b76ed00%240802a8c0%40andreewe0feef9%3E"
+       TITLE="[sunuo-users] Multis">andreew18 at gmail.com
+       </A><BR>
+    <I>Wed Jun 20 17:04:24 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000122.html">[sunuo-users] startup problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>After I downloaded a new pure binary of SunUO 0.4.4 and while I tried to place a house or a boat I got an error at sunuo's console:
+
+2007-06-20 16:43:19,488 FATAL Exception disarmed in target 0x92F &quot;QD&quot; &gt; Server.Multis.Deeds.HousePlacementTarget &gt; Server.Targeting.LandTarget System.TypeInitializationException: The type initializer for &quot;Server.MultiData&quot; threw an exception. ---&gt; System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
+   at System.IO.__Error.EndOfFile()
+   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
+   at System.IO.BinaryReader.ReadInt32()
+   at Server.MultiData..cctor() in i:\cygwin\home\max\svn\sunuo\src\MultiData.cs :line 105
+   --- End of inner exception stack trace ---
+   at Server.MultiData.GetComponents(Int32 multiID)
+   at Server.Items.BaseMulti.get_Components() in i:\cygwin\home\max\svn\sunuo\src\Items\BaseMulti.cs:line 81
+   at Server.Map.OnEnter(Item item) in i:\cygwin\home\max\svn\sunuo\src\Map.cs:line 744
+   at Server.Item.MoveToWorld(Point3D location, Map map) in i:\cygwin\home\max\svn\sunuo\src\Item.cs:line 1097
+   at Server.Multis.Deeds.HouseDeed.OnPlacement(Mobile from, Point3D p) in c:\Documents and Settings\Andreew1\Desktop\sunuo-0.4.4\sunuo-0.4.4\Scripts\Multis\Dee
+ds.cs:line 170
+   at Server.Multis.Deeds.HousePlacementTarget.OnTarget(Mobile from, Object o) in c:\Documents and Settings\Andreew1\Desktop\sunuo-0.4.4\sunuo-0.4.4\Scripts\Mul
+tis\Deeds.cs:line 33
+   at Server.Targeting.Target.Invoke(Mobile from, Object targeted) in i:\cygwin\home\max\svn\sunuo\src\Targeting\Target.cs:line 287
+   at erver.Network.PacketHandlers.TargetResponse(NetState state, PacketReader pvSrc) in i:\cygwin\home\max\svn\sunuo\src\Network\PacketHandlers.cs:line 1158
+
+In Linux all works fine, but not in Windows 
+Zlib.dll is in main folder, zlib.cs isn't igored in config xml
+
+Anyone can help?
+
+Andreew
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070620/fd57306f/attachment.html">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070620/fd57306f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000122.html">[sunuo-users] startup problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

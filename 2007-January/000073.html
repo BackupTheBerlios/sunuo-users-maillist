@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Shard connecting problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Shard%20connecting%20problem&In-Reply-To=%3C459D7680.7060501%40nkey.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000070.html">
+   <LINK REL="Next"  HREF="000074.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Shard connecting problem</H1>
+    <B>Maik Greubel</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Shard%20connecting%20problem&In-Reply-To=%3C459D7680.7060501%40nkey.de%3E"
+       TITLE="[sunuo-users] Shard connecting problem">greubel at nkey.de
+       </A><BR>
+    <I>Thu Jan  4 22:49:52 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000070.html">[sunuo-users] Shard connecting problem
+</A></li>
+        <LI>Next message: <A HREF="000074.html">[sunuo-users] Shard connecting problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+Max Kellermann schrieb:
+&gt;<i> On 2007/01/01 17:32, Maik Greubel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">greubel at nkey.de</A>&gt; wrote:
+</I>&gt;&gt;<i> may this question is a double, but we have a problem connecting sunuo
+</I>&gt;&gt;<i> behind a DSL router. With RunUO this worked well, we only forward port
+</I>&gt;&gt;<i> 2593 on the router to the internal ip address.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What to do with that?
+</I>&gt;<i> 
+</I>&gt;<i> Please provide more information about the nature of your problem.  We
+</I>&gt;<i> cannot help you with just &quot;problem connecting sunuo&quot;.
+</I>
+Ok, we want to test at a local shard, we use svn to share the script
+sources.
+
+We only did a port forwarding to port 2593 to a local ip address e.g.
+192.168.2.100. That worked well at runuo. We use a dynamic dns record at
+dyndns.org. Except the uodata-files-directory we did not any chances to
+the configuration file sunuo.xml in the etc folder.
+
+We get a short connect, the shard list is shown. If I click on my test
+shard, the message &quot;Connecting&quot; appears and nothing happen.
+
+This is vise versa, if my brother wants to connect to my local server
+and if I want to connect to my brothers server.
+
+In the log there is shown, that I connect but about a second after the
+disconnect is shown:
+
+=== snip ===
+SunUO Version 0.4.1 <A HREF="http://www.sunuo.org/">http://www.sunuo.org/</A>
+   on Microsoft Windows NT 5.1.2600.0, runtime 1.1.4322.573
+
+ 2007-01-04 22:31:25,828 INFO  Loaded binary library legacy
+ 2007-01-04 22:31:26,078 INFO  Loaded binary library profiler
+ 2007-01-04 22:31:26,093 INFO  Library core verified: 4 items, 0 mobiles
+ 2007-01-04 22:31:29,687 INFO  Library legacy verified: 1654 items, 435
+mobiles
+ 2007-01-04 22:31:29,687 INFO  Library profiler verified: 0 items, 0
+mobiles
+ 2007-01-04 22:31:29,687 INFO  All libraries verified: 1658 items, 435
+mobiles)
+ 2007-01-04 22:31:33,046 INFO  Loading world
+ 2007-01-04 22:33:04,031 INFO  loaded 4 accounts
+ 2007-01-04 22:33:08,000 INFO  World loaded: 1248404 items, 1456 mobiles
+(94.9 seconds)
+ 2007-01-04 22:33:43,406 INFO  Loading regions
+ 2007-01-04 22:34:09,718 INFO  Finished loading regions
+ 2007-01-04 22:34:12,375 INFO  Listening on 0.0.0.0:2593
+ 2007-01-04 22:34:13,296 INFO  SunUO initialized, entering main loop
+ 2007-01-04 22:39:27,171 INFO  Saving world
+ 2007-01-04 22:40:01,734 INFO  Entities saved in 34.5 seconds.
+ 2007-01-04 22:40:05,218 INFO  World saved in 38.0 seconds.
+ 2007-01-04 22:44:36,812 INFO  Saving world
+ 2007-01-04 22:44:41,921 INFO  Entities saved in 5.1 seconds.
+ 2007-01-04 22:44:43,890 INFO  World saved in 7.1 seconds.
+ 2007-01-04 22:45:24,250 INFO  Client: 84.170.70.191: Connected. [1 Online]
+ 2007-01-04 22:45:24,718 INFO  Login: 84.170.70.191: Valid credentials
+for 'User'
+ 2007-01-04 22:45:30,921 INFO  Client: 84.170.70.191: Disconnected. [0
+Online] [User]
+
+== /snip ===
+
+As you can see, the server listens on 0.0.0.0 INADDR_ANY, that should
+include the forwarded address from the dsl router.
+
+&gt;<i>From local LAN a user can connect to the server.
+</I>
+If you need further information, please let me know.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070104/c3311e65/attachment.bin">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070104/c3311e65/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000070.html">[sunuo-users] Shard connecting problem
+</A></li>
+	<LI>Next message: <A HREF="000074.html">[sunuo-users] Shard connecting problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

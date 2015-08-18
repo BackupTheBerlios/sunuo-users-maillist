@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Problem with bootstrap, tiledata.mul not found
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Problem%20with%20bootstrap%2C%20tiledata.mul%20not%20found&In-Reply-To=%3C53184.84.220.96.9.1168387294.squirrel%40webmail.bolognainformatica.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000083.html">
+   <LINK REL="Next"  HREF="000085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Problem with bootstrap, tiledata.mul not found</H1>
+    <B>ml at tassoman.com</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Problem%20with%20bootstrap%2C%20tiledata.mul%20not%20found&In-Reply-To=%3C53184.84.220.96.9.1168387294.squirrel%40webmail.bolognainformatica.com%3E"
+       TITLE="[sunuo-users] Problem with bootstrap, tiledata.mul not found">ml at tassoman.com
+       </A><BR>
+    <I>Wed Jan 10 01:01:34 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000083.html">[sunuo-users] Dynamic Hostnames as GameServer
+</A></li>
+        <LI>Next message: <A HREF="000085.html">[sunuo-users] Problem with bootstrap, tiledata.mul not found
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello, I've compiled from sources sunuo for a power mac installation.
+
+I'm still getting problems with shard boot, it can't find tiledata.mul.
+
+I've set right data-path into xml configuration. This is teh output:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">tassoman at cubotto</A>:~/uoml/sunuo$ ./run.sh
+SunUO Version 0.4.3 <A HREF="http://www.sunuo.org/">http://www.sunuo.org/</A>
+  on Unix 2.6.17.10, runtime 1.1.4322.2032
+
+2007-01-10 00:54:03,570 WARN  library legacy does not exist
+2007-01-10 00:54:03,710 INFO  Library core verified: 4 items, 0 mobiles
+2007-01-10 00:54:03,711 INFO  All libraries verified: 4 items, 0 mobiles)
+2007-01-10 00:54:03,720 WARN  Warning: data file TileData.mul not found
+2007-01-10 00:54:03,725 FATAL System.Exception: TileData.mul was not found
+  at Server.TileData.Configure () [0x0013e] in
+/home/tassoman/uoml/sunuo/src/TileData.cs:288
+  at Server.Core.Start (Boolean repair) [0x000c3] in
+/home/tassoman/uoml/sunuo/src/Main.cs:404
+  at Server.Bootstrap.Main (System.String[] args) [0x0026a] in
+/home/tassoman/uoml/sunuo/src/Bootstrap.cs:147
+SunUO.exe exited with status 1
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">tassoman at cubotto</A>:~/uoml/sunuo$ uname -a
+Linux cubotto 2.6.17-10-powerpc #2 Tue Dec 5 22:00:09 UTC 2006 ppc GNU/Linux
+
+System is ubuntu edgy on a power mac G4 cube
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000083.html">[sunuo-users] Dynamic Hostnames as GameServer
+</A></li>
+	<LI>Next message: <A HREF="000085.html">[sunuo-users] Problem with bootstrap, tiledata.mul not found
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

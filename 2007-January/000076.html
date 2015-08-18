@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Shard connecting problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Shard%20connecting%20problem&In-Reply-To=%3C45A05A18.1080208%40nkey.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000075.html">
+   <LINK REL="Next"  HREF="000077.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Shard connecting problem</H1>
+    <B>Maik Greubel</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Shard%20connecting%20problem&In-Reply-To=%3C45A05A18.1080208%40nkey.de%3E"
+       TITLE="[sunuo-users] Shard connecting problem">greubel at nkey.de
+       </A><BR>
+    <I>Sun Jan  7 03:25:28 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000075.html">[sunuo-users] Shard connecting problem
+</A></li>
+        <LI>Next message: <A HREF="000077.html">[sunuo-users] Shard connecting problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok, I have found the undocumented solution for this:
+
+Fill into sunuo.xml the following xml elements:
+
+=== snip ===
+  &lt;server-list&gt;
+    &lt;game-server&gt;
+      &lt;name&gt;Shardname&lt;/name&gt;
+      &lt;address&gt;hostname:portnumber&lt;/address&gt;
+    &lt;/game-server&gt;
+  &lt;/server-list&gt;
+=== /snip ===
+
+
+This should be a direct element under &lt;sunuo-config&gt;, I have written it
+directly before &lt;/sunuo-config&gt;.
+
+You can also post more than one &lt;game-server&gt; each one will append to
+the shard list after account logon.
+
+But many thanks
+
+Maik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070107/12f0c4fd/attachment.bin">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070107/12f0c4fd/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000075.html">[sunuo-users] Shard connecting problem
+</A></li>
+	<LI>Next message: <A HREF="000077.html">[sunuo-users] Shard connecting problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,1041 @@
+From greubel at nkey.de  Mon Jan  1 17:32:35 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Mon, 01 Jan 2007 17:32:35 +0100
+Subject: [sunuo-users] Shard connecting problem
+Message-ID: <1167669155.2748.7.camel@moon.universe.pwg>
+
+Hello,
+
+may this question is a double, but we have a problem connecting sunuo
+behind a DSL router. With RunUO this worked well, we only forward port
+2593 on the router to the internal ip address.
+
+What to do with that?
+
+Thanks Maik
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3365 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070101/14161e10/attachment.bin>
+
+From max at duempel.org  Wed Jan  3 14:12:46 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 3 Jan 2007 14:12:46 +0100
+Subject: [sunuo-users] Shard connecting problem
+In-Reply-To: <1167669155.2748.7.camel@moon.universe.pwg>
+References: <1167669155.2748.7.camel@moon.universe.pwg>
+Message-ID: <20070103131246.GD18326@roonstrasse.net>
+
+On 2007/01/01 17:32, Maik Greubel <greubel at nkey.de> wrote:
+> may this question is a double, but we have a problem connecting sunuo
+> behind a DSL router. With RunUO this worked well, we only forward port
+> 2593 on the router to the internal ip address.
+> 
+> What to do with that?
+
+Please provide more information about the nature of your problem.  We
+cannot help you with just "problem connecting sunuo".
+
+Max
+
+
+
+From elglasmelse at gto.net  Thu Jan  4 20:17:51 2007
+From: elglasmelse at gto.net (Peter Melse)
+Date: Thu, 4 Jan 2007 14:17:51 -0500
+Subject: [sunuo-users] Shard Connection Problem
+In-Reply-To: <mailman.9.1167908409.5161.sunuo-users@lists.berlios.de>
+Message-ID: <000001c73035$07666720$6601a8c0@schubert>
+
+I believe I am experiencing the same issue. One error I receive is "cannot
+connect to game server" is it still necessary to bind a c# script to your
+external IP address with SunUO 4.0.1? (I'm writing English documentation for
+this version as I get it working on ubuntu.)
+
+-----Original Message-----
+From: sunuo-users-bounces at lists.berlios.de
+[mailto:sunuo-users-bounces at lists.berlios.de] On Behalf Of
+sunuo-users-request at lists.berlios.de
+Sent: Thursday, January 04, 2007 6:00 AM
+To: sunuo-users at lists.berlios.de
+Subject: sunuo-users Digest, Vol 6, Issue 2
+
+Send sunuo-users mailing list submissions to
+	sunuo-users at lists.berlios.de
+
+To subscribe or unsubscribe via the World Wide Web, visit
+	https://lists.berlios.de/mailman/listinfo/sunuo-users
+or, via email, send a message with subject or body 'help' to
+	sunuo-users-request at lists.berlios.de
+
+You can reach the person managing the list at
+	sunuo-users-owner at lists.berlios.de
+
+When replying, please edit your Subject line so it is more specific
+than "Re: Contents of sunuo-users digest..."
+
+
+Today's Topics:
+
+   1. Re: Shard connecting problem (Max Kellermann)
+
+
+----------------------------------------------------------------------
+
+Message: 1
+Date: Wed, 3 Jan 2007 14:12:46 +0100
+From: Max Kellermann <max at duempel.org>
+Subject: Re: [sunuo-users] Shard connecting problem
+To: Maik Greubel <greubel at nkey.de>
+Cc: sunuo-users <sunuo-users at lists.berlios.de>
+Message-ID: <20070103131246.GD18326 at roonstrasse.net>
+Content-Type: text/plain; charset=us-ascii
+
+On 2007/01/01 17:32, Maik Greubel <greubel at nkey.de> wrote:
+> may this question is a double, but we have a problem connecting sunuo
+> behind a DSL router. With RunUO this worked well, we only forward port
+> 2593 on the router to the internal ip address.
+> 
+> What to do with that?
+
+Please provide more information about the nature of your problem.  We
+cannot help you with just "problem connecting sunuo".
+
+Max
+
+
+
+------------------------------
+
+_______________________________________________
+sunuo-users mailing list
+sunuo-users at lists.berlios.de
+https://lists.berlios.de/mailman/listinfo/sunuo-users
+
+
+End of sunuo-users Digest, Vol 6, Issue 2
+*****************************************
+
+-- 
+No virus found in this incoming message.
+Checked by AVG Free Edition.
+Version: 7.5.432 / Virus Database: 268.16.4/615 - Release Date: 1/3/2007
+1:34 PM
+ 
+
+-- 
+No virus found in this outgoing message.
+Checked by AVG Free Edition.
+Version: 7.5.432 / Virus Database: 268.16.4/615 - Release Date: 1/3/2007
+1:34 PM
+ 
+
+
+
+From max at duempel.org  Thu Jan  4 20:46:21 2007
+From: max at duempel.org (Max Kellermann)
+Date: Thu, 4 Jan 2007 20:46:21 +0100
+Subject: [sunuo-users] Shard Connection Problem
+In-Reply-To: <000001c73035$07666720$6601a8c0@schubert>
+References: <mailman.9.1167908409.5161.sunuo-users@lists.berlios.de>
+	<000001c73035$07666720$6601a8c0@schubert>
+Message-ID: <20070104194621.GB28796@roonstrasse.net>
+
+On 2007/01/04 20:17, Peter Melse <elglasmelse at gto.net> wrote:
+> I believe I am experiencing the same issue. One error I receive is
+> "cannot connect to game server" is it still necessary to bind a c#
+> script to your external IP address with SunUO 4.0.1? (I'm writing
+> English documentation for this version as I get it working on
+> ubuntu.)
+
+Seriously, I don't understand your question.  What C# script do you
+mean?  What is your "external IP"?  If you're asking questions
+regarding SunUO's network setup, please describe your local network
+and provide excerpts from your configuration file.
+
+Max
+
+
+
+From greubel at nkey.de  Thu Jan  4 22:49:52 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Thu, 04 Jan 2007 22:49:52 +0100
+Subject: [sunuo-users] Shard connecting problem
+In-Reply-To: <20070103131246.GD18326@roonstrasse.net>
+References: <1167669155.2748.7.camel@moon.universe.pwg>
+	<20070103131246.GD18326@roonstrasse.net>
+Message-ID: <459D7680.7060501@nkey.de>
+
+
+
+Max Kellermann schrieb:
+> On 2007/01/01 17:32, Maik Greubel <greubel at nkey.de> wrote:
+>> may this question is a double, but we have a problem connecting sunuo
+>> behind a DSL router. With RunUO this worked well, we only forward port
+>> 2593 on the router to the internal ip address.
+>>
+>> What to do with that?
+> 
+> Please provide more information about the nature of your problem.  We
+> cannot help you with just "problem connecting sunuo".
+
+Ok, we want to test at a local shard, we use svn to share the script
+sources.
+
+We only did a port forwarding to port 2593 to a local ip address e.g.
+192.168.2.100. That worked well at runuo. We use a dynamic dns record at
+dyndns.org. Except the uodata-files-directory we did not any chances to
+the configuration file sunuo.xml in the etc folder.
+
+We get a short connect, the shard list is shown. If I click on my test
+shard, the message "Connecting" appears and nothing happen.
+
+This is vise versa, if my brother wants to connect to my local server
+and if I want to connect to my brothers server.
+
+In the log there is shown, that I connect but about a second after the
+disconnect is shown:
+
+=== snip ===
+SunUO Version 0.4.1 http://www.sunuo.org/
+   on Microsoft Windows NT 5.1.2600.0, runtime 1.1.4322.573
+
+ 2007-01-04 22:31:25,828 INFO  Loaded binary library legacy
+ 2007-01-04 22:31:26,078 INFO  Loaded binary library profiler
+ 2007-01-04 22:31:26,093 INFO  Library core verified: 4 items, 0 mobiles
+ 2007-01-04 22:31:29,687 INFO  Library legacy verified: 1654 items, 435
+mobiles
+ 2007-01-04 22:31:29,687 INFO  Library profiler verified: 0 items, 0
+mobiles
+ 2007-01-04 22:31:29,687 INFO  All libraries verified: 1658 items, 435
+mobiles)
+ 2007-01-04 22:31:33,046 INFO  Loading world
+ 2007-01-04 22:33:04,031 INFO  loaded 4 accounts
+ 2007-01-04 22:33:08,000 INFO  World loaded: 1248404 items, 1456 mobiles
+(94.9 seconds)
+ 2007-01-04 22:33:43,406 INFO  Loading regions
+ 2007-01-04 22:34:09,718 INFO  Finished loading regions
+ 2007-01-04 22:34:12,375 INFO  Listening on 0.0.0.0:2593
+ 2007-01-04 22:34:13,296 INFO  SunUO initialized, entering main loop
+ 2007-01-04 22:39:27,171 INFO  Saving world
+ 2007-01-04 22:40:01,734 INFO  Entities saved in 34.5 seconds.
+ 2007-01-04 22:40:05,218 INFO  World saved in 38.0 seconds.
+ 2007-01-04 22:44:36,812 INFO  Saving world
+ 2007-01-04 22:44:41,921 INFO  Entities saved in 5.1 seconds.
+ 2007-01-04 22:44:43,890 INFO  World saved in 7.1 seconds.
+ 2007-01-04 22:45:24,250 INFO  Client: 84.170.70.191: Connected. [1 Online]
+ 2007-01-04 22:45:24,718 INFO  Login: 84.170.70.191: Valid credentials
+for 'User'
+ 2007-01-04 22:45:30,921 INFO  Client: 84.170.70.191: Disconnected. [0
+Online] [User]
+
+== /snip ===
+
+As you can see, the server listens on 0.0.0.0 INADDR_ANY, that should
+include the forwarded address from the dsl router.
+
+>From local LAN a user can connect to the server.
+
+If you need further information, please let me know.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070104/c3311e65/attachment.bin>
+
+From max at duempel.org  Thu Jan  4 23:18:22 2007
+From: max at duempel.org (Max Kellermann)
+Date: Thu, 4 Jan 2007 23:18:22 +0100
+Subject: [sunuo-users] Shard connecting problem
+In-Reply-To: <459D7680.7060501@nkey.de>
+References: <1167669155.2748.7.camel@moon.universe.pwg>
+	<20070103131246.GD18326@roonstrasse.net> <459D7680.7060501@nkey.de>
+Message-ID: <20070104221822.GA11345@roonstrasse.net>
+
+On 2007/01/04 22:49, Maik Greubel <greubel at nkey.de> wrote:
+[...]
+> We only did a port forwarding to port 2593 to a local ip address e.g.
+> 192.168.2.100.
+[...]
+
+Good stuff!  Thanks for all the information.
+
+> As you can see, the server listens on 0.0.0.0 INADDR_ANY, that should
+> include the forwarded address from the dsl router.
+
+No, it does not.  0.0.0.0 means it listens on all IPs this machine
+owns, but this machine does _not_ own the DSL router's IP.  But that
+doesn't matter since the DSL router rewrites the IP (DNAT).
+
+
+Ok, now a basic introduction to the UO protocol, maybe this helps you
+understand: client logs into login server, login server sends server
+list.  Client chooses game server from list.  Login server tells
+client which IP to connect to.
+
+This is where it becomes interesting: which IP did the login server
+send?  Its own?  That is, 192.168.2.100.  Now your brother's client
+connects to 192.168.2.100.  But that doesn't work since 192.168.2.100
+is a private IP.
+
+What you have to do is make SunUO send the "official" DSL IP.
+
+One solution would be to edit the "Address" variable and enter your
+DynDNS hostname there.  Which Misc/ServerList.cs are you using,
+RunUO's or SunUO's?
+
+Max
+
+
+
+From greubel at nkey.de  Fri Jan  5 20:33:44 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Fri, 05 Jan 2007 20:33:44 +0100
+Subject: [sunuo-users] Shard connecting problem
+In-Reply-To: <20070104221822.GA11345@roonstrasse.net>
+References: <1167669155.2748.7.camel@moon.universe.pwg>
+	<20070103131246.GD18326@roonstrasse.net> <459D7680.7060501@nkey.de>
+	<20070104221822.GA11345@roonstrasse.net>
+Message-ID: <459EA818.2070901@nkey.de>
+
+
+
+Max Kellermann schrieb:
+> No, it does not.  0.0.0.0 means it listens on all IPs this machine
+> owns, but this machine does _not_ own the DSL router's IP.  But that
+> doesn't matter since the DSL router rewrites the IP (DNAT).
+
+Right, in this special case, the uo server never should know, that the
+packet comes from outside the LAN. Because the source address of a
+packet in direction to the server will get the routers internal address
+(the nature of network address translation). This is the fact on which
+my meaning that 0.0.0.0 listens on any address :-)
+
+> Ok, now a basic introduction to the UO protocol, maybe this helps you
+> understand: client logs into login server, login server sends server
+> list.  Client chooses game server from list.  Login server tells
+> client which IP to connect to.
+
+Yes, yesterday I did some investigations and Core.Config.GameServers
+should do the trick. On RunUO I had to fix the Address to my DynDNS name
+to make it work. In the sunuo sources, which I want to take from now on
+there is no
+
+public const string Address
+
+in Misc/ServerList.cs. So I'm confused. There was no description how to
+put more servers in the GameServer configuration. I tested some things
+with the <bind....> configuration option in sunuo.xml, without success.
+
+BTW; If I write a dns name instead of an IP address into the
+configuration, the server doesn't start because of invalid ip address.
+May you can fix this by adding a simple dns name resolution? Would be
+very nice. May I can do this job for you, I can program C#, too.
+
+BTW2: Do you have a todo-list? May I can help you with such things?
+
+> This is where it becomes interesting: which IP did the login server
+> send?  Its own?  That is, 192.168.2.100.  Now your brother's client
+> connects to 192.168.2.100.  But that doesn't work since 192.168.2.100
+> is a private IP.
+
+Obviously the server sends its local LAN address, because it can't know
+something about the external address, if I don't tell it...
+
+> What you have to do is make SunUO send the "official" DSL IP.
+
+Yes, but how?
+
+> One solution would be to edit the "Address" variable and enter your
+> DynDNS hostname there.  Which Misc/ServerList.cs are you using,
+> RunUO's or SunUO's?
+
+See above. We did make a complete clean up and use now the whole sunuo
+scripts and core.
+
+> Max
+
+Maik
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070105/8c75aac2/attachment.bin>
+
+From greubel at nkey.de  Sun Jan  7 03:25:28 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sun, 07 Jan 2007 03:25:28 +0100
+Subject: [sunuo-users] Shard connecting problem
+In-Reply-To: <459EA818.2070901@nkey.de>
+References: <1167669155.2748.7.camel@moon.universe.pwg>	<20070103131246.GD18326@roonstrasse.net>
+	<459D7680.7060501@nkey.de>	<20070104221822.GA11345@roonstrasse.net>
+	<459EA818.2070901@nkey.de>
+Message-ID: <45A05A18.1080208@nkey.de>
+
+Ok, I have found the undocumented solution for this:
+
+Fill into sunuo.xml the following xml elements:
+
+=== snip ===
+  <server-list>
+    <game-server>
+      <name>Shardname</name>
+      <address>hostname:portnumber</address>
+    </game-server>
+  </server-list>
+=== /snip ===
+
+
+This should be a direct element under <sunuo-config>, I have written it
+directly before </sunuo-config>.
+
+You can also post more than one <game-server> each one will append to
+the shard list after account logon.
+
+But many thanks
+
+Maik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070107/12f0c4fd/attachment.bin>
+
+From max at duempel.org  Sun Jan  7 10:17:36 2007
+From: max at duempel.org (Max Kellermann)
+Date: Sun, 7 Jan 2007 10:17:36 +0100
+Subject: [sunuo-users] Shard connecting problem
+In-Reply-To: <45A05A18.1080208@nkey.de>
+References: <1167669155.2748.7.camel@moon.universe.pwg>
+	<20070103131246.GD18326@roonstrasse.net> <459D7680.7060501@nkey.de>
+	<20070104221822.GA11345@roonstrasse.net>
+	<459EA818.2070901@nkey.de> <45A05A18.1080208@nkey.de>
+Message-ID: <20070107091736.GA20202@roonstrasse.net>
+
+On 2007/01/07 03:25, Maik Greubel <greubel at nkey.de> wrote:
+> Ok, I have found the undocumented solution for this:
+> 
+> Fill into sunuo.xml the following xml elements:
+
+Correct.  Thanks for pointing out that "documentation bug", I'll fix
+it.
+
+Max
+
+
+
+From greubel at nkey.de  Sun Jan  7 12:55:26 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sun, 07 Jan 2007 12:55:26 +0100
+Subject: [sunuo-users] How to modify world save timer?
+Message-ID: <45A0DFAE.5010201@nkey.de>
+
+Hello,
+
+the subject should say all of it. I want to modify the world save to
+become more infrequently.
+
+I investigate Timer.cs where only the Timer class exists, and in Main.cs
+the timer objects are created. EventSink.cs holds the WorldSave-Methods.
+But where the timer is created for worldsave?
+
+Thanks
+Maik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070107/0c5ccc6d/attachment.bin>
+
+From max at duempel.org  Sun Jan  7 13:37:11 2007
+From: max at duempel.org (Max Kellermann)
+Date: Sun, 7 Jan 2007 13:37:11 +0100
+Subject: [sunuo-users] How to modify world save timer?
+In-Reply-To: <45A0DFAE.5010201@nkey.de>
+References: <45A0DFAE.5010201@nkey.de>
+Message-ID: <20070107123711.GA20603@roonstrasse.net>
+
+On 2007/01/07 12:55, Maik Greubel <greubel at nkey.de> wrote:
+> the subject should say all of it. I want to modify the world save to
+> become more infrequently.
+
+The world autosave script is Misc/AutoSave.cs - you have to modify it
+(variable m_Delay), since I have not put these variables into
+etc/sunuo.xml yet.
+
+Max
+
+
+
+
+From greubel at nkey.de  Sun Jan  7 16:24:07 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sun, 07 Jan 2007 16:24:07 +0100
+Subject: [sunuo-users] How to modify world save timer?
+In-Reply-To: <20070107123711.GA20603@roonstrasse.net>
+References: <45A0DFAE.5010201@nkey.de> <20070107123711.GA20603@roonstrasse.net>
+Message-ID: <45A11097.3000604@nkey.de>
+
+
+
+Max Kellermann schrieb:
+> On 2007/01/07 12:55, Maik Greubel <greubel at nkey.de> wrote:
+>> the subject should say all of it. I want to modify the world save to
+>> become more infrequently.
+> 
+> The world autosave script is Misc/AutoSave.cs - you have to modify it
+> (variable m_Delay), since I have not put these variables into
+> etc/sunuo.xml yet.
+> 
+> Max
+> 
+> 
+
+Thanks, I create a patch for you, see it attached.
+
+Regards
+Maik
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: worldsave-config.patch
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070107/a65b1b24/attachment.ksh>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070107/a65b1b24/attachment.bin>
+
+From max at duempel.org  Sun Jan  7 19:54:45 2007
+From: max at duempel.org (Max Kellermann)
+Date: Sun, 7 Jan 2007 19:54:45 +0100
+Subject: [sunuo-users] How to modify world save timer?
+In-Reply-To: <45A11097.3000604@nkey.de>
+References: <45A0DFAE.5010201@nkey.de> <20070107123711.GA20603@roonstrasse.net>
+	<45A11097.3000604@nkey.de>
+Message-ID: <20070107185445.GA22582@roonstrasse.net>
+
+On 2007/01/07 16:24, Maik Greubel <greubel at nkey.de> wrote:
+> Thanks, I create a patch for you, see it attached.
+
+Great!  I have committed it to svn.
+
+I have made three small changes:
+
+1.) interval smaller than one minute is not allowed, instead of "==
+    0.0"; also, exact comparisons with floating point numbers are "not
+    a good thing"[tm]
+
+2.) Config.Root.SaveInterval is non-static (you may access the
+    Config.Root instance by using "Core.Config")
+
+3.) Config.Root.SaveInterval is a TimeSpan object - cast it when it's
+    parsed
+
+Max
+
+
+
+From max at duempel.org  Tue Jan  9 09:28:15 2007
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 9 Jan 2007 09:28:15 +0100
+Subject: [sunuo-users] SunUO 0.4.3 released
+Message-ID: <20070109082815.GA4332@roonstrasse.net>
+
+Hi,
+
+I have just released version 0.4.3 of SunUO.
+
+The most important change is the lock around
+TimerChangeEntry.m_InstancePool.  This caused rare crashes on very
+busy shards.
+
+ http://download.berlios.de/sunuo/sunuo-0.4.3.zip
+
+Max
+
+
+
+From greubel at nkey.de  Tue Jan  9 21:01:38 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Tue, 09 Jan 2007 21:01:38 +0100
+Subject: [sunuo-users] Dynamic Hostnames as GameServer
+In-Reply-To: <20070109082815.GA4332@roonstrasse.net>
+References: <20070109082815.GA4332@roonstrasse.net>
+Message-ID: <45A3F4A2.6040401@nkey.de>
+
+Hello,
+
+the attached patch fixes a small problem using dynamic hostnames and the
+german telekom "Zwangstrennung" which forces a disconnect after a
+specified time (frequently in 24 hours).
+
+If a user is connected to the server, and the forced disconnect occurs,
+the user will getting disconnected. If she try to login it will happen,
+that a connection can't established because the login-server only knows
+the dynamic ip address of the server before disconnect.
+
+With my solution each time a user wants to connect the login server
+resolve the given address in sunuo.xml and built the shard list with
+this new resolved ip.
+
+If there are some questions, feel free to ask me.
+
+Config your shard list as known from the documentation in on sunuo.org.
+
+2 Files will be fixed:
+
+src/Config.cs
+scripts/legacy/Misc/Shardlist.cs
+
+Regards
+Maik
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: gameserverlist-dynamichostnames.patch
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070109/629a3c8e/attachment.ksh>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070109/629a3c8e/attachment.bin>
+
+From ml at tassoman.com  Wed Jan 10 01:01:34 2007
+From: ml at tassoman.com (ml at tassoman.com)
+Date: Wed, 10 Jan 2007 01:01:34 +0100 (CET)
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+Message-ID: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+
+Hello, I've compiled from sources sunuo for a power mac installation.
+
+I'm still getting problems with shard boot, it can't find tiledata.mul.
+
+I've set right data-path into xml configuration. This is teh output:
+
+tassoman at cubotto:~/uoml/sunuo$ ./run.sh
+SunUO Version 0.4.3 http://www.sunuo.org/
+  on Unix 2.6.17.10, runtime 1.1.4322.2032
+
+2007-01-10 00:54:03,570 WARN  library legacy does not exist
+2007-01-10 00:54:03,710 INFO  Library core verified: 4 items, 0 mobiles
+2007-01-10 00:54:03,711 INFO  All libraries verified: 4 items, 0 mobiles)
+2007-01-10 00:54:03,720 WARN  Warning: data file TileData.mul not found
+2007-01-10 00:54:03,725 FATAL System.Exception: TileData.mul was not found
+  at Server.TileData.Configure () [0x0013e] in
+/home/tassoman/uoml/sunuo/src/TileData.cs:288
+  at Server.Core.Start (Boolean repair) [0x000c3] in
+/home/tassoman/uoml/sunuo/src/Main.cs:404
+  at Server.Bootstrap.Main (System.String[] args) [0x0026a] in
+/home/tassoman/uoml/sunuo/src/Bootstrap.cs:147
+SunUO.exe exited with status 1
+
+tassoman at cubotto:~/uoml/sunuo$ uname -a
+Linux cubotto 2.6.17-10-powerpc #2 Tue Dec 5 22:00:09 UTC 2006 ppc GNU/Linux
+
+System is ubuntu edgy on a power mac G4 cube
+
+
+
+From max at duempel.org  Wed Jan 10 10:07:44 2007
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 10 Jan 2007 10:07:44 +0100
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+In-Reply-To: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+References: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+Message-ID: <20070110090744.GA24863@roonstrasse.net>
+
+On 2007/01/10 01:01, ml at tassoman.com wrote:
+> Hello, I've compiled from sources sunuo for a power mac installation.
+> 
+> I'm still getting problems with shard boot, it can't find tiledata.mul.
+> 
+> I've set right data-path into xml configuration. This is teh output:
+
+So you're sure TileData.mul exists in the data-path?  If yes, please
+try:
+
+ strace -f -o /tmp/sunuo.trace ./run.sh
+
+.. and send me the resulting file /tmp/sunuo.trace.
+
+Max
+
+
+
+From ml at tassoman.com  Thu Jan 11 11:44:56 2007
+From: ml at tassoman.com (Tassoman (mailing))
+Date: Thu, 11 Jan 2007 11:44:56 +0100
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+In-Reply-To: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+References: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+Message-ID: <1168512296.5422.19.camel@localhost>
+
+Hi to all,
+as you just know, I'm trying to start sunuo on a old, but still cool
+powermac.
+
+My way was:
+Get the sources from website, untar, compile with make.
+On docs I've read sunuo is "shipped" with custom scripts debugged from
+runuo version. So I suppose no external script is needed.
+Let's continue: I've edited sunuo.xml as docs explains and extracted my
+muls and idx'es from my local machine windoze installation to the ubuntu
+edgy.
+Then i tried to start run.sh getting tha error of tiledata.mul missing
+
+-- 
+Blogging humanum est, Tassoman ovest.
+http://blog.tassoman.com
+
+
+
+From ml at tassoman.com  Thu Jan 11 13:35:41 2007
+From: ml at tassoman.com (Tassoman (mailing))
+Date: Thu, 11 Jan 2007 13:35:41 +0100
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+In-Reply-To: <1168512296.5422.19.camel@localhost>
+References: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+	<1168512296.5422.19.camel@localhost>
+Message-ID: <1168518941.5422.33.camel@localhost>
+
+Il giorno gio, 11/01/2007 alle 11.44 +0100, Tassoman (mailing) ha
+scritto:
+> Hi to all,
+> as you just know, I'm trying to start sunuo on a old, but still cool
+> powermac.
+> 
+> My way was:
+> Get the sources from website, untar, compile with make.
+> On docs I've read sunuo is "shipped" with custom scripts debugged from
+> runuo version. So I suppose no external script is needed.
+> Let's continue: I've edited sunuo.xml as docs explains and extracted my
+> muls and idx'es from my local machine windoze installation to the ubuntu
+> edgy.
+> Then i tried to start run.sh getting tha error of tiledata.mul missing
+> 
+
+
+Ok I've managed the correct way to get all working well.
+0. install mono packages needed
+1. Download binary distribution (with Scripts) and extract
+2. Get the svn sources, export them into a custom directory
+3. compile sources
+4. remove bin dir from binary distribution extracted before
+5. move compiled files (you find them into build directory) into binary
+distribution's root
+6. run.sh
+
+YO! There was a lack of documentation.....
+
+You see, since UO client 5.0.7 youre not able to login with uogateway,
+it's not able to remove encryption. Use razor instead.
+
+-- 
+Blogging humanum est, Tassoman ovest.
+http://blog.tassoman.com
+
+
+
+From max at duempel.org  Thu Jan 11 13:39:22 2007
+From: max at duempel.org (Max Kellermann)
+Date: Thu, 11 Jan 2007 13:39:22 +0100
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+In-Reply-To: <1168518941.5422.33.camel@localhost>
+References: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+	<1168512296.5422.19.camel@localhost>
+	<1168518941.5422.33.camel@localhost>
+Message-ID: <20070111123922.GA16698@roonstrasse.net>
+
+On 2007/01/11 13:35, "Tassoman (mailing)" <ml at tassoman.com> wrote:
+[...]
+> 2. Get the svn sources, export them into a custom directory
+> 3. compile sources
+> 4. remove bin dir from binary distribution extracted before
+> 5. move compiled files (you find them into build directory) into binary
+> distribution's root
+
+Why that?  Every binary you need is in the binary zip file
+(sunuo-0.4.3.zip).
+
+Max
+
+
+
+From ml at tassoman.com  Thu Jan 11 14:43:59 2007
+From: ml at tassoman.com (Tassoman (mailing))
+Date: Thu, 11 Jan 2007 14:43:59 +0100
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+In-Reply-To: <20070111132147.GA20468@roonstrasse.net>
+References: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+	<1168512296.5422.19.camel@localhost>
+	<1168518941.5422.33.camel@localhost>
+	<20070111123922.GA16698@roonstrasse.net>
+	<1168521276.5422.37.camel@localhost>
+	<20070111132147.GA20468@roonstrasse.net>
+Message-ID: <1168523039.5422.43.camel@localhost>
+
+Il giorno gio, 11/01/2007 alle 14.21 +0100, Max Kellermann ha scritto:
+> On 2007/01/11 14:14, "Tassoman (mailing)" <ml at tassoman.com> wrote:
+> > Power-pc kernel is different from 686, they are two different kinds
+> > of architectures.
+> 
+> SunUO has no architecture dependent binaries.  The .exe and .dll files
+> are CIL (Common Intermediate Language), which contains no native code
+> - just like Java.
+
+LOOOOOOL! BtW now i got the svn lastest! ;-D
+I was supposing i should compile for my kind of architecture. You see,
+I've tried some time ago with a binary sphereserver compiled for 686
+-_-'
+
+There's some way to get nerun distro ported to sun uo? I've tried to run
+it over sunuo scripts, but unluckly.
+
+-- 
+Blogging humanum est, Tassoman ovest.
+http://blog.tassoman.com
+
+
+
+From max at duempel.org  Thu Jan 11 14:21:47 2007
+From: max at duempel.org (Max Kellermann)
+Date: Thu, 11 Jan 2007 14:21:47 +0100
+Subject: [sunuo-users] Problem with bootstrap, tiledata.mul not found
+In-Reply-To: <1168521276.5422.37.camel@localhost>
+References: <53184.84.220.96.9.1168387294.squirrel@webmail.bolognainformatica.com>
+	<1168512296.5422.19.camel@localhost>
+	<1168518941.5422.33.camel@localhost>
+	<20070111123922.GA16698@roonstrasse.net>
+	<1168521276.5422.37.camel@localhost>
+Message-ID: <20070111132147.GA20468@roonstrasse.net>
+
+On 2007/01/11 14:14, "Tassoman (mailing)" <ml at tassoman.com> wrote:
+> Power-pc kernel is different from 686, they are two different kinds
+> of architectures.
+
+SunUO has no architecture dependent binaries.  The .exe and .dll files
+are CIL (Common Intermediate Language), which contains no native code
+- just like Java.
+
+Max
+
+
+
+From greubel at nkey.de  Sat Jan 27 14:20:17 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Sat, 27 Jan 2007 14:20:17 +0100
+Subject: [sunuo-users] Dynamic Hostname Shardlist patch
+Message-ID: <45BB5191.60901@nkey.de>
+
+To give my patch a second try to be assigned to core, I review it and
+now the shard list will be dynamic configurable.
+
+What I did:
+
+1. Add support to read name of dynamic host from config and the option
+   that this host is really dynamic. Most of test shards in germany
+   will thanks for this feature, all other can ignore it.
+
+2. If the hostname is dynamic (see documentation section "server-list"
+   example 2 or my doc patch) the hostname will resolved each time, a
+   client connect and display the shard list. If its not dynamic (no
+   configuration needed) the Core will resolve the address and add it
+   to the server list statically. For this the patch of
+
+   Scripts/Misc/Serverlist.cs
+
+   have to be done.
+
+
+Because Max ignore my last patch, I decided to reimplement it in a
+better way. ;-)
+
+Regards
+-- 
+Maik Greubel
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: gameserverlist-dynamichostname2.patch
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070127/1eb1e373/attachment.ksh>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070127/1eb1e373/attachment.bin>
+
+From max at duempel.org  Tue Jan 30 10:19:27 2007
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 30 Jan 2007 10:19:27 +0100
+Subject: [sunuo-users] Dynamic Hostname Shardlist patch
+In-Reply-To: <45BB5191.60901@nkey.de>
+References: <45BB5191.60901@nkey.de>
+Message-ID: <20070130091927.GA31914@roonstrasse.net>
+
+On 2007/01/27 14:20, Maik Greubel <greubel at nkey.de> wrote:
+> To give my patch a second try to be assigned to core, I review it and
+> now the shard list will be dynamic configurable.
+> 
+> What I did:
+[...]
+
+Hi Maik,
+
+many thanks for your continued work on SunUO.  I havn't had time yet
+to do a full review of your patch.  Three things to consider:
+
+- I'm planning to do a really "easy" solution to the "SunUO on dial-in
+  IP" problem, which I have to experiment with.  Until that is
+  accomplished, it's good to have your patch!
+
+- now something about your patch.  I'd prefer to make the GameServer
+  object do all the lookup and the decision whether to look up the IP
+  every time.  It seems more natural and OO to me.
+
+- consider that a lagging DNS server will make the shard pause until
+  the DNS request is finished (keep in mind that services like DynDNS
+  make the DNS server forward all requests to the authoritative DynDNS
+  server, which adds even more lag)
+
+Max
+
+
+
+From greubel at nkey.de  Tue Jan 30 20:24:39 2007
+From: greubel at nkey.de (Maik Greubel)
+Date: Tue, 30 Jan 2007 20:24:39 +0100
+Subject: [sunuo-users] Dynamic Hostname Shardlist patch
+In-Reply-To: <20070130091927.GA31914@roonstrasse.net>
+References: <45BB5191.60901@nkey.de> <20070130091927.GA31914@roonstrasse.net>
+Message-ID: <45BF9B77.8050503@nkey.de>
+
+
+
+Max Kellermann schrieb:
+> - I'm planning to do a really "easy" solution to the "SunUO on dial-in
+>   IP" problem, which I have to experiment with.  Until that is
+>   accomplished, it's good to have your patch!
+
+Well, that only be possible, if the login server knows, that it is
+behind a NAT-Firewall. If I am right, NAT will results in a modified
+IP-Packet, which have a flag field. That may be a solution for this. I
+don't know, wether .NET or mono have the ability to handle network
+packages in raw mode to find this flag.
+
+But this should be a very "easy" solutiond ;-)
+
+> - now something about your patch.  I'd prefer to make the GameServer
+>   object do all the lookup and the decision whether to look up the IP
+>   every time.  It seems more natural and OO to me.
+
+Yes, I will review it another time to make it more natural. Thanks for
+that feedback.
+
+> - consider that a lagging DNS server will make the shard pause until
+>   the DNS request is finished (keep in mind that services like DynDNS
+>   make the DNS server forward all requests to the authoritative DynDNS
+>   server, which adds even more lag)
+
+Yes, thats a side effect of dynamic dns, which all services have. My
+solution is imho just important for local tests, a "production"-server
+should not have a dynamic ip or hostname and just do not need such a
+feature.
+
+Maik
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3449 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070130/9a79966b/attachment.bin>
+
+From adminamarath at hotmail.it  Tue Jan 30 22:44:03 2007
+From: adminamarath at hotmail.it (Michele Zarrillo)
+Date: Tue, 30 Jan 2007 22:44:03 +0100
+Subject: [sunuo-users] (no subject)
+Message-ID: <BAY110-W883681A693B299762B3A5BEA60@phx.gbl>
+
+
+  
+
+
+
+
+Hi, can someone know how to add a new body and/or new layer??
+ 
+for body i tryed to :
+ 
+-Open Body.cs 
+ 
+-Edit bool IsMale adding code of new animation added in anim.mul
+ 
+-i tryed it in game and body result invisible and client crash
+ 
+-------------------
+ 
+for layer :
+ 
+-+open item.cs
+ 
+-Add 
+ 
+ 
+New = 0x10, ( beacuse i need a new layer immovable like beard but beaind any other layer also in animation)
+ 
+but it results in a new bear layer.
+ 
+Who can help me?
+ 
+tnx
+_________________________________________________________________
+Esprimiti: personalizza la tua home page con Live.com.
+http://www.live.com/
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/sunuo-users/attachments/20070130/e32c696f/attachment.html>
+
+From max at duempel.org  Tue Jan 30 23:17:43 2007
+From: max at duempel.org (Max Kellermann)
+Date: Tue, 30 Jan 2007 23:17:43 +0100
+Subject: [sunuo-users] Dynamic Hostname Shardlist patch
+In-Reply-To: <45BF9B77.8050503@nkey.de>
+References: <45BB5191.60901@nkey.de> <20070130091927.GA31914@roonstrasse.net>
+	<45BF9B77.8050503@nkey.de>
+Message-ID: <20070130221743.GA7378@roonstrasse.net>
+
+On 2007/01/30 20:24, Maik Greubel <greubel at nkey.de> wrote:
+> Well, that only be possible, if the login server knows, that it is
+> behind a NAT-Firewall. If I am right, NAT will results in a modified
+> IP-Packet, which have a flag field. That may be a solution for this. I
+> don't know, wether .NET or mono have the ability to handle network
+> packages in raw mode to find this flag.
+
+No, it does not have a flag.  NAT is transparent.
+
+But my solution will be not redirecting the UO client, like uoproxy
+does, so we don't need to determine our "external" IP.
+
+Max
+
+
+

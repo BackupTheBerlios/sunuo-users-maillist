@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20problems%20using%20Transferserver%20%28xmlspawner%20editor%29%0A%20and%20LuaInterface.dlls%20with%20SunUO&In-Reply-To=%3C20070730132026.167200%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000132.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO</H1>
+    <B>Florian Fischer</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20problems%20using%20Transferserver%20%28xmlspawner%20editor%29%0A%20and%20LuaInterface.dlls%20with%20SunUO&In-Reply-To=%3C20070730132026.167200%40gmx.net%3E"
+       TITLE="[sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO">seabeams at gmx.de
+       </A><BR>
+    <I>Mon Jul 30 15:20:26 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000132.html">[sunuo-users] problems using Transferserver (xmlspawner editor)	and LuaInterface.dlls with SunUO
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#133">[ date ]</a>
+              <a href="thread.html#133">[ thread ]</a>
+              <a href="subject.html#133">[ subject ]</a>
+              <a href="author.html#133">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>hi again,
+
+here are the infos you requested. I also attached the error message+stacktrace (sorry only png).
+
+spawneditor+transferserver (RunUO 1.0 version):
+<A HREF="http://xmlspawner.15.forumer.com/index.php?showtopic=49">http://xmlspawner.15.forumer.com/index.php?showtopic=49</A>
+
+XMLSpawner itself (dependency):
+<A HREF="http://xmlspawner.15.forumer.com/index.php?showtopic=4">http://xmlspawner.15.forumer.com/index.php?showtopic=4</A>
+
+
+sunuo.xml
+  &lt;libraries&gt;
+    &lt;library name=&quot;legacy&quot;&gt;
+      &lt;!--
+      &lt;ignore-source name=&quot;Misc/ZLib.cs&quot; /&gt;
+      --&gt;
+		&lt;overlay name=&quot;bar&quot;/&gt;
+    &lt;/library&gt;
+    &lt;library name=&quot;bar&quot;/&gt;
+    &lt;library name=&quot;myrunuo&quot; disabled=&quot;yes&quot; /&gt;
+    &lt;library name=&quot;remote-admin&quot; disabled=&quot;yes&quot; /&gt;
+    &lt;library name=&quot;reports&quot; disabled=&quot;yes&quot; /&gt;
+
+  	&lt;library name=&quot;UOArchitect&quot;&gt;
+    	&lt;depends name=&quot;OrbServerSDK&quot;/&gt;
+    	&lt;depends name=&quot;UOArchitectInterface&quot;/&gt;
+	&lt;/library&gt;
+	&lt;library name=&quot;XMLSpawner2_v321&quot; /&gt;
+	&lt;library name=&quot;XMLPoints_v123&quot;&gt;
+		&lt;depends name=&quot;XMLSpawner2_v321&quot;/&gt;
+	&lt;/library&gt;
+	&lt;library name=&quot;XMLSiege_v06&quot;&gt;
+		&lt;depends name=&quot;XMLSpawner2_v321&quot;/&gt;
+	&lt;/library&gt;
+	&lt;library name=&quot;XMLTransferServer&quot;&gt;
+		&lt;depends name=&quot;TransferServer&quot;/&gt;
+	&lt;/library&gt;
+  &lt;/libraries&gt;
+
+Assemblies.cfg:
+
+System.dll
+System.Web.dll
+System.Xml.dll
+System.Data.dll
+System.Drawing.dll
+System.Windows.Forms.dll
+System.Runtime.Remoting.dll
+log4net.dll
+MySql.Data.dll
+
+
+I also have another question. I try to overlay some distribution scripts. I'm able to change existing scripts and overlay them. Thats fine.
+But what do i do when i have an to add an dependency? For example i modify the PlayerMobile.cs to add something like this: &quot;using Server.Engines.XmlSpawner2;&quot;
+
+But sunuo cant compile this, because it needs xmlspawner2 first. But XMLSpawner needs the legacy.dll first. How do i do this? Adding this to the distribution files also doesn't work.
+
+regards
+SiENcE
+
+
+-------- Original-Nachricht --------
+Datum: Mon, 30 Jul 2007 10:16:43 +0200
+Von: Max Kellermann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">max at duempel.org</A>&gt;
+An: Florian Fischer &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">seabeams at gmx.de</A>&gt;
+CC: <A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">sunuo-users at lists.berlios.de</A>
+Betreff: Re: [sunuo-users] problems using Transferserver (xmlspawner editor) and LuaInterface.dlls with SunUO
+
+&gt;<i> On 2007/07/29 18:33, Florian Fischer &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/sunuo-users">seabeams at gmx.de</A>&gt; wrote:
+</I>&gt;<i> &gt; hi,
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; i have problems using Transferserver (from xmlspawner editor) and
+</I>&gt;<i> LuaInterface.dlls (c# lua interface) with SunUO 0.4.4.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; SunUO crashs with an excaption when loading one of thoose dlls from
+</I>&gt;<i> &gt; &quot;\local\lib\&quot;. RunUO1/2 works fine.
+</I>&gt;<i> 
+</I>&gt;<i> Hi Florian,
+</I>&gt;<i> 
+</I>&gt;<i> please provide the full exception message including the stack trace.
+</I>&gt;<i> Without it, we cannot analyze your problem.  You should also tell us
+</I>&gt;<i> where we can get these scripts you are talking about (direct download
+</I>&gt;<i> URL would be great).
+</I>&gt;<i> 
+</I>&gt;<i> Max
+</I>
+-- 
+GMX FreeMail: 1 GB Postfach, 5 E-Mail-Adressen, 10 Free SMS.
+Alle Infos und kostenlose Anmeldung: <A HREF="http://www.gmx.net/de/go/freemail">http://www.gmx.net/de/go/freemail</A>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: sunuo044.png
+Type: image/png
+Size: 34070 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/sunuo-users/attachments/20070730/ab9512a3/attachment.png">https://lists.berlios.de/pipermail/sunuo-users/attachments/20070730/ab9512a3/attachment.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000132.html">[sunuo-users] problems using Transferserver (xmlspawner editor)	and LuaInterface.dlls with SunUO
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#133">[ date ]</a>
+              <a href="thread.html#133">[ thread ]</a>
+              <a href="subject.html#133">[ subject ]</a>
+              <a href="author.html#133">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

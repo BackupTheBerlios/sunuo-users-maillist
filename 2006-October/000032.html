@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Serialization Error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2006-October/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Serialization%20Error&In-Reply-To=%3Ctxd6peiip8llcw5.031020061043%40server%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000035.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Serialization Error</H1>
+    <B>Gandalf</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Serialization%20Error&In-Reply-To=%3Ctxd6peiip8llcw5.031020061043%40server%3E"
+       TITLE="[sunuo-users] Serialization Error">Gandalf at mystical-unicorn.net
+       </A><BR>
+    <I>Tue Oct  3 17:43:54 CEST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000035.html">[sunuo-users] Serialization Error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>After installing the daat99 OWLTR system I get the following error:
+
+
+2006-10-03 10:14:28,574 INFO  Loading world
+2006-10-03 10:14:30,725 ERROR failed to load mobile
+System.Exception: ***** Bad serialize on Server.Mobiles.Mongbat *****
+  at Server.World.LoadEntities () [0x00314] in /home/max/svn/sunuo/src/World.cs:684
+An error was encountered while loading a saved object
+ - Type: Server.Mobiles.Mongbat
+ - Serial: 0xFFFFFFFF
+Delete the object? (y/n)
+n
+After pressing return an exception will be thrown and the server will terminate
+
+2006-10-03 10:14:35,916 FATAL System.Exception: Load failed (items=False, mobiles=True, guilds=False, regions=False, type=Server.Mobiles.Mongbat, serial=0xFFFFFFFF) ---&gt; System.Exception: ***** Bad serialize on Server.Mobiles.Mongbat *****
+  at Server.World.LoadEntities () [0x00314] in /home/max/svn/sunuo/src/World.cs:684 --- End of inner exception stack trace ---
+
+  at Server.World.LoadEntities () [0x00924] in /home/max/svn/sunuo/src/World.cs:900
+  at Server.World.Load () [0x00036] in /home/max/svn/sunuo/src/World.cs:918
+  at Server.Core.Start (Server.Config.Root _config, Boolean debug, Boolean _service, Boolean _profiling) [0x001fb] in /home/max/svn/sunuo/src/Main.cs:358
+  at Server.Bootstrap.Main (System.String[] args) [0x0024a] in /home/max/svn/sunuo/src/Bootstrap.cs:130
+This exception is fatal, press return to exit
+
+
+
+Never run into anything like this before and I'm completely lost. Any help would be greatly appreciated. Thank you.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000035.html">[sunuo-users] Serialization Error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

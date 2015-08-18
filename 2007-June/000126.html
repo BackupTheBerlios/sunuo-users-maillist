@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] startup problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20startup%20problem&In-Reply-To=%3C8f42d5660706290743i47d67b3an2d1380f9e7fa85f2%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000125.html">
+   <LINK REL="Next"  HREF="000127.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] startup problem</H1>
+    <B>Elio Heinrich</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20startup%20problem&In-Reply-To=%3C8f42d5660706290743i47d67b3an2d1380f9e7fa85f2%40mail.gmail.com%3E"
+       TITLE="[sunuo-users] startup problem">downsource at googlemail.com
+       </A><BR>
+    <I>Fri Jun 29 16:43:57 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000125.html">[sunuo-users] startup problem
+</A></li>
+        <LI>Next message: <A HREF="000127.html">[sunuo-users] startup problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Okay, with an update of Mono it worked.
+But now it says &quot;TileData.mul&quot; not found, though the file is existent
+on the server.
+
+-----
+SunUO Version 0.4.4 <A HREF="http://www.sunuo.org/">http://www.sunuo.org/</A>
+  on Unix 2.6.9.23, runtime 1.1.4322.2032
+
+2007-06-29 16:36:51,824 INFO  Loaded binary library legacy
+2007-06-29 16:36:52,119 INFO  Loaded binary library profiler
+2007-06-29 16:36:52,125 INFO  Library core verified: 4 items, 0 mobiles
+2007-06-29 16:36:52,270 INFO  Library legacy verified: 1654 items, 435 mobiles
+2007-06-29 16:36:52,270 INFO  Library profiler verified: 0 items, 0 mobiles
+2007-06-29 16:36:52,272 INFO  All libraries verified: 1658 items, 435 mobiles)
+2007-06-29 16:36:52,277 WARN  Warning: data file TileData.mul not found
+2007-06-29 16:36:52,280 FATAL System.Exception: TileData.mul was not found
+  at Server.TileData.Configure () [0x0013f] in
+/home/max/svn/sunuo/src/TileData.cs:288
+  at Server.Core.Start (Boolean repair) [0x000a8] in
+/home/max/svn/sunuo/src/Main.cs:407
+  at Server.Bootstrap.Main (System.String[] args) [0x0026a] in
+/home/max/svn/sunuo/src/Bootstrap.cs:147
+SunUO.exe exited with status 0
+-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000125.html">[sunuo-users] startup problem
+</A></li>
+	<LI>Next message: <A HREF="000127.html">[sunuo-users] startup problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

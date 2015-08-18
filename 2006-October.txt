@@ -1,0 +1,409 @@
+From Gandalf at mystical-unicorn.net  Tue Oct  3 17:43:54 2006
+From: Gandalf at mystical-unicorn.net (Gandalf)
+Date: Tue, 3 Oct 2006 10:43:54 -0500
+Subject: [sunuo-users] Serialization Error
+Message-ID: <txd6peiip8llcw5.031020061043@server>
+
+After installing the daat99 OWLTR system I get the following error:
+
+
+2006-10-03 10:14:28,574 INFO  Loading world
+2006-10-03 10:14:30,725 ERROR failed to load mobile
+System.Exception: ***** Bad serialize on Server.Mobiles.Mongbat *****
+  at Server.World.LoadEntities () [0x00314] in /home/max/svn/sunuo/src/World.cs:684
+An error was encountered while loading a saved object
+ - Type: Server.Mobiles.Mongbat
+ - Serial: 0xFFFFFFFF
+Delete the object? (y/n)
+n
+After pressing return an exception will be thrown and the server will terminate
+
+2006-10-03 10:14:35,916 FATAL System.Exception: Load failed (items=False, mobiles=True, guilds=False, regions=False, type=Server.Mobiles.Mongbat, serial=0xFFFFFFFF) ---> System.Exception: ***** Bad serialize on Server.Mobiles.Mongbat *****
+  at Server.World.LoadEntities () [0x00314] in /home/max/svn/sunuo/src/World.cs:684 --- End of inner exception stack trace ---
+
+  at Server.World.LoadEntities () [0x00924] in /home/max/svn/sunuo/src/World.cs:900
+  at Server.World.Load () [0x00036] in /home/max/svn/sunuo/src/World.cs:918
+  at Server.Core.Start (Server.Config.Root _config, Boolean debug, Boolean _service, Boolean _profiling) [0x001fb] in /home/max/svn/sunuo/src/Main.cs:358
+  at Server.Bootstrap.Main (System.String[] args) [0x0024a] in /home/max/svn/sunuo/src/Bootstrap.cs:130
+This exception is fatal, press return to exit
+
+
+
+Never run into anything like this before and I'm completely lost. Any help would be greatly appreciated. Thank you.
+
+
+
+From fabrizio.castellano at gmail.com  Wed Oct  4 15:43:33 2006
+From: fabrizio.castellano at gmail.com (fabrizio castellano)
+Date: Wed, 4 Oct 2006 15:43:33 +0200
+Subject: [sunuo-users] Use precompiled libraries?
+Message-ID: <51e511990610040643o749f5b29sdebc8a0c69bba25c@mail.gmail.com>
+
+Hi
+I think it could be useful to introduce a new option for library
+handling, something like
+
+<library name="foo">
+       <precompiled>
+<\library>
+
+to tell SunUO not to compile any script but to use the dll that is
+already present in the library folder.
+
+This would allow users to compile the library on a machine and then
+upload it to the game server, without having to upload all the
+scripts.
+
+I know this could be already done simply by uploading the compiled dll
+without changing the scripts on the server.
+This way SunUO would think scripts didn't change and would use the dll
+without compilation.
+
+Anyway this requires some scripts on the server and my aim is to be
+able to run a shard with no .cs files on the server, only uploading
+precompiled dlls when needed.
+
+This shouldn't be such a great task, the only problem could be
+.NET/Mono compatibility if I try to compile a dll on linux and then
+make it run on a windows server.
+
+Thanks for your attention
+Fax
+
+
+From max at duempel.org  Wed Oct  4 15:46:54 2006
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 4 Oct 2006 15:46:54 +0200
+Subject: [sunuo-users] Use precompiled libraries?
+In-Reply-To: <51e511990610040643o749f5b29sdebc8a0c69bba25c@mail.gmail.com>
+References: <51e511990610040643o749f5b29sdebc8a0c69bba25c@mail.gmail.com>
+Message-ID: <20061004134654.GA9086@roonstrasse.net>
+
+On 2006/10/04 15:43, fabrizio castellano <fabrizio.castellano at gmail.com> wrote:
+> I think it could be useful to introduce a new option for library
+> handling, something like
+> 
+> <library name="foo">
+>        <precompiled>
+> <\library>
+> 
+> to tell SunUO not to compile any script but to use the dll that is
+> already present in the library folder.
+
+This has already been possible for a long time, see chapter 4 in the
+documentation.
+
+Max
+
+
+
+From max at duempel.org  Wed Oct  4 15:51:38 2006
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 4 Oct 2006 15:51:38 +0200
+Subject: [sunuo-users] Serialization Error
+In-Reply-To: <txd6peiip8llcw5.031020061043@server>
+References: <txd6peiip8llcw5.031020061043@server>
+Message-ID: <20061004135138.GB9086@roonstrasse.net>
+
+On 2006/10/03 17:43, Gandalf <Gandalf at mystical-unicorn.net> wrote:
+> After installing the daat99 OWLTR system I get the following error:
+
+What is the "daat99 OWLTR system"?  Is it a script library?
+
+Before you install a script library, you should either trust the
+author that he's a good programmer, or review the code yourself.
+
+Please understand that I can't support third party scripts.  There are
+way too many bad and low quality script libraries for RunUO, maybe
+this one does bad things to your world saves.  Who knows.
+
+Max
+
+
+
+From fabrizio.castellano at gmail.com  Wed Oct  4 16:02:43 2006
+From: fabrizio.castellano at gmail.com (fabrizio castellano)
+Date: Wed, 4 Oct 2006 16:02:43 +0200
+Subject: [sunuo-users] Use precompiled libraries?
+In-Reply-To: <20061004134654.GA9086@roonstrasse.net>
+References: <51e511990610040643o749f5b29sdebc8a0c69bba25c@mail.gmail.com>
+	<20061004134654.GA9086@roonstrasse.net>
+Message-ID: <51e511990610040702k45bdcd9ave72b1ec5f1f952e3@mail.gmail.com>
+
+Ops ... I didn't read this line
+
+"Binary script libraries are loaded from ./local/lib/NAME.dll"
+
+So I guess I can disable standard scripts in ./Scripts by disabling
+library "legacy" and then put my own dll in
+./local/lib/mylib/mylib.dll right?
+
+But what about files in ./var/cache/lib ? I see there is a legacy.dll
+file there, what is it?
+
+On 10/4/06, Max Kellermann <max at duempel.org> wrote:
+> On 2006/10/04 15:43, fabrizio castellano <fabrizio.castellano at gmail.com> wrote:
+> > I think it could be useful to introduce a new option for library
+> > handling, something like
+> >
+> > <library name="foo">
+> >        <precompiled>
+> > <\library>
+> >
+> > to tell SunUO not to compile any script but to use the dll that is
+> > already present in the library folder.
+>
+> This has already been possible for a long time, see chapter 4 in the
+> documentation.
+>
+> Max
+>
+>
+
+
+From max at duempel.org  Wed Oct  4 16:18:19 2006
+From: max at duempel.org (Max Kellermann)
+Date: Wed, 4 Oct 2006 16:18:19 +0200
+Subject: [sunuo-users] Use precompiled libraries?
+In-Reply-To: <51e511990610040702k45bdcd9ave72b1ec5f1f952e3@mail.gmail.com>
+References: <51e511990610040643o749f5b29sdebc8a0c69bba25c@mail.gmail.com>
+	<20061004134654.GA9086@roonstrasse.net>
+	<51e511990610040702k45bdcd9ave72b1ec5f1f952e3@mail.gmail.com>
+Message-ID: <20061004141819.GA10198@roonstrasse.net>
+
+On 2006/10/04 16:02, fabrizio castellano <fabrizio.castellano at gmail.com> wrote:
+> Ops ... I didn't read this line
+> 
+> "Binary script libraries are loaded from ./local/lib/NAME.dll"
+> 
+> So I guess I can disable standard scripts in ./Scripts by disabling
+> library "legacy" and then put my own dll in
+> ./local/lib/mylib/mylib.dll right?
+
+No.  that would be ./local/lib/mylib.dll - you should read the
+documentation carefully.
+
+> But what about files in ./var/cache/lib ? I see there is a
+> legacy.dll file there, what is it?
+
+It's only a cache.  SunUO compiles the libraries only once (until you
+modify them of course).  The resulting dll file is cached, that's it.
+
+Max
+
+
+
+From 0631568 at clevislauzon.qc.ca  Sat Oct 14 00:16:11 2006
+From: 0631568 at clevislauzon.qc.ca (0631568)
+Date: Fri, 13 Oct 2006 18:16:11 -0400
+Subject: [sunuo-users] SunUo french Team
+Message-ID: <s52fd822.032@alphonse.clevislauzon.qc.ca>
+
+Hi ,
+I'm french Canadian and with one of my friend , we check to start a shard on SunUo  in French . 
+When I come to search for some French documentation (my friend is not really good in English) , they had nothing . I want to change that.
+I search some bilingual people to help me to traduce the documentation of SunUo .
+
+Sorry for my bad English *
+
+I start to traduce the README.
+
+LisezMoi.txt 
+
+Version 0.1 
+
+SunUO Lisez Moi
+============
+
+(c) 2005 Max Kellermann <max at duempel.org>
+
+Qu'est ce que SunUo?
+--------------------
+
+SunUo est un ?mulateur de serveur d'Ultima Online, bas? sur RunUo.
+
+
+T?l?charger SunUo
+-----------------
+
+Vous pouvez le trouv? sur se site:
+
+ http://www.sunuo.org/
+
+
+Installation et Documentation
+------------------------------
+
+Vous trouverez toute la documentation ? se lien
+
+ http://www.sunuo.org/doc/sunuo.html
+
+L?gal
+-----
+
+Copyright 2005 Max Kellermann <max at duempel.org>
+bas? sur RunUO (C) The RunUO Software Team
+
+Ce programme est sous licence GNU , vous pouvez donc le modifier et le distribuer.
+
+ ________________________________________
+|Email :0631568 at clevislauzon.qc.ca       |
+|MSN : hanibal13_13 at hotmail.com          | 
+|________________________________________|
+
+
+__________________________________________________
+Olivier Fortin
+tel : 838-0041
+Email : 0631568 at clevislauzon.qc.ca
+200 Du Carreffour
+
+
+From max at duempel.org  Mon Oct 16 13:03:36 2006
+From: max at duempel.org (Max Kellermann)
+Date: Mon, 16 Oct 2006 13:03:36 +0200
+Subject: [sunuo-users] SunUo french Team
+In-Reply-To: <s52fd822.032@alphonse.clevislauzon.qc.ca>
+References: <s52fd822.032@alphonse.clevislauzon.qc.ca>
+Message-ID: <20061016110336.GA14650@roonstrasse.net>
+
+On 2006/10/14 00:16, 0631568 <0631568 at clevislauzon.qc.ca> wrote:
+> I'm french Canadian and with one of my friend , we check to start a
+> shard on SunUo in French .  When I come to search for some French
+> documentation (my friend is not really good in English) , they had
+> nothing . I want to change that.  I search some bilingual people to
+> help me to traduce the documentation of SunUo .
+
+Good idea!  I can speak french only very very little, but if your
+project is successful, I'll be glad to add your translations to the
+SunUO web site.
+
+Max
+
+
+
+From 0631568 at clevislauzon.qc.ca  Mon Oct 16 14:44:57 2006
+From: 0631568 at clevislauzon.qc.ca (0631568)
+Date: Mon, 16 Oct 2006 08:44:57 -0400
+Subject: [sunuo-users] =?iso-8859-1?q?R=E9p=2E_=3A_Re=3A__SunUo_french_Tea?=
+ =?iso-8859-1?q?m?=
+Message-ID: <s53346ca.072@alphonse.clevislauzon.qc.ca>
+
+Perfect, I will open a private wiki in the next day and start the team
+traduce .
+
+More information Soon.
+
+
+__________________________________________________
+Olivier Fortin
+Email : 0631568 at clevislauzon.qc.ca
+>>> Max Kellermann <max at duempel.org> 16/10/06 7:03 >>>
+On 2006/10/14 00:16, 0631568 <0631568 at clevislauzon.qc.ca> wrote:
+> I'm french Canadian and with one of my friend , we check to start a
+> shard on SunUo in French .  When I come to search for some French
+> documentation (my friend is not really good in English) , they had
+> nothing . I want to change that.  I search some bilingual people to
+> help me to traduce the documentation of SunUo .
+
+Good idea!  I can speak french only very very little, but if your
+project is successful, I'll be glad to add your translations to the
+SunUO web site.
+
+Max
+
+
+
+
+From 0631568 at clevislauzon.qc.ca  Tue Oct 24 05:26:36 2006
+From: 0631568 at clevislauzon.qc.ca (0631568)
+Date: Mon, 23 Oct 2006 23:26:36 -0400
+Subject: [sunuo-users] =?iso-8859-1?q?SUNUO_Traduction_Fran=E7aise?=
+Message-ID: <s53d4fde.002@alphonse.clevislauzon.qc.ca>
+
+This is the link for people want to help me , for traduce SunUO.
+
+http://solisproject.no-ip.com:8181/~sunuo/wiki/index.php
+
+__________________________________________________
+Olivier Fortin
+Email : 0631568 at clevislauzon.qc.ca
+
+
+From dtravailloux at haute-savoie.cci.fr  Tue Oct 24 12:23:41 2006
+From: dtravailloux at haute-savoie.cci.fr (Dimitri TRAVAILLOUX)
+Date: Tue, 24 Oct 2006 12:23:41 +0200
+Subject: [sunuo-users] RE : sunuo-users Digest, Vol 3, Issue 5
+Message-ID: <0CF9B41E8066DD43A852C284A7EA85F157C38B@bangkok.haute-savoie.cci.fr>
+
+Hello
+
+Could you give antoher link ? I can't help you from my office...port 8181 is forbidden here.
+
+Best regards
+
+Dimitri TRAVAILLOUX 
+Architecte logiciel 
+Chambre de Commerce et d'Industrie de la Haute-Savoie 
+T?l : 04 50 33 71 37  - Fax : 04 50 33 71 13 
+dtravailloux at haute-savoie.cci.fr 
+www.haute-savoie.cci.fr
+ 
+
+-----Message d'origine-----
+De?: sunuo-users-bounces at lists.berlios.de [mailto:sunuo-users-bounces at lists.berlios.de] De la part de sunuo-users-request at lists.berlios.de
+Envoy??: mardi 24 octobre 2006 12:00
+??: sunuo-users at lists.berlios.de
+Objet?: sunuo-users Digest, Vol 3, Issue 5
+
+Send sunuo-users mailing list submissions to
+	sunuo-users at lists.berlios.de
+
+To subscribe or unsubscribe via the World Wide Web, visit
+	https://lists.berlios.de/mailman/listinfo/sunuo-users
+or, via email, send a message with subject or body 'help' to
+	sunuo-users-request at lists.berlios.de
+
+You can reach the person managing the list at
+	sunuo-users-owner at lists.berlios.de
+
+When replying, please edit your Subject line so it is more specific
+than "Re: Contents of sunuo-users digest..."
+
+
+Today's Topics:
+
+   1. SUNUO Traduction Fran?aise (0631568)
+
+
+----------------------------------------------------------------------
+
+Message: 1
+Date: Mon, 23 Oct 2006 23:26:36 -0400
+From: "0631568" <0631568 at clevislauzon.qc.ca>
+Subject: [sunuo-users] SUNUO Traduction Fran?aise
+To: <sunuo-users at lists.berlios.de>
+Message-ID: <s53d4fde.002 at alphonse.clevislauzon.qc.ca>
+Content-Type: text/plain; charset=US-ASCII
+
+This is the link for people want to help me , for traduce SunUO.
+
+http://solisproject.no-ip.com:8181/~sunuo/wiki/index.php
+
+__________________________________________________
+Olivier Fortin
+Email : 0631568 at clevislauzon.qc.ca
+
+
+------------------------------
+
+_______________________________________________
+sunuo-users mailing list
+sunuo-users at lists.berlios.de
+https://lists.berlios.de/mailman/listinfo/sunuo-users
+
+
+End of sunuo-users Digest, Vol 3, Issue 5
+*****************************************
+
+

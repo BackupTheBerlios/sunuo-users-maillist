@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] Bug in Revision 898 -&gt; 899
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Bug%20in%20Revision%20898%20-%3E%20899&In-Reply-To=%3C48DBC0BE.4040408%40nkey.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] Bug in Revision 898 -&gt; 899</H1>
+    <B>Maik Greubel</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20Bug%20in%20Revision%20898%20-%3E%20899&In-Reply-To=%3C48DBC0BE.4040408%40nkey.de%3E"
+       TITLE="[sunuo-users] Bug in Revision 898 -&gt; 899">greubel at nkey.de
+       </A><BR>
+    <I>Thu Sep 25 18:47:58 CEST 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello list,
+
+unfortunately there is a bug in the patch from Defiance. If we have a
+multi-page gump like the account list gump or the .go gump the gump will
+be removed after closing but the callback routine is not finished. This
+will result in the behaviour, thats not possible to create new accounts
+in the admin gump nor use the .go command.
+
+If I comment the line 6201 in Mobile.cs, which should contain
+
+m_NetState.RemoveGump(gump);
+
+the .go gump works correctly, as well as the account list to create a
+new account.
+
+Best regards
+
+Maik
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>

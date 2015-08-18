@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sunuo-users] strange problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/sunuo-users/2006-November/index.html" >
+   <LINK REL="made" HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20strange%20problem&In-Reply-To=%3C51e511990611030827m1a502ea9g6f948aba644cb9a8%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sunuo-users] strange problem</H1>
+    <B>fabrizio castellano</B> 
+    <A HREF="mailto:sunuo-users%40lists.berlios.de?Subject=Re%3A%20%5Bsunuo-users%5D%20strange%20problem&In-Reply-To=%3C51e511990611030827m1a502ea9g6f948aba644cb9a8%40mail.gmail.com%3E"
+       TITLE="[sunuo-users] strange problem">fabrizio.castellano at gmail.com
+       </A><BR>
+    <I>Fri Nov  3 17:27:55 CET 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000044.html">[sunuo-users] strange problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi
+
+I've been using SunUO for a while now and I have a working custom
+shard, or at least I had it until today :P
+
+Today after some heavy modifications to the scripts something strange
+happens: SunUO compiles the new scripts but then loads the old ones
+(the cached version of legacy.dll)
+
+To check this thing I made a new installation of SunUO with standard
+RunUO scripts, launched SunUO.exe and checked that all was working.
+
+Then I replaced the Scripts folder with my custom from the old
+installation and SunUO complained that it couldn't find System.Drawing
+namespace.
+Note that my custom Scripts folder was compiling without problems in
+the old installation ...
+
+Then I made another fresh standard RunUO installation and started
+replacing the standard scripts with my custom ones a few at a time,
+recompiling scripts each time to see when the System.Drawing problem
+would show up.
+I ended up with all my custom scripts installed and correctly compiled
+(no problems with System.Drawing anymore o_O )
+
+As the server starts up I notice that it lacks the usual startup
+messages my custom scripts print out on the console and after loggin
+in I notice that it actually is a standard RunUO server, with standard
+scripts!
+
+SunUO compiled my custom scripts and then loaded the old legacy.dll
+
+If I make some modifications to a .cs file SunUO recompiles the
+scripts but then it loads the old ones and I can't manage to have my
+shard up and running with my scripts instead of the standard ones.
+
+Thanks in advance for any help
+Fax
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000044.html">[sunuo-users] strange problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/sunuo-users">More information about the sunuo-users
+mailing list</a><br>
+</body></html>
